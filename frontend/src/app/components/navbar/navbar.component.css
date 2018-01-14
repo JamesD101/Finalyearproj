@@ -1,0 +1,69 @@
+.tosinnav{
+  width:100%;
+  overflow: hidden;
+  height: 80px;
+  background-color: #202c39;
+  border: 1px solid transparent;
+  padding:10px;
+  color: #fff;
+
+  /*box-shadow: 2px 2px 5px black;*/
+
+}
+.movein{
+  text-align: center;
+  margin-right: 50px;
+}
+.movers{
+  text-align: center;
+  margin-right: 50px;
+}
+.movenav{
+  margin-left: 60px;
+}
+/*
+!*
+.hold{
+  overflow: hidden;
+}
+.tosinnav{
+  width:100%;
+  overflow: hidden;
+  height: 80px;
+  background-color: #202c39;
+  border: 1px solid transparent;
+  padding:10px;
+  color: #fff;
+
+  !*box-shadow: 2px 2px 5px black;*!
+
+}
+.logo{
+  margin-top: 12px;
+  margin-left: 70px;
+}
+.move-right{
+  float: right;
+  margin-right: 40px;
+  margin-top: -35px;
+}
+
+.move-right p{
+  display: inline;
+  font-size: 15px;
+}
+
+.move-right .house1{
+  padding-right: 80px;
+}
+
+.move-right p a{
+  color: #fff;
+  text-decoration: none;
+}
+
+.overlay{
+  background-color: black;
+}
+*!
+*/

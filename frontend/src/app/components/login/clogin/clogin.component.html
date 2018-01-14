@@ -1,0 +1,25 @@
+<hr>
+<h5 class="text-center">Login as a Customer</h5>
+<hr>
+<br>
+<div class="row show-hide-message">
+  <div [ngClass] = "messageClass">
+    {{ message }}
+  </div>
+</div>
+
+<form [formGroup]="form" (submit)="onLoginCustomer()">
+  <div class="clogin-container">
+    <input type="text" name="username" class="inp fullname" autocomplete="off" placeholder="Enter your Username" formControlName="username">
+    <ul class="help-block">
+      <li *ngIf="form.controls.username.errors?.required && form.controls.username.dirty">This field is required</li>
+    </ul>
+
+    <input type="password" class="inp email" name="password" autocomplete="off" placeholder="Enter your password" formControlName="password">
+    <ul class="help-block">
+      <li *ngIf="form.controls.password.errors?.required && form.controls.password.dirty">This field is required</li>
+    </ul>
+
+    <button [disabled]="!form.valid" type="submit" class="subbut">Login as a customer</button>
+  </div>
+</form>

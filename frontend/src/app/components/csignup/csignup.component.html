@@ -1,0 +1,42 @@
+<div class="container">
+  <br><br><br><br><br>
+  <h5 class="text-center">Sign up as a customer to interact more with the service providers</h5>
+
+  <hr id="under">
+
+  <div class="row show-hide-message">
+    <div [ngClass]="messageClass">
+      {{ message }}
+    </div>
+  </div>
+  <form [formGroup]="crform" (submit)="onRegisterCustomer()">
+    <div class="bsignup-container">
+
+      <input type="text" name="username" class="inp fullname" autocomplete="off" placeholder="Enter your username" formControlName="username">
+      <ul class="help-block">
+        <li *ngIf="crform.controls.username.errors?.required && crform.controls.username.dirty">This field is required</li>
+        <li *ngIf="crform.controls.username.errors?.minlength || crform.controls.username.errors?.maxlength">Minimum length : 5 and Maximum length: 30</li>
+      </ul>
+
+      <input type="text" class="inp email" name="email" autocomplete="off" placeholder="Enter your email address" formControlName="email">
+      <ul class="help-block">
+        <li *ngIf="crform.controls.email.errors?.required && crform.controls.email.dirty">This field is required</li>
+        <li *ngIf="crform.controls.email.errors?.minlength || crform.controls.email.errors?.maxlength">Minimum length : 5 and Maximum length: 30</li>
+        <li *ngIf="crform.controls.email.errors?.validateEmail && crform.controls.email.dirty">This is not a valid E-mail address</li>
+      </ul>
+
+      <input type="password" name="password" class="inp password" autocomplete="off" placeholder="Enter your password" formControlName="password">
+      <ul class="help-block">
+        <li *ngIf="crform.controls.password.errors?.required && crform.controls.password.dirty">This is a required field</li>
+        <li *ngIf="crform.controls.password.errors?.minlength || crform.controls.password.errors?.maxlength">Minimum length: 5 and Maximum length: 30</li>
+        <li *ngIf="crform.controls.password.errors?.passwordValidate && crform.controls.password.dirty">Password must containe: Uppercase, Lowercase, Digit and a Symbol</li>
+      </ul>
+      <input type="password" name="confirm" class="inp password" autocomplete="off" placeholder="Confirm your password" formControlName="confirm">
+      <ul class="help-block">
+        <li *ngIf="crform.controls.confirm.errors?.required && crform.controls.confirm.dirty">This is a required field</li>
+        <li *ngIf="crform.errors?.matchingPassword && crform.controls.confirm.dirty">Passwords do not match</li>
+      </ul>
+      <button [disabled]="!crform.valid || processing" type="submit" class="subbut">Sign up as a customer</button>
+    </div>
+  </form>
+</div>

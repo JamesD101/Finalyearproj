@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AuthService } from '../../../services/auth.service';
+import { BauthService } from '../../../services/bauth.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -15,7 +15,7 @@ export class BloginComponent implements OnInit {
   messageClass: string;
   processing = false;
 
-  constructor(private formBuilder: FormBuilder, private authService: AuthService, private router: Router) {
+  constructor(private formBuilder: FormBuilder, private bauthService: BauthService, private router: Router) {
     this.bloginForm();
   }
 
@@ -50,7 +50,7 @@ export class BloginComponent implements OnInit {
       businessname: this.blform.get('businessname').value,
       password: this.blform.get('password').value
     }
-    this.authService.loginBusiness(buser).subscribe(data => {
+    this.bauthService.loginBusiness(buser).subscribe(data => {
       if (!data.success){
         this.messageClass = 'alert alert-danger';
         this.message = data.message;
@@ -59,6 +59,7 @@ export class BloginComponent implements OnInit {
       } else {
         this.messageClass = 'alert alert-success';
         this.message = data.message;
+        this.bauthService.storeUserData(data.token, data.buser);
         setTimeout (() => {
           this.router.navigate(['/bdash']);
         }, 2000);

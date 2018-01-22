@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators} from '@angular/forms';
-import { AuthService } from '../../services/auth.service';
+import { BauthService } from '../../services/bauth.service';
 
 @Component({
   selector: 'app-bsignup',
@@ -13,10 +13,14 @@ export class BsignupComponent implements OnInit {
   message: String;
   messageClass;
   processing = false;
+  businessnameValid;
+  businessnameMessage;
+  emailValid;
+  emailMessage;
 
   constructor(
     private formBuilder: FormBuilder,
-    private authService: AuthService
+    private bauthService: BauthService
   ) {
     this.createForm();
   }
@@ -123,7 +127,7 @@ export class BsignupComponent implements OnInit {
       state: this.brform.get('state').value,
       password: this.brform.get('password').value
     };
-    this.authService.registerBusiness(buser).subscribe( data => {
+    this.bauthService.registerBusiness(buser).subscribe( data => {
       if (!data.success) {
         this.messageClass = 'alert alert-danger';
         this.message = data.message;
@@ -132,9 +136,34 @@ export class BsignupComponent implements OnInit {
       } else {
         this.messageClass = 'alert alert-success';
         this.message = data.message;
+
       }
     });
   }
+
+  /*checkBEmail(email){
+    this.authService.checkBEmail(this.brform.get('email').value).subscribe( data => {
+      if(!data.success){
+        this.emailValid = false;
+        this.emailMessage = data.message;
+      } else {
+        this.emailValid = true;
+        this.emailMessage = data.message;
+      }
+    });
+  }
+
+  checkBusinessname(businessname){
+    this.authService.checkBusinessname(this.brform.get('businessname').value).subscribe(data => {
+      if(!data.success){
+        this.businessnameValid = false;
+        this.businessnameMessage = data.message;
+      } else {
+        this.businessnameValid = true;
+        this.businessnameMessage = data.message;
+      }
+    });
+  }*/
 
 
 }

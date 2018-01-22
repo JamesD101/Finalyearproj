@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators} from '@angular/forms';
-import { AuthService } from '../../../services/auth.service';
+import { CauthService } from '../../../services/cauth.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -15,7 +15,7 @@ export class CloginComponent implements OnInit {
   messageClass: string;
   processing = false;
 
-  constructor(private formBuilder: FormBuilder, private authService: AuthService, private router: Router) {
+  constructor(private formBuilder: FormBuilder, private cauthService: CauthService, private router: Router) {
     this.cloginForm();
   }
 
@@ -46,7 +46,7 @@ export class CloginComponent implements OnInit {
       username: this.form.get('username').value,
       password: this.form.get('password').value
     }
-    this.authService.loginCustomer(cuser).subscribe(data => {
+    this.cauthService.loginCustomer(cuser).subscribe(data => {
       if(!data.success){
         this.messageClass = 'alert alert-danger';
         this.message = data.message;

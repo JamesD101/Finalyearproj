@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BauthService } from '../../../../services/bauth.service';
 
 @Component({
   selector: 'app-side-bar',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SideBarComponent implements OnInit {
 
-  constructor() { }
+  businessname ;
+  email;
+  address;
+  city;
+  category;
+  state;
+  constructor(private bauthService: BauthService) { }
 
   ngOnInit() {
+    this.bauthService.getProfile().subscribe(profile => {
+      this.businessname = profile.buser.businessname;
+      this.email = profile.buser.email;
+      this.address = profile.buser.address;
+      this.city = profile.buser.city;
+      this.state = profile.buser.state;
+      this.category = profile.buser.category;
+    });
   }
 
 }

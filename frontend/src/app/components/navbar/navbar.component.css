@@ -17,6 +17,7 @@
 .movers{
   text-align: center;
   margin-right: 50px;
+  cursor: pointer;
 }
 .movenav{
   margin-left: 60px;

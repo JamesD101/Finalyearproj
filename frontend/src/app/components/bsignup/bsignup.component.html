@@ -23,20 +23,22 @@
         <li *ngIf="brform.controls.email.errors?.required && brform.controls.email.dirty">This field is required</li>
         <li *ngIf="brform.controls.email.errors?.minlength || brform.controls.email.errors?.maxlength">Minimum length : 5 and Maximum length: 30</li>
         <li *ngIf="brform.controls.email.errors?.validateEmail && brform.controls.email.dirty">This is not a valid E-mail address</li>
+        <!--<li *ngIf="emailValid"> {{ emailMessage }}</li>-->
       </ul>
 
       <input type="text" name="businessname" class="inp businessname" autocomplete="off" placeholder="Enter your business name" formControlName="businessname">
         <ul class="help-block">
           <li *ngIf="brform.controls.businessname.errors?.required && brform.controls.businessname.dirty">This field is required</li>
+          <!--<li *ngIf="businessnameValid"> {{ businessnameMessage }}</li>-->
         </ul>
 
       <label>Select A Service Category</label>
       <select class="inpu" name="category" formControlName="category">
         <!--<option>Select a service category</option>-->
         <option>Photography</option>
+        <option>Event Center</option>
         <option>Makeup artist</option>
         <option>Stylist</option>
-        <option>Event Center</option>
         <option>MC</option>
         <option>Catering</option>
       </select>
@@ -54,15 +56,15 @@
       <label>State</label>
       <select class="inputt" name="state" formControlName="state" autocomplete="off">
         <option>Abuja</option>
-        <option>Anambra</option>
-        <option>Ekiti</option>
-        <option>Jos</option>
+        <option>Adamawa</option>
         <option>Kaduna</option>
         <option>Kano</option>
+        <option>Kwara</option>
         <option>Lagos</option>
         <option>Ogun</option>
         <option>Ondo</option>
         <option>Osun</option>
+        <option>Plateau</option>
       </select>
 
       <input type="password" name="password" class="inp password" autocomplete="off" placeholder="Enter your password" formControlName="password">
@@ -76,6 +78,7 @@
           <li *ngIf="brform.controls.confirm.errors?.required && brform.controls.confirm.dirty">This is a required field</li>
           <li *ngIf="brform.errors?.matchingPassword && brform.controls.confirm.dirty">Passwords do not match</li>
         </ul>
+
       <button [disabled]="!brform.valid || processing" type="submit" class="subbut">Sign up as a service provider</button>
     </div>
   </form>

@@ -1,6 +1,7 @@
 const Cuser = require('../model/cuser');
 const Buser = require('../model/buser');
 const config = require('../config/database');
+const jwt = require('jsonwebtoken');
 
 module.exports = function(router){
 
@@ -177,7 +178,15 @@ module.exports = function(router){
                             if (!validPassword){
                                 res.json ({ success: false, message: 'Password was invalid' });
                             } else {
-                                res.json({ success: true, message: 'Success!'});
+                                const token = jwt.sign({ buserId: buser._id}, config.secret);
+                                res.json({ success: true, message: 'Success!', token: token, buser: {
+                                    businessname: buser.businessname,
+                                        email: buser.email,
+                                        category: buser.category,
+                                    address: buser.address,
+                                        city: buser.city,
+                                    state: buser.state
+                                    }});
                             }
                         }
                     }
@@ -185,6 +194,136 @@ module.exports = function(router){
             }
         }
     });
+
+    router.use(function (req, res, next) {
+        const token = req.headers['authorization'];
+        if (!token){
+            res.json({ success: false, message: 'No token provided' });
+        } else {
+            jwt.verify(token, config.secret, function(err, decoded) {
+               if (err) {
+                   res.json({ success: false, message: 'Token invalid: ' +err });
+               } else {
+                   req.decoded = decoded;
+                   next();
+               }
+            });
+        }
+    });
+
+    router.get('/businessprofile', function (req, res) {
+        Buser.findOne({ _id: req.decoded.buserId }).select('businessname email address category city state').exec( function (err, buser) {
+            if (err) {
+                res.json({ success: false, message: 'Error occurred' });
+            } else {
+                if (!buser) {
+                    res.json({ success: false, message: 'User not found'});
+                } else {
+                    res.json({ success: true, buser: buser });
+                }
+            }
+        });
+    });
+
+    router.get('/search/:category/:state', function (req,res) {
+            if (!req.params.category) {
+                res.json({success: false, message: 'Category is required'});
+            } else {
+                if (!req.params.state) {
+                    res.json({success: false, message: 'State field is required'});
+                } else {
+                    Buser.find({ category: req.params.category, state: req.params.state }, function (err, busers) {
+                        if(err){
+                            res.json({ success: false, message: err });
+                        } else {
+                            if (!busers) {
+                                res.json({success: false, message: 'No category like you selected'});
+                            }
+                            else {
+                                res.json({success: true, busers: busers});
+                            }
+                        }
+                    });
+                    // }
+                    // }
+                    //     .sort({ '_id' : -1});
+                }
+                }
+    });
+
+    /*router.get('/checkBusiness/:businessname', function (req,res) {
+       if (!req.params.businessname){
+           res.json({ success:false, message: 'No username' });
+        } else {
+           Buser.findOne({ businessname: req.params.businessname }, function (err, buser) {
+              if(err){
+                  res.json({ success:false, message: err});
+              } else {
+                  if (buser){
+                      res.json({ success: false, message: 'Business Name already exists'});
+                  } else {
+                      res.json({ success: true, message: 'Business Name is available'});
+                  }
+
+              }
+           });
+       }
+    });
+
+    router.get('/checkBEmail/:email', function (req,res) {
+       if(!req.params.email){
+           res.json({ success: false, message: 'No email'});
+       } else {
+           Buser.findOne({ email: req.params.email }, function (err, buser) {
+               if (err){
+                   res.json({ success:false, message: err});
+               } else {
+                   if (buser) {
+                       res.json({ success: false, message: 'Use a different email address'});
+                   } else {
+                       res.json({ success: true, message: 'Email is free to be used'});
+                   }
+               }
+           });
+       }
+    });
+
+    router.get('/checkUsername/:username', function (req,res) {
+        if(!req.params.username){
+            res.json({ success:false, message: 'No username'});
+        } else {
+            Cuser.findOne({ username: req.params.username }, function (err, cuser) {
+                if (err){
+                    res.json({ success:false, message: err });
+                } else {
+                    if (cuser) {
+                        res.json({ success:false, message: 'Username already exists'});
+                    } else {
+                        res.json({ success:true, message: 'Username is free'});
+                    }
+                }
+            });
+        }
+    });
+
+    router.get('/checkEmail/:email', function (req,res) {
+       if (!req.params.email){
+           res.json({ success:false, message: 'No email'});
+       } else {
+           Cuser.findOne({ email: req.params.email }, function (err, cuser) {
+               if(err){
+                   res.json({ success:false, message: err });
+               } else {
+                   if(cuser){
+                       res.json({ success:false, message: 'Email already exists' });
+                   } else {
+                       res.json({ success:true, message: 'Email is free' });
+                   }
+               }
+
+           });
+       }
+    });*/
 
     return router;
 };

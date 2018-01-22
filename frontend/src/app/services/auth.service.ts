@@ -1,27 +1,14 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
+import { tokenNotExpired } from 'angular2-jwt';
 
 @Injectable()
 export class AuthService {
 
-  domain = 'http://localhost:8080';
-
 
   constructor(private http: HttpClient) { }
 
-  registerBusiness(buser) {
-  return this.http.post<Buser>(this.domain + '/authentication/bregister', buser);
-  }
-  registerCustomer(cuser) {
-    return this.http.post(this.domain + '/authentication/cregister', cuser);
-  }
-  loginCustomer(cuser){
-    return this.http.post(this.domain + '/authentication/clogin', cuser);
-  }
-  loginBusiness(buser){
-    return this.http.post(this.domain + '/authentication/blogin', buser);
-  }
 
 }

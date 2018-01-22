@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators} from '@angular/forms';
-import { AuthService } from '../../services/auth.service';
+import { CauthService } from '../../services/cauth.service';
 
 @Component({
   selector: 'app-csignup',
@@ -13,9 +13,14 @@ export class CsignupComponent implements OnInit {
   message: String;
   messageClass;
   processing = false;
+  emailValid;
+  emailMessage;
+  usernameValid;
+  usernameMessage;
+
 
   constructor( private formBuilder: FormBuilder,
-               private authService: AuthService ) {
+               private cauthService: CauthService ) {
     this.createForm();
   }
 
@@ -98,7 +103,7 @@ export class CsignupComponent implements OnInit {
       email: this.crform.get('email').value,
       password: this.crform.get('password').value
     };
-    this.authService.registerCustomer(cuser).subscribe( data => {
+    this.cauthService.registerCustomer(cuser).subscribe( data => {
       if (!data.success) {
         this.messageClass = 'alert alert-danger';
         this.message = data.message;
@@ -111,5 +116,30 @@ export class CsignupComponent implements OnInit {
     });
   }
 
+  /*checkCemail(email){
+    this.CauthService.checkCEmail(this.crform.get('email').value).subscribe(data => {
+      if (!data.success) {
+        this.emailValid = false;
+        this.emailMessage = data.message;
+      } else {
+        this.emailValid = true;
+        this.emailMessage = data.message;
+      }
+    });
+  }
+
+  checkCusername(username){
+    this.CauthService.checkUsername(this.crform.get('username').value).subscribe( data => {
+      if (!data.success) {
+        this.usernameValid = false;
+        this.usernameMessage = data.message;
+
+      } else {
+        this.usernameValid = true;
+        this.usernameMessage = data.message;
+      }
+    });
+  }
+*/
 
 }

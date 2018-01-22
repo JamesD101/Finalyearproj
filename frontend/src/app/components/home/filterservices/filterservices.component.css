@@ -5,6 +5,9 @@ ul{
   /*margin-left: 60px;*/
   /*background: black;*/
 }
+.sme{
+  color: black;
+}
 ul li{
   margin-top: 50px;
   text-align: center;

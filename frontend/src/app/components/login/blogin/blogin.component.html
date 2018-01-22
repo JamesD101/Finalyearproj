@@ -9,7 +9,7 @@
 </div>
 
 <form [formGroup]="blform" (submit)="onLoginBusiness()">
-  <div class="blogin-container">
+  <div class="clogin-container">
     <input type="text" name="businessname" class="inp fullname" autocomplete="off" placeholder="Enter your business name" formControlName="businessname">
     <ul class="help-block">
       <li *ngIf="blform.controls.businessname.errors?.required && blform.controls.businessname.dirty">This field is required</li>

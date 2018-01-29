@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   templateUrl: './blogin.component.html',
   styleUrls: ['./blogin.component.css']
 })
-export class BloginComponent implements OnInit {
+export class BloginComponent implements OnInit{
 
   blform: FormGroup;
   message: string;
@@ -66,4 +66,5 @@ export class BloginComponent implements OnInit {
       }
     });
   }
+
 }

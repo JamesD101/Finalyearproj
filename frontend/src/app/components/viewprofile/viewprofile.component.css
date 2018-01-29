@@ -1,0 +1,11 @@
+.inner{
+  overflow: hidden;
+}
+
+.here-now{
+  position: fixed;
+}
+
+.here-there{
+  margin-left: auto;
+}

@@ -12,14 +12,14 @@ export class NavbarComponent implements OnInit {
 
   displayblogin = false;
 
-  constructor( private bauthService: BauthService,
-               private router: Router,
-               private flashMessagesService: FlashMessagesService
-  ) { }
+  constructor(private bauthService: BauthService,
+              private router: Router,
+              private flashMessagesService: FlashMessagesService) {
+  }
 
   onLogoutClick() {
     this.bauthService.logoutBusiness();
-    this.flashMessagesService.show('You are logged out', { cssClass: 'alert-info' });
+    this.flashMessagesService.show('You are logged out', {cssClass: 'alert-info'});
     this.router.navigate(['/login/blogin']);
 
   }
@@ -28,3 +28,5 @@ export class NavbarComponent implements OnInit {
   }
 
 }
+
+

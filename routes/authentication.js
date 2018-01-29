@@ -195,6 +195,32 @@ module.exports = function(router){
         }
     });
 
+    router.get('/search/:category/:state', function (req,res) {
+        if (!req.params.category) {
+            res.json({success: false, message: 'Category is required'});
+        } else {
+            if (!req.params.state) {
+                res.json({success: false, message: 'State field is required'});
+            } else {
+                Buser.find({ category: req.params.category, state: req.params.state }, function (err, busers) {
+                    if(err){
+                        res.json({ success: false, message: err });
+                    } else {
+                        if (!busers) {
+                            res.json({success: false, message: 'No category like you selected'});
+                        }
+                        else {
+                            res.json({success: true, busers: busers});
+                        }
+                    }
+                });
+                // }
+                // }
+                //     .sort({ '_id' : -1});
+            }
+        }
+    });
+
     router.use(function (req, res, next) {
         const token = req.headers['authorization'];
         if (!token){
@@ -225,32 +251,20 @@ module.exports = function(router){
         });
     });
 
-    router.get('/search/:category/:state', function (req,res) {
-            if (!req.params.category) {
-                res.json({success: false, message: 'Category is required'});
-            } else {
-                if (!req.params.state) {
-                    res.json({success: false, message: 'State field is required'});
-                } else {
-                    Buser.find({ category: req.params.category, state: req.params.state }, function (err, busers) {
-                        if(err){
-                            res.json({ success: false, message: err });
-                        } else {
-                            if (!busers) {
-                                res.json({success: false, message: 'No category like you selected'});
-                            }
-                            else {
-                                res.json({success: true, busers: busers});
-                            }
-                        }
-                    });
-                    // }
-                    // }
-                    //     .sort({ '_id' : -1});
-                }
-                }
-    });
 
+    router.get('/searchbusiness/:category', function (req,res) {
+       Buser.find({ category: req.params.category}, function (err, busers) {
+           if(err){
+               res.json({ success: false, message: err });
+           } else {
+               if (!busers) {
+                   res.json({ success: false, message: 'No Service Provider is availabe' });
+               } else {
+                   res.json({ success: true, busers: busers });
+               }
+           }
+       });
+    });
     /*router.get('/checkBusiness/:businessname', function (req,res) {
        if (!req.params.businessname){
            res.json({ success:false, message: 'No username' });

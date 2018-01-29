@@ -1,4 +1,4 @@
-<div class="container">
+<div class="containerme">
   <br><br><br><br><br>
   <h5 class="text-center">Sign up as a customer to interact more with the service providers</h5>
 
@@ -29,7 +29,7 @@
       <ul class="help-block">
         <li *ngIf="crform.controls.password.errors?.required && crform.controls.password.dirty">This is a required field</li>
         <li *ngIf="crform.controls.password.errors?.minlength || crform.controls.password.errors?.maxlength">Minimum length: 5 and Maximum length: 30</li>
-        <li *ngIf="crform.controls.password.errors?.passwordValidate && crform.controls.password.dirty">Password must containe: Uppercase, Lowercase, Digit and a Symbol</li>
+        <li *ngIf="crform.controls.password.errors?.passwordValidate && crform.controls.password.dirty">Password must contain: Uppercase, Lowercase, Digit and a Symbol</li>
       </ul>
       <input type="password" name="confirm" class="inp password" autocomplete="off" placeholder="Confirm your password" formControlName="confirm">
       <ul class="help-block">

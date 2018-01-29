@@ -25,6 +25,14 @@ import { SideBarComponent } from './components/dashboard/bdashboard/side-bar/sid
 import { ContentComponent } from './components/dashboard/bdashboard/content/content.component';
 import { FlashMessagesModule } from 'angular2-flash-messages';
 import { FlashMessagesService } from 'angular2-flash-messages';
+import { ViewprofileComponent } from './components/viewprofile/viewprofile.component';
+import { MessageComponent } from './components/dashboard/bdashboard/message/message.component';
+import { UploadComponent } from './components/dashboard/bdashboard/upload/upload.component';
+import { AddinfoComponent } from './components/dashboard/bdashboard/addinfo/addinfo.component';
+// import { SearchProductsComponent } from './components/home/search-products/search-products.component';
+import { SearchServiceComponent } from './components/home/search-service/search-service.component';
+import { SearchSideBarComponent } from './components/home/search-service/search-side-bar/search-side-bar.component';
+import { SearchContentComponent } from './components/home/search-service/search-content/search-content.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +49,15 @@ import { FlashMessagesService } from 'angular2-flash-messages';
     CdashboardComponent,
     BdashboardComponent,
     SideBarComponent,
-    ContentComponent
+    ContentComponent,
+    ViewprofileComponent,
+    MessageComponent,
+    UploadComponent,
+    AddinfoComponent,
+    // SearchProductsComponent,
+    SearchServiceComponent,
+    SearchSideBarComponent,
+    SearchContentComponent
   ],
   imports: [
     BrowserModule,

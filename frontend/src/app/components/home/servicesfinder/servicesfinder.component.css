@@ -9,7 +9,9 @@
   text-align: center;
   padding-bottom: 30px;
 }
-
+.text1 span{
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
 .hold-search-btn{
   display: inline;
   margin-top: 10px;

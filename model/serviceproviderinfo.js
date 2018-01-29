@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 // const bcrypt = require('bcrypt-nodejs');
 
 const serviceProviderSchema = new Schema ({
-      description : { type: String, required: true, unique: true },
+      aboutme : { type: String, required: true, unique: true },
       profilepic : { type: String }
 
 });

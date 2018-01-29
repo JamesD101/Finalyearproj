@@ -103,6 +103,7 @@ export class CsignupComponent implements OnInit {
       email: this.crform.get('email').value,
       password: this.crform.get('password').value
     };
+    // console.log(cuser);
     this.cauthService.registerCustomer(cuser).subscribe( data => {
       if (!data.success) {
         this.messageClass = 'alert alert-danger';

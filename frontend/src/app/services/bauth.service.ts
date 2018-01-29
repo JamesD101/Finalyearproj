@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import { tokenNotExpired } from 'angular2-jwt';
@@ -17,7 +17,7 @@ export class BauthService {
     return tokenNotExpired();
   }
 
-  loadToken(){
+  loadToken() {
     this.authToken = localStorage.getItem('token');
   }
 
@@ -38,6 +38,18 @@ export class BauthService {
     this.authToken = token;
     this.buser = buser;
   }
+  searchBusiness(someSearch): Observable<any> {
+    // this.loadToken();
+    // const headers = new HttpHeaders().set('Authorization', this.authToken);
+    // let search = new HttpParams();
+    // search = search.append('category', someSearch.category);
+    // search = search.append('state', someSearch.state);
+    // const category = someSearch.category;
+    // const state = someSearch.state;
+    return this.http.get(this.domain + '/authentication/search/' + someSearch.category + '/' + someSearch.state );
+      //{params: search, headers} );
+  }
+
   getProfile(): Observable<any> {
     this.loadToken();
     const headers = new HttpHeaders().set('Authorization', this.authToken);

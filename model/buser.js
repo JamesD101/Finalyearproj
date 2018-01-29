@@ -70,7 +70,9 @@ const businessSchema = new Schema ({
     address: { type: String, required: true },
     city: { type: String, required: true },
     state: { type: String, required: true},
-    password: { type: String, required: true, validate: passwordValidate }
+    password: { type: String, required: true, validate: passwordValidate },
+    description: { type: String },
+    profilePic: { type: String  }
 });
 
 businessSchema.pre('save', function (next) {

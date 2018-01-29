@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { BauthService } from '../../services/bauth.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-bsignup',
@@ -20,7 +21,8 @@ export class BsignupComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private bauthService: BauthService
+    private bauthService: BauthService,
+    private router: Router
   ) {
     this.createForm();
   }
@@ -136,7 +138,9 @@ export class BsignupComponent implements OnInit {
       } else {
         this.messageClass = 'alert alert-success';
         this.message = data.message;
-
+        setTimeout( () => {
+          this.router.navigate(['/login/blogin']);
+        }, 2000);
       }
     });
   }

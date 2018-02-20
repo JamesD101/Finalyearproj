@@ -63,7 +63,7 @@ const emailValidate = [
     }
 ]
 const businessSchema = new Schema ({
-    fullname: { type: String, required: true, unique: true} ,
+    fullname: { type: String, required: true} ,
     email: { type: String, required: true, unique: true, validate: emailValidate } ,
     businessname: { type: String, required: true, unique: true } ,
     category: { type: String, required: true } ,
@@ -71,8 +71,8 @@ const businessSchema = new Schema ({
     city: { type: String, required: true },
     state: { type: String, required: true},
     password: { type: String, required: true, validate: passwordValidate },
-    description: { type: String },
-    profilePic: { type: String  }
+    description: { type: String }
+    // profilePic: { type: String  }
 });
 
 businessSchema.pre('save', function (next) {

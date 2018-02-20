@@ -1,0 +1,47 @@
+<div class="container cont">
+  <ul>
+  <div class="center-my-form">
+    <div class="centering">
+      <form [formGroup]="searchForm" class="hold-search-btn">
+        <select name="category" formControlName="category" class="searchservice" autocomplete="off">
+          <option *ngFor="let c of allCategory" [ngValue]="c">{{ c }}</option>
+        </select>
+        <select class="searchlocation" name="state" formControlName="state" autocomplete="off">
+          <option *ngFor="let s of allState" [ngValue]="s">{{ s }}</option>
+        </select>
+        <!--<input type="search" class="searchlocation" placeholder="Location e.g Ikeja">-->
+
+        <button type="submit" class="searchbutton" (click)="onSearch()" >Search</button>
+
+      </form>
+    </div>
+  </div>
+  <br>
+  <div *ngFor="let search of searches" class="containerme">
+    <div class="container">
+      <div class="row">
+        <div class="contain col-md-8">
+          <div class="row">
+            <div class="col-md-4 image"></div>
+            <div class="col-md-8 seller">
+              <div class="insider">
+                <h5><b>{{ search.businessname }}</b></h5>
+                <p>4 star</p>
+                <p><i>{{ search.address }}, {{ search.city }}, {{ search.state }}</i></p>
+                <!--<p>Description</p>-->
+                <h6> <b>Description:</b> <i></i></h6>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="sub col-md-4">
+          <button class="buttonme col-md-12">View Profile</button>
+        </div>
+      </div>
+    </div>
+    <br>
+  </div>
+  </ul>
+</div>
+
+

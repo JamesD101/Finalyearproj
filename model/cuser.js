@@ -100,4 +100,13 @@ customerSchema.methods.comparePassword = function(password){
     return bcrypt.compareSync(password, this.password);
 }
 
-module.exports = mongoose.model('Cuser', customerSchema);
+const Cuser = module.exports = mongoose.model('Cuser', customerSchema);
+
+module.exports.getUserById = function (id, callback) {
+    Cuser.findById(id, callback);
+};
+
+module.exports.getUserByUsername = function (username, callback) {
+    const query = { username: username}
+    Cuser.findOne(query, callback);
+};

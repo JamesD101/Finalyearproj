@@ -1,0 +1,33 @@
+<div class="container">
+  <br><br>
+<hr>
+
+  <hr>
+  <h5 class="text-center">Login as a Service Provider</h5>
+  <hr>
+  <!--<br>-->
+  <div class="row show-hide-message">
+    <div [ngClass] = "messageClass">
+      {{ message }}
+    </div>
+  </div>
+
+  <form [formGroup]="blform" (submit)="onLoginBusiness()">
+    <div class="clogin-container">
+      <input type="text" name="businessname" class="inp fullname" autocomplete="off" placeholder="Enter your business name" formControlName="businessname">
+      <ul class="help-block">
+        <li *ngIf="blform.controls.businessname.errors?.required && blform.controls.businessname.dirty">This field is required</li>
+        <li *ngIf="blform.controls.businessname.errors?.minlength || blform.controls.businessname.errors?.maxlength">Minimum length : 5 and Maximum length: 30</li>
+      </ul>
+
+      <input type="password" class="inp email" name="password" autocomplete="off" placeholder="Enter your password" formControlName="password">
+      <ul class="help-block">
+        <li *ngIf="blform.controls.password.errors?.required && blform.controls.password.dirty">This field is required</li>
+      </ul>
+
+      <button [disabled]="!blform.valid" type="submit" class="subbut">Login as a service provider</button>
+    </div>
+  </form>
+
+
+</div>

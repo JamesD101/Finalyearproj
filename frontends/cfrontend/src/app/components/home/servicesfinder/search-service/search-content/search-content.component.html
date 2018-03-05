@@ -1,6 +1,8 @@
+
 <div class="center-my-form">
+  <h6>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You must be logged in to view the profile of service providers</h6>
   <div class="centering">
-    <form [formGroup]="searchForm" class="hold-search-btn">
+    <form [formGroup]="searchForm" class="hold-search-btn" (submit)="onSearch()">
       <select name="category" formControlName="category" class="searchservice" autocomplete="off">
         <option *ngFor="let c of allCategory" [ngValue]="c">{{ c }}</option>
       </select>
@@ -9,12 +11,20 @@
       </select>
       <!--<input type="search" class="searchlocation" placeholder="Location e.g Ikeja">-->
 
-      <button type="submit" class="searchbutton" (click)="onSearch()" >Search</button>
+      <button type="submit" class="searchbutton">Search</button>
 
     </form>
   </div>
 </div>
 <br>
+
+<h5 *ngIf="empty">The category or location which was searched for those not have any SERVICE PROVIDER</h5>
+<div class="row show-hide-message">
+  <div [ngClass] = "messageClass">
+    {{ message }}
+  </div>
+</div>
+
 <div *ngFor="let search of searches" class="containerme">
   <div class="container">
     <div class="row">
@@ -27,17 +37,26 @@
               <p>4 star</p>
               <p><i>{{ search.address }}, {{ search.city }}, {{ search.state }}</i></p>
               <!--<p>Description</p>-->
-              <h6> <b>Description:</b> <i></i></h6>
+              <h6> <b>Description: {{ search.description }}</b> <i></i></h6>
             </div>
           </div>
         </div>
       </div>
       <div class="sub col-md-4">
-        <button class="buttonme col-md-12">View Profile</button>
+        <a [routerLink]="['singleprovider/', search._id]"><button class="buttonme col-md-12">View Profile</button></a>
+        <a><button (click)="hirepro(search._id)" class="buttonme col-md-12">Request Service Provider</button></a>
+        <a [routerLink]="['singleprovider/', search._id]"><button class="buttonme col-md-12">Contact Details</button></a>
       </div>
     </div>
   </div>
   <br>
+  <span class="underline"></span>
 </div>
+
+
+
+<!--</ng-template-->
+
+
 
 

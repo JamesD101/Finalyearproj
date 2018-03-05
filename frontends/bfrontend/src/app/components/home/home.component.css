@@ -1,18 +1,34 @@
-.service-finder{
+.holdme{
   overflow: hidden;
   width:100%;
-  height:400px;
-  background-image: url("../../../assets/tech.jpg");
-  background-size: contain;
-  background-position: 100%;
+  height:300px;
+  background-image: url("back.jpg");
+  background-repeat: no-repeat;
+  /*background-position: 100%;*/
+  background-size: cover;
   margin-top: -20px;
 
 }
-
-.filter-service{
-  /*margin-top: 100px;*/
-  /*background-color: green;*/
-  /*overflow: hidden;*/
+.holdme h2{
+  color: #ffffff;
+  font-size: 30px;
+  text-align: center;
+  margin-top: 90px;
+}
+.holdme p{
+  color: #ffffff;
+  font-size: 18px;
+  text-align: center;
+  margin-top: 10px;
+}
+.howitworks{
+  overflow: hidden;
   width:100%;
-  height:301px;
+  height:500px;
+  background-image: url("howitworks.jpg");
+  background-repeat: no-repeat;
+  /*background-position: 100%;*/
+  background-size: contain;
+  /*margin-top: -20px;*/
+
 }

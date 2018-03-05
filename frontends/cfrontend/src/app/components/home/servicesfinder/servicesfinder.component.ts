@@ -41,10 +41,10 @@ export class ServicesfinderComponent implements OnInit {
   }
 
   onSearch() {
-    if (!this.cauthService.loggedInC()){
-        this.message = 'You must login to search';
-        this.messageClass = 'alert alert-info';
-    } else {
+    // if (!this.cauthService.loggedInC()){
+    //     this.message = 'You must login to search';
+    //     this.messageClass = 'alert alert-info';
+    // } else {
     const someSearch = {
       category: this.searchForm.get('category').value,
       state: this.searchForm.get('state').value
@@ -64,5 +64,5 @@ export class ServicesfinderComponent implements OnInit {
         }
       });
     }
-  }
+
 }

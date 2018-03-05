@@ -16,6 +16,18 @@ const emailLengthChecker = (email) => {
     }
 }
 
+const descLengthChecker = (description) => {
+    if(!description){
+        return false;
+    } else {
+        if (description.length < 3 || description.length > 50){
+            return false;
+        } else {
+            return true;
+        }
+    }
+}
+
 const validPasswordChecker = (password) => {
     if (!password){
         return false;
@@ -62,6 +74,12 @@ const emailValidate = [
         validator: validEmailChecker, message: 'Email is invalid'
     }
 ]
+
+const descriptionValidate = [
+    {
+        validator: descLengthChecker, message : 'Description must be between 3 and 130 characters'
+    }
+]
 const businessSchema = new Schema ({
     fullname: { type: String, required: true} ,
     email: { type: String, required: true, unique: true, validate: emailValidate } ,
@@ -71,8 +89,7 @@ const businessSchema = new Schema ({
     city: { type: String, required: true },
     state: { type: String, required: true},
     password: { type: String, required: true, validate: passwordValidate },
-    description: { type: String }
-    // profilePic: { type: String  }
+    description: { type: String, validate: descriptionValidate }
 });
 
 businessSchema.pre('save', function (next) {

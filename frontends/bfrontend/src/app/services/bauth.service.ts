@@ -19,16 +19,11 @@ export class BauthService {
   // userid;
 
   constructor(private http: HttpClient
-              // private cauth: CauthService
   ) { }
 
 
   loggedIn() {
-    // if (!this.cauth.loggedInC()) {
       return tokenNotExpired();
-    // } else {
-    //   return null;
-    // }
   }
 
   loadToken() {
@@ -52,19 +47,36 @@ export class BauthService {
     this.bauthToken = token;
     this.buser = buser;
   }
-
-  editBuserInfo(pbuser, idme): Observable<any> {
+  getReviews(id): Observable<any> {
     this.loadToken();
     const headers = new HttpHeaders().set('Authorization', this.bauthToken);
-    let user = new HttpParams();
-    user = user.append('id', idme._id);
-    return this.http.put(this.domain + 'bauthentication/addinfo', pbuser, { params: user, headers });
+    return this.http.get(this.domain + '/bauthentication/getreviews/' + id, {headers});
+  }
+
+  editBuserInfo(newbuser): Observable<any> {
+    this.loadToken();
+    const headers = new HttpHeaders().set('Authorization', this.bauthToken);
+    return this.http.put(this.domain + '/bauthentication/adddesc/', newbuser, { headers } );
   }
 
   getProfile(): Observable<any> {
     this.loadToken();
     const headers = new HttpHeaders().set('Authorization', this.bauthToken);
     return this.http.get(this.domain + '/bauthentication/businessprofile', { headers });
+  }
+  checkRequest(id): Observable<any> {
+    this.loadToken();
+    const headers = new HttpHeaders().set('Authorization', this.bauthToken);
+    // let  currentId = new HttpParams();
+    // currentId = currentId.set('_id', id);
+    return this.http.get(this.domain + '/bauthentication/checkrequest/' + id, {headers});
+  }
+  confirmedRequest(id): Observable<any> {
+    this.loadToken();
+    const headers = new HttpHeaders().set('Authorization', this.bauthToken);
+    // let  currentId = new HttpParams();
+    // currentId = currentId.set('_id', id);
+    return this.http.get(this.domain + '/bauthentication/confirmedrequest/' + id, {headers});
   }
 
 

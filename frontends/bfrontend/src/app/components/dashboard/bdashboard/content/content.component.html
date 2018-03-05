@@ -2,51 +2,9 @@
       <div class="reviews col-sm-12 col-md-12">
         <h3 class="text-center page-header">Service Reviews</h3>
         <br>
-        <div class="review">
-          <p class="text-me"><span>Sukomi</span> : Amazing experience with the photographer</p>
-        </div>
-        <div class="review">
-          <p class="text-me"><span>Tifunmi</span> : The brilliance experienced from the job has stolen me as a permanent customer. Thanks you very much James D</p>
-        </div>
-        <div class="review">
-          <p class="text-me"><span>Tafuko</span> : Great job....keep it up :)</p>
-        </div>
-        <div class="review">
-          <p class="text-me"><span>Sukomi</span> : Amazing experience with the photographer</p>
-        </div>
-        <div class="review">
-          <p class="text-me"><span>Tifunmi</span> : The brilliance experienced from the job has stolen me as a permanent customer. Thanks you very much James D</p>
-        </div>
-        <div class="review">
-          <p class="text-me"><span>Tafuko</span> : Great job....keep it up :)</p>
-        </div>
-        <div class="review">
-          <p class="text-me"><span>Sukomi</span> : Amazing experience with the photographer</p>
-        </div>
-        <div class="review">
-          <p class="text-me"><span>Tifunmi</span> : The brilliance experienced from the job has stolen me as a permanent customer. Thanks you very much James D</p>
-        </div>
-        <div class="review">
-          <p class="text-me"><span>Tafuko</span> : Great job....keep it up :)</p>
-        </div>
-        <div class="review">
-          <p class="text-me"><span>Sukomi</span> : Amazing experience with the photographer</p>
-        </div>
-        <div class="review">
-          <p class="text-me"><span>Tifunmi</span> : The brilliance experienced from the job has stolen me as a permanent customer. Thanks you very much James D</p>
-        </div>
-        <div class="review">
-          <p class="text-me"><span>Tafuko</span> : Great job....keep it up :)</p>
-        </div>
-
-        <div class="review">
-          <p class="text-me"><span>Sukomi</span> : Amazing experience with the photographer</p>
-        </div>
-        <div class="review">
-          <p class="text-me"><span>Tifunmi</span> : The brilliance experienced from the job has stolen me as a permanent customer. Thanks you very much James D</p>
-        </div>
-        <div class="review">
-          <p class="text-me"><span>Tafuko</span> : Great job....keep it up :)</p>
+        <h5 class="reviewme" *ngIf="empty">There is no review on the SERVICE PROVIDER</h5>
+        <div class="review" *ngFor="let r of holdReviews">
+          <p class="text-me"><span>{{ r.username }}</span> : {{ r.review }}</p>
         </div>
 
       </div>

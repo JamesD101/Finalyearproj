@@ -13,7 +13,8 @@ export class NavbarComponent implements OnInit {
   displayblogin = false;
   disp: any;
   isValid: boolean = true;
-
+  id;
+  all;
 
   constructor(
               private cauthService: CauthService,
@@ -30,6 +31,10 @@ export class NavbarComponent implements OnInit {
       return false;
     }
   }
+
+  goBack(){
+    window.location.reload();
+  }
   onLogoutCustomerClick() {
     this.cauthService.logoutCustomer();
     this.flashMessagesService.show('You are logged out', {cssClass: 'alert-info'});
@@ -37,7 +42,6 @@ export class NavbarComponent implements OnInit {
 
   }
   ngOnInit() {
-
   }
 
 }

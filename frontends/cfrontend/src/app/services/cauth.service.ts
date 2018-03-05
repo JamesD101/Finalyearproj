@@ -42,10 +42,68 @@ export class CauthService {
     return this.http.post(this.domain + '/cauthentication/clogin', cuser);
   }
 
+  singleServiceProvider(id): Observable<any> {
+    return this.http.get(this.domain + 'cauthentication/singleserviceprovider/' + id);
+  }
+  onlyServiceProvider(businessname): Observable<any> {
+    return this.http.get(this.domain + 'cauthentication/onlyserviceprovider/' + businessname);
+  }
+  sendRequest(essRequest): Observable<any>{
+    return this.http.post(this.domain + '/cauthentication/request', essRequest);
+  }
+  changeStatus(id): Observable<any> {
+    this.loadTokenC();
+    const headers = new HttpHeaders().set('Authorization', this.cauthToken);
+    return this.http.post(this.domain + '/cauthentication/changestatus/' + id, {headers});
+  }
+  checkRequest(id): Observable<any> {
+    this.loadTokenC();
+    const headers = new HttpHeaders().set('Authorization', this.cauthToken);
+    // let  currentId = new HttpParams();
+    // currentId = currentId.set('_id', id);
+    return this.http.get(this.domain + '/cauthentication/checkrequest/' + id, {headers});
+  }
+  checkconfirmedRequest(id): Observable<any> {
+    this.loadTokenC();
+    const headers = new HttpHeaders().set('Authorization', this.cauthToken);
+    // let  currentId = new HttpParams();
+    // currentId = currentId.set('_id', id);
+    return this.http.get(this.domain + '/cauthentication/confirmedrequest/' + id, {headers});
+  }
+  checkBRequest(id): Observable<any> {
+    this.loadTokenC();
+    const headers = new HttpHeaders().set('Authorization', this.cauthToken);
+    return this.http.get(this.domain + '/cauthentication/checkbrequest/' + id, {headers});
+  }
+  checkconfirmedBRequest(id): Observable<any> {
+    this.loadTokenC();
+    const headers = new HttpHeaders().set('Authorization', this.cauthToken);
+    return this.http.get(this.domain + '/cauthentication/confirmedbrequest/' + id, {headers});
+  }
+  deleteReq(id): Observable<any>{
+    this.loadTokenC();
+    const headers = new HttpHeaders().set('Authorization', this.cauthToken);
+    return this.http.get(this.domain + '/cauthentication/deleterequest/' + id, {headers});
+  }
+  getSingleReq(id): Observable<any> {
+    this.loadTokenC();
+    const headers = new HttpHeaders().set('Authorization', this.cauthToken);
+    return this.http.get(this.domain + '/cauthentication/singlereq/' + id, {headers});
+  }
   logoutCustomer() {
     this.cauthToken = null;
     this.cuser = null;
     localStorage.clear();
+  }
+  addReview(reviews): Observable<any>{
+    this.loadTokenC();
+    const headers = new HttpHeaders().set('Authorization', this.cauthToken);
+    return this.http.post(this.domain + '/cauthentication/addreviews', reviews, { headers });
+  }
+  getReviews(id): Observable<any> {
+    // this.loadTokenC();
+    // const headers = new HttpHeaders().set('Authorization', this.cauthToken);
+    return this.http.get(this.domain + '/cauthentication/getreviews/' + id);
   }
   storeCuserData(token, cuser) {
     localStorage.setItem('token', token);
@@ -59,14 +117,10 @@ export class CauthService {
     return this.http.get(this.domain + '/cauthentication/customerprofile', { headers });
   }
   searchBusiness(someSearch): Observable<any> {
-    this.loadTokenC();
-    const headers = new HttpHeaders().set('Authorization', this.cauthToken);
     let search = new HttpParams();
     search = search.append('category', someSearch.category);
     search = search.append('state', someSearch.state);
-    // const category = someSearch.category;
-    // const state = someSearch.state;
-    return this.http.get( this.domain + '/cauthentication/search', {params: search, headers} );
+    return this.http.get( this.domain + '/cauthentication/search', { params: search } );
   }
   searchBusinessP(): Observable<any> {
     this.loadTokenC();

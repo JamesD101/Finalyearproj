@@ -3,6 +3,10 @@ const Buser = require('../model/buser');
 const config = require('../config/database');
 // const passport = require('passport');
 const jwt = require('jsonwebtoken');
+const Request = require('../model/request');
+const Avatar = require('../model/profilepic');
+const Comrequest = require('../model/comrequest');
+const Reviews = require('../model/reviews');
 
 module.exports = function (router) {
 
@@ -53,6 +57,176 @@ module.exports = function (router) {
         }
     });
 
+    router.post('/request', function(req,res){
+        if (!req.body.businessname){
+            res.json({ success: false, message: 'No businessname was provided'});
+        } else {
+            if (!req.body.username) {
+                res.json({success: false, message: 'No username was provided'});
+            } else {
+                if (!req.body.status) {
+                    res.json({ success: false, message: 'No status was provided' });
+                } else {
+                    Buser.findOne({businessname: req.body.businessname}, function (err, buser) {
+                        if (err) {
+                            res.json({success: false, message: 'An error occurred'});
+                        } else {
+                            if (!buser) {
+                                res.json({success: false, message: 'Username was not found.'});
+                            } else {
+                                Cuser.findOne({username: req.body.username}, function (err, cuser) {
+                                    if (err) {
+                                        res.json({success: false, message: err});
+                                    } else {
+                                        if (!cuser) {
+                                            res.json({success: false, message: 'No Cuser found'});
+                                        } else {
+                                            let request = new Request({
+                                                businessname: buser.businessname,
+                                                status: req.body.status,
+                                                cuserId: cuser._id,
+                                                username: cuser.username,
+                                                buserId: buser._id,
+                                                category: buser.category
+                                            });
+                                            request.save(function (err){
+                                                if (err) {
+                                                    res.json({ success: false, message: 'An error occurred while saving'});
+                                                } else {
+                                                    res.json({ success: true, message: 'Request Saved'});
+                                                }
+                                            });
+                                            // res.json({success: true, buser: buser, cuser: cuser});
+                                        }
+                                    }
+                                });
+                            }
+                        }
+                    });
+                }
+            }
+        }
+    });
+
+    router.get('/checkrequest/:id', function (req, res) {
+        Request.find({ cuserId: req.params.id}, function (err, somereq) {
+            if (err) {
+                res.json({ success: false, message: err });
+            } else {
+                if (!somereq) {
+                    res.json({ success: false, message: 'You do not have any requested service provider' });
+                } else {
+                    res.json({ success: true, somereq: somereq });
+                }
+            }
+        });
+    });
+
+    router.get('/checkbrequest/:id', function (req, res) {
+        Request.find({ buserId: req.params.id}, function (err, somereq) {
+            if (err) {
+                res.json({ success: false, message: err });
+            } else {
+                if (!somereq) {
+                    res.json({ success: false, message: 'No value' });
+                } else {
+                    res.json({ success: true, somereq: somereq });
+                }
+            }
+        });
+    });
+
+    router.get('/confirmedrequest/:id', function (req, res) {
+        Comrequest.find({ cuserId: req.params.id}, function (err, somereq) {
+            if (err) {
+                res.json({ success: false, message: err });
+            } else {
+                if (!somereq) {
+                    res.json({ success: false, message: 'You do not have any requested service provider' });
+                } else {
+                    res.json({ success: true, somereq: somereq });
+                }
+            }
+        });
+    });
+
+    router.get('/confirmedbrequest/:id', function (req, res) {
+        Comrequest.find({ buserId: req.params.id}, function (err, somereq) {
+            if (err) {
+                res.json({ success: false, message: err });
+            } else {
+                if (!somereq) {
+                    res.json({ success: false, message: 'You do not have any requested service provider' });
+                } else {
+                    res.json({ success: true, somereq: somereq });
+                }
+            }
+        });
+    });
+
+    router.post('/addreviews', function (req,res) {
+       if (!req.body.review) {
+           res.json({ success: false, message: 'No review' });
+       } else {
+           if (!req.body.businessname) {
+               res.json({ success: false, message: 'No business name was found' });
+           } else {
+               if (!req.body.username) {
+                   res.json({ success: false, message: 'No Customer name was found' });
+               } else {
+                   Cuser.findOne({ username: req.body.username }, function (err, cuser) {
+                      if (err) {
+                          res.json({ success: false, message: err });
+                      } else {
+                          if (!cuser) {
+                              res.json({ success: false, message: 'No user was found' });
+                          } else {
+                              Buser.findOne({ businessname: req.body.businessname }, function (err, buser) {
+                                 if (err) {
+                                     res.json({ success: false, message: err });
+                                 } else {
+                                     if (!buser) {
+                                         res.json({ success: false, message: 'No Service Provider found' });
+                                     } else {
+                                         let reviews = new Reviews({
+                                             review: req.body.review,
+                                             buserId: buser._id,
+                                             username: cuser.username,
+                                             businessname: buser.businessname
+                                         });
+                                         reviews.save(function (err) {
+                                            if (err) {
+                                                res.json({ success: false, message: err });
+                                            } else {
+                                                res.json({ success: true, message: 'Review saved' });
+                                            }
+                                         });
+                                     }
+                                 }
+                              });
+                          }
+                      }
+                   });
+               }
+           }
+       }
+    });
+
+    router.get('/getreviews/:id', function (req, res) {
+        Reviews.find({ buserId: req.params.id }, function (err, review) {
+           if (err) {
+               res.json({ success: false, message: err });
+           } else {
+               if (!review) {
+                   res.json({ success: false, message: 'No review was found' });
+               } else {
+                   res.json({ success: true, review: review });
+               }
+           }
+        });
+    });
+
+
     router.get('/search/:category', function (req,res) {
         Buser.find({ category: req.params.category}, function (err, busers) {
             if(err){
@@ -74,7 +248,7 @@ module.exports = function (router) {
             if (!req.query.state) {
                 res.json({success: false, message: 'State field is required'});
             } else {
-                Buser.find({ category: req.query.category, state: req.query.state }).select('businessname email address category city state description').exec( function (err, busers) {
+                Buser.find({ category: req.query.category, state: req.query.state }).select('_id businessname email address category city state description').exec( function (err, busers) {
                     if(err){
                         res.json({ success: false, message: 'You must be log in' });
                     } else {
@@ -126,6 +300,143 @@ module.exports = function (router) {
         }
     });
 
+    router.get('/deleterequest/:id', function (req, res) {
+       Request.findOneAndRemove({ _id: req.params.id}, function (err) {
+           if (err) {
+               res.json({ success: false, message: err });
+           } else {
+               res.json({ success: true, message: 'Request has been deleted' });
+           }
+       });
+    });
+
+    router.get('/getjobrequestofsp/:id', function (req, res) {
+        Request.find({ buserId: req.params.id }, function(err, request) {
+            if (err) {
+                res.json({ success: false, message: 'Error occurred' });
+            } else {
+                if (!request) {
+                    res.json({ success: false, message: 'No request was found' });
+                } else {
+                    res.json({ success: true, request: request });
+                }
+            }
+        });
+    });
+
+
+    router.get('/onlyserviceprovider/:businessname', function (req,res) {
+        Buser.findOne({ businessname: req.params.businessname }).select('_id businessname email address category city state description').exec( function (err, buser) {
+            if (err) {
+                res.json({ success: false, message: 'An error occured'});
+            } else {
+                if (!buser) {
+                    res.json({success: false, message: 'No Service Provider was found'});
+                } else {
+                    Avatar.findOne({buserId: req.decoded.buserId}, function (err, avatar) {
+                        if (err) {
+                            res.json({success: false, message: 'An error occurred'});
+                        } else {
+                            if (!avatar) {
+                                res.json({success: true, buser: buser});
+                            } else {
+                                res.json({success: true, buser: buser, avatar: avatar});
+                            }
+                        }
+                    });
+                }
+            }
+        });
+    });
+
+    router.get('/singleserviceprovider/:id', function (req,res) {
+            Buser.findOne({_id: req.params.id}).select('_id businessname email address category city state description').exec( function (err, buser) {
+                if (err) {
+                    res.json({ success: false, message: 'An error occured'});
+                } else {
+                    if (!buser) {
+                        res.json({ success: false, message: 'No Service Provider was found' });
+                    } else {
+                        Reviews.findOne({ buserId: req.params.id}, function (err, review) {
+                           if (err) {
+                               res.json({ success: false, message: err });
+                           } else {
+                               if (!review) {
+                                   res.json({success: true, buser: buser });
+                               } else {
+                                   Avatar.findOne({ buserId: req.params.id}, function (err, avatar) {
+                                      if (err) {
+                                          res.json({ success: false, message: 'An Error occurred' });
+                                      } else {
+                                          if (!avatar){
+                                              res.json({success: true, buser: buser, review: review});
+                                          } else {
+                                              res.json({success: true, buser: buser, review: review, avatar: avatar });
+                                          }
+                                      }
+                                   });
+                               }
+                           }
+                        });
+                    }
+                }
+            });
+    });
+
+
+    router.get('/singlereq/:id', function (req,res) {
+        Request.findOne({ _id: req.params.id}, function (err, request) {
+          if (err) {
+              res.json({ success: false, message: err });
+          } else {
+              if (!request) {
+                  res.json({ success: false, message: 'No request was found' });
+              } else {
+                  res.json({ success: true, request: request });
+              }
+          }
+        });
+    });
+
+    router.post('/changestatus/:id', function (req, res) {
+        if (!req.params.id) {
+            res.json({success: false, message: 'No ID found'});
+        } else {
+            Request.findOne({_id: req.params.id}, function (err, request) {
+                if (err) {
+                    res.json({success: false, message: 'Not a valid User ID'});
+                } else {
+                    if (!request) {
+                        res.json({success: false, message: 'No Request was found'});
+                    } else {
+                        let newrequest = new Comrequest({
+                            businessname: request.businessname,
+                            status: 'Done',
+                            cuserId: request.cuserId,
+                            username: request.username,
+                            buserId: request.buserId,
+                            category: request.category
+                        });
+                        newrequest.save((err) => {
+                            if (err) {
+                                res.json({success: false, message: err});
+                            } else {
+                                res.json({success: true, message: 'User info has been updated'});
+                                Request.findOneAndRemove({ _id: req.params.id}, function (err) {
+                                   if (err) {
+                                       res.json({ success: false, message: err });
+                                   }
+                                });
+                            }
+                        });
+                    }
+                }
+            });
+        }
+    });
+
+
+
     router.use(function (req, res, next) {
         const token = req.headers['authorization'];
         if (!token){
@@ -140,7 +451,7 @@ module.exports = function (router) {
                 }
             });
         }
-    });
+    })
 
     router.get('/customerprofile', function (req, res) {
         Cuser.findOne({ _id: req.decoded.cuserId }).select('_id username').exec( function (err, cuser) {
@@ -155,6 +466,7 @@ module.exports = function (router) {
             }
         });
     });
+
 
 
     return router;

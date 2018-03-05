@@ -17,13 +17,13 @@
             <div class="box2 col-sm-12 col-md-4">
               <div class="innerbox1">
                 <h5>Job request</h5>
-                <h5>10000000</h5>
+                <h5>{{ total }}</h5>
               </div>
             </div>
             <div class="box3 col-sm-12 col-md-4">
               <div class="innerbox1">
                 <h5>Successful jobs done</h5>
-                <h3>1000</h3>
+                <h5>{{ valcomreq }}</h5>
               </div>
             </div>
           </div>
@@ -40,13 +40,13 @@
               <a class="nav-link movein" routerLink="/bdash/reviews">Review</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link movein" [routerLink]="['/bdash/editprofile/', id]">Edit Information</a>
+              <a class="nav-link movein" [routerLink]="['/bdash/editprofile/', id]">Add Description</a>
             </li>
             <li class="nav-item">
               <a class="nav-link movein" routerLink="/bdash/upload">Upload Works</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link movein" routerLink="/bdash/message">Message</a>
+              <a class="nav-link movein" [routerLink]="['/bdash/profilepicture/', id]">Profile Picture</a>
             </li>
           </ul>
         </div>

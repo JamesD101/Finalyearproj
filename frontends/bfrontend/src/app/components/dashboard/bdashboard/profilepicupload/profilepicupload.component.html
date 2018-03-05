@@ -1,0 +1,12 @@
+<h5>Upload A Profile Picture</h5>
+
+
+<input type="file" (change)="onFileSelected($event)">
+
+<button type="button" (click)="onUpload()">Upload</button>
+<img class="imgl" src="../../../../../../../assets/c2d377b57e330ae98d45c3c685f8f83b">
+<div class="row show-hide-message">
+  <div [ngClass]="messageClass">
+    {{ message }}
+  </div>
+</div>

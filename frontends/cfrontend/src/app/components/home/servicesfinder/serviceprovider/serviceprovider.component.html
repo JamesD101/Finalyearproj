@@ -1,0 +1,39 @@
+<div class="inner">
+  <div class="row">
+    <div class="here-now col-sm-12 col-md-4">
+      <app-side-bar></app-side-bar>
+    </div>
+    <div class="here-there col-sm-12 col-md-8">
+      <!--<app-content></app-content>-->
+      <div class="gh">
+        <div class="container">
+          <div class="row">
+            <div class="box1 col-sm-12 col-md-4">
+              <div class="innerbox1">
+                <h5>Rating</h5>
+                <h3>5 star</h3>
+              </div>
+            </div>
+            <div class="box2 col-sm-12 col-md-4">
+              <div class="innerbox1">
+                <h5>Job request</h5>
+                <h5>{{ total }}</h5>
+              </div>
+            </div>
+            <div class="box3 col-sm-12 col-md-4">
+              <div class="innerbox1">
+                <h5>Successful jobs done</h5>
+                <h5>{{ valcomreq }}</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+        <div class="therouting">
+          <router-outlet></router-outlet>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

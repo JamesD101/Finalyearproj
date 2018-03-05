@@ -6,13 +6,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 
 import { ReactiveFormsModule } from '@angular/forms';
+import { FileSelectDirective } from 'ng2-file-upload';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { BauthService } from './services/bauth.service';
-import { CauthService } from './services/cauth.service';
 import { BsignupComponent } from './components/bsignup/bsignup.component';
 import { BloginComponent } from './components/login/blogin/blogin.component';
 import { FlashMessagesModule } from 'angular2-flash-messages';
@@ -23,11 +23,13 @@ import { UploadComponent } from './components/dashboard/bdashboard/upload/upload
 import { AddinfoComponent } from './components/dashboard/bdashboard/addinfo/addinfo.component';
 import { BdashboardComponent } from './components/dashboard/bdashboard/bdashboard.component';
 import { SideBarComponent } from './components/dashboard/bdashboard/side-bar/side-bar.component'
-import { ContentComponent } from './components/dashboard/bdashboard/content/content.component'
+import { ContentComponent } from './components/dashboard/bdashboard/content/content.component';
+import { ProfilepicuploadComponent } from './components/dashboard/bdashboard/profilepicupload/profilepicupload.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    FileSelectDirective,
     HomeComponent,
     LoginComponent,
     BsignupComponent,
@@ -40,6 +42,7 @@ import { ContentComponent } from './components/dashboard/bdashboard/content/cont
     MessageComponent,
     UploadComponent,
     AddinfoComponent,
+    ProfilepicuploadComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +51,7 @@ import { ContentComponent } from './components/dashboard/bdashboard/content/cont
     HttpClientModule,
     FlashMessagesModule
   ],
-  providers: [BauthService, CauthService, FlashMessagesService],
+  providers: [BauthService, FlashMessagesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

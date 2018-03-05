@@ -59,7 +59,7 @@ export class LoginComponent implements OnInit {
         this.message = data.message;
         this.cauthService.storeCuserData(data.token, data.cuser);
         setTimeout( () => {
-          this.router.navigate(['/cdash']);
+          this.router.navigate(['/']);
         }, 2000);
       }
     });

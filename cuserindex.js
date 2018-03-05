@@ -9,11 +9,11 @@ const config = require('./config/database');
 const router = express.Router();
 //import authentication routes
 const cauthentication = require('./routes/cauthentication')(router);
+// const request = require('./routes/request')(router);
 const bodyParser = require('body-parser');
 const cors = require('cors');
 // set mongoose promise into global
 mongoose.Promise = global.Promise;
-
 //connect to database
 mongoose.connect(config.uri, function (err) {
     if (err){
@@ -22,11 +22,13 @@ mongoose.connect(config.uri, function (err) {
         console.log('Connected to the database ', config.db);
     }
 });
-
+const server = require('http').createServer(app);
+const io = require('socket.io').listen(server);
 //MIDDLEWARE
 app.use(cors({
     origin: 'http://localhost:5001'
 }));
+
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -34,6 +36,7 @@ app.use(bodyParser.json());
 app.use(express.static(__dirname + '/frontend/dist'));
 
 app.use('/cauthentication', cauthentication);
+// app.use('/request', request);
 
 
 
@@ -42,7 +45,9 @@ app.get('*', function(req,res) {
     res.sendFile(path.join(__dirname + '/frontends/cfrontend/dist/index.html'));
 });
 
+server.listen(port);
+console.log('New server is running on port '+port);
 
-app.listen(port, function () {
-    console.log('Listening on port ' + port) ;
+io.sockets.on('connection',function (socket) {
+   console.log('New connection made');
 });

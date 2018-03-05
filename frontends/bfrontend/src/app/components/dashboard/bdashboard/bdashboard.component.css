@@ -95,12 +95,7 @@ li a{
 }
 .therouter{
   height: 400px;
-  -webkit-border-radius: 25px;
-  -moz-border-radius: 25px;
-  border-radius: 25px;
-  overflow-y: scroll;
-
+  overflow: scroll;
   width: 800px;
-  /*background-color: black;*/
   margin-top: 270px;
 }

@@ -13,11 +13,11 @@
         <a class="nav-link movers" routerLink="/csingup">Sign up </a>
       </li>
       <li class="nav-item" *ngIf="cauthService.loggedInC()">
-        <a class="nav-link movers" routerLink="/cdash">Message</a>
+        <a class="nav-link movers" routerLink="/dashboard">Dashboard</a>
       </li>
-     <!-- <li class="nav-item" *ngIf="bauthService.loggedIn()">
-        <a class="nav-link movers">Settings</a>
-      </li>-->
+      <li class="nav-item" *ngIf="cauthService.loggedInC()">
+        <a class="nav-link movers" (click)="goBack()">Go back</a>
+      </li>
       <li class="nav-item" *ngIf="cauthService.loggedInC()">
         <a class="nav-link movers" (click)="onLogoutCustomerClick()">Logout</a>
       </li>

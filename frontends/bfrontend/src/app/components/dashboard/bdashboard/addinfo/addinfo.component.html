@@ -1,57 +1,23 @@
+<div class="containerme">
+<div class="row show-hide-message">
+  <div [ngClass]="messageClass">
+    {{ message }}
+  </div>
+</div>
 <form [formGroup]="editForm" (submit)="updateUserInfo()">
   <div class="bsignup-container">
-    <!--<input type="text" name="id" class="inp fullname" autocomplete="off" placeholder="Enter your fullname" formControlName="id" [(ngModel)]="info._id">-->
-
-    <input type="text" name="fullname" class="inp fullname" autocomplete="off" placeholder="Enter your fullname" formControlName="fullname" [(ngModel)]="info.fullname">
-    <ul class="help-block">
-      <li *ngIf="editForm.controls.fullname.errors?.required && editForm.controls.fullname.dirty">This field is required</li>
-      <li *ngIf="editForm.controls.fullname.errors?.minlength || editForm.controls.fullname.errors?.maxlength">Minimum length : 5 and Maximum length: 30</li>
-    </ul>
-
-   <!-- <input type="text" class="inp email" name="email" autocomplete="off" placeholder="Enter your email address" formControlName="email" [(ngModel)]="info.email">
-    <ul class="help-block">
-      <li *ngIf="editForm.controls.email.errors?.required && editForm.controls.email.dirty">This field is required</li>
-      <li *ngIf="editForm.controls.email.errors?.minlength || editForm.controls.email.errors?.maxlength">Minimum length : 5 and Maximum length: 30</li>
-      <li *ngIf="editForm.controls.email.errors?.validateEmail && editForm.controls.email.dirty">This is not a valid E-mail address</li>
-      &lt;!&ndash;<li *ngIf="emailValid"> {{ emailMessage }}</li>&ndash;&gt;
-    </ul>
-
-    <input type="text" name="businessname" class="inp businessname" autocomplete="off" placeholder="Enter your business name" formControlName="businessname" [(ngModel)]="info.businessname">
+    <input type="text" name="businessname" class="inp businessname" autocomplete="off" placeholder="Enter your business name" formControlName="businessname" [(ngModel)] = "info.businessname">
     <ul class="help-block">
       <li *ngIf="editForm.controls.businessname.errors?.required && editForm.controls.businessname.dirty">This field is required</li>
-      &lt;!&ndash;<li *ngIf="businessnameValid"> {{ businessnameMessage }}</li>&ndash;&gt;
     </ul>
 
-    <input type="text" name="address" autocomplete="off" class="address" placeholder="Enter your address" formControlName="address" [(ngModel)]="info.address">
-    <ul class="help-block">
-      <li *ngIf="editForm.controls.address.errors?.required && editForm.controls.address.dirty">This is a required field</li>
-    </ul>
-
-    <input type="text" name="city" autocomplete="off" class="inp" placeholder="Enter your city" formControlName="city" [(ngModel)]="info.city">
-    <ul class="help-block">
-      <li *ngIf="editForm.controls.city.errors?.required && editForm.controls.city.dirty">This is a required field</li>
-    </ul>
-    <select class="inputt" name="category" formControlName="category" autocomplete="off">
-      <option *ngFor="let c of allCategory" [ngValue]="c">{{ c }}</option>
-    </select>
-    <br>
-    <select class="inputt" name="state" formControlName="state" autocomplete="off">
-      <option *ngFor="let s of allState" [ngValue]="s">{{ s }}</option>
-    </select>
-    <input type="password" name="password" class="inp password" autocomplete="off" placeholder="Enter your password" formControlName="password">
-    &lt;!&ndash;<ul class="help-block">&ndash;&gt;
-      &lt;!&ndash;<li *ngIf="orm.controls.password.errors?.required && brform.controls.password.dirty">This is a required field</li>&ndash;&gt;
-      &lt;!&ndash;<li *ngIf="brform.controls.password.errors?.minlength || brform.controls.password.errors?.maxlength">Minimum length: 5 and Maximum length: 30</li>&ndash;&gt;
-      &lt;!&ndash;<li *ngIf="brform.controls.password.errors?.passwordValidate && brform.controls.password.dirty">Password must containe: Uppercase, Lowercase, Digit and a Symbol</li>&ndash;&gt;
-    &lt;!&ndash;</ul>&ndash;&gt;
     <textarea name="description" class="textArea" autocomplete="off" placeholder="Write something about you and your service" formControlName="description" [(ngModel)]="info.description"></textarea>
     <ul class="help-block">
       <li *ngIf="editForm.controls.description.errors?.required && editForm.controls.description.dirty">This is a required field</li>
+      <li *ngIf="editForm.controls.description.errors?.minlength || editForm.controls.description.errors?.maxlength">Minimum length : 5 and Maximum length: 130</li>
     </ul>
-    &lt;!&ndash;<label>Add A Profile Picture </label>&ndash;&gt;
-    &lt;!&ndash;<input type="file" name="profilepic" formControlName="profilepic">&ndash;&gt;
     <br>
-    <br>-->
     <button type="submit" class="subbut" [disabled]="!editForm.valid">Update Information</button>
   </div>
 </form>
+</div>

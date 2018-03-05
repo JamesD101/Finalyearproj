@@ -1,7 +1,16 @@
 const Buser = require('../model/buser');
 const Cuser = require('../model/cuser');
+const Request = require('../model/request');
+const Comrequest = require('../model/comrequest');
 const config = require('../config/database');
 const jwt = require('jsonwebtoken');
+const Reviews = require('../model/reviews');
+const Avatar = require('../model/profilepic');
+var multer = require('multer');
+// set the directory for the uploads to the uploaded to
+var DIR = './uploads/';
+//define the type of upload multer would be doing and pass in its destination, in our case, its a single file with the name photo
+var upload = multer({dest: DIR}).single('photo');
 
 module.exports = function(router){
 
@@ -87,6 +96,86 @@ module.exports = function(router){
         }
     });
 
+    router.post('/upload/:id', function (req, res, next) {
+        Buser.findOne({ _id: req.params.id }).select('_id businessname').exec( function (err, buser) {
+            if (err) {
+                res.json({ success: false, message: 'An error occurred' });
+            } else {
+                if (!buser){
+                    res.json({ success: false, message: 'No User was found' });
+                } else {
+                    var path = '';
+                    upload(req, res, function (err) {
+                        if (err) {
+                            // An error occurred when uploading
+                            console.log(err);
+                            return res.status(422).send("an Error occured");
+                        }
+                        // No error occured.
+                        path = req.file.path;
+                        // return res.send("Upload Completed for "+path);
+                        let avatar = new Avatar({
+                            buserId: req.params.id,
+                            // businessname: buser.businessname,
+                            imgpath: path
+                        });
+                        avatar.save(function (err) {
+                            if (err) {
+                                res.json({ success: false, message: 'An Error Occcurred' });
+                            } else {
+                                res.json({ success: true, message: 'Profile Picture was saved successfully' });
+                            }
+                        });
+                    });
+                }
+            }
+        });
+    });
+
+    router.get('/getreviews/:id', function (req, res) {
+        Reviews.find({ buserId: req.params.id }, function (err, review) {
+            if (err) {
+                res.json({ success: false, message: err });
+            } else {
+                if (!review) {
+                    res.json({ success: false, message: 'No review was found' });
+                } else {
+                    res.json({ success: true, review: review });
+                }
+            }
+        });
+    });
+
+    router.get('/checkrequest/:id', function (req, res) {
+        Request.find({ buserId: req.params.id}, function (err, somereq) {
+            if (err) {
+                res.json({ success: false, message: err });
+            } else {
+                if (!somereq) {
+                    res.json({ success: false, message: 'You do not have any requested service provider' });
+                } else {
+                    res.json({ success: true, somereq: somereq });
+                }
+            }
+        });
+    });
+
+    router.get('/confirmedrequest/:id', function (req, res) {
+        Comrequest.find({ buserId: req.params.id}, function (err, somereq) {
+            if (err) {
+                res.json({ success: false, message: err });
+            } else {
+                if (!somereq) {
+                    res.json({ success: false, message: 'You do not have any requested service provider' });
+                } else {
+                    res.json({ success: true, somereq: somereq });
+                }
+            }
+        });
+    });
+
+
+
     router.post('/blogin', function(req,res){
         if (!req.body.businessname){
             res.json({ success: false, message: 'No Business Name was provided'});
@@ -138,63 +227,133 @@ module.exports = function(router){
         }
     });
 
-
-    router.put('/addinfo/:id', function (req, res) {
-        if (!req.params.id) {
-            res.json({ success: false, message: 'No User ID was provided' });
+    router.put('/adddesc', function (req, res) {
+        if (!req.body.businessname) {
+            res.json({success: false, message: 'A Business name must be provided'});
         } else {
-            Buser.findOne({ _id: req.params.id}).select('_id fullname').exec((err, buser) => {
-                if (err) {
-                    res.json({ success: false, message: 'Not a valid User ID' });
-                }  else {
-                    if (!buser) {
-                        res.json({ success: false, message: 'No User was found' });
+            if (!req.body.description) {
+                res.json({ success: false, message: 'Description is required' });
+            } else {
+                Buser.findOne({ businessname: req.body.businessname }).select('businessname').exec(function (err, buser) {
+                    if (err) {
+                        res.json({success: false, message: 'An error occurred' });
                     } else {
-                        buser.fullname = req.body.fullname;
-                        buser.save((err) => {
-                            if (err) {
-                                res.json({ success: false, message: err });
-                            } else {
-                                res.json({ success: true, message: 'User info has been updated' });
-                            }
-                        });
+                        if (!buser) {
+                            res.json({success: false, message: 'No business was found'});
+                        } else {
+                            buser.description = req.body.description;
+                            buser.save(function (err) {
+                                if (err) {
+                                    res.json({ success: false, message: err });
+                                } else {
+                                    res.json({ success: true, message: 'Information has been updated successfully' });
+                                }
+                            });
+                        }
                     }
-                }
-            });
-
+                });
+            }
         }
     });
+
+
+    // router.put('/addinfo', function (req, res) {
+    //     if (!req.body.fullname) {
+    //         res.json({success: false, message: 'Fullname is required'});
+    //     } else {
+    //         if (!req.body.businessname) {
+    //                 res.json({success: false, message: 'A Business name must be provided'});
+    //             } else {
+    //                 if (!req.body.description) {
+    //                     res.json({success: false, message: 'Description is required'});
+    //                 } else {
+    //                     Buser.findOne({ businessname: req.body.businessname }, function (err, buser) {
+    //                         if (err) {
+    //                             res.json({ success: false, message: 'An error occurred here' });
+    //                         } else {
+    //                             if (!buser) {
+    //                                 res.json({ success: false, message: 'No User was found' });
+    //                             } else {
+                                    // buser.fullname = req.body.fullname;
+                                    // buser.businessname = req.body.businessname;
+                                    // buser.description = req.body.description;
+                                    // buser.save(function (err) {
+                                    //     if (err) {
+                                    //         res.json({success: false, message: 'An error occurred'});
+                                    //     } else {
+                                    //         res.json({ success: true, message: 'Information has been updated successfully' });
+                                    //        }
+                                    //    });
+                                   // }
+                               // }
+                            // });
+                        // }
+                // }
+        // }
+// });
 
     router.get('/singleuser/:id', function (req,res) {
         if (!req.params.id){
             res.json({ success:false, message: 'No UserID was provided' });
         } else {
-            Buser.findOne({_id: req.params.id}).select('_id businessname email address category city state description').exec( function (err, buser) {
+            Buser.findOne({_id: req.params.id}).select('_id businessname email address category city state description').exec(function (err, buser) {
                 if (err) {
-                    res.json({ success: false, message: 'Not a valid User ID' });
+                    res.json({success: false, message: 'Not a valid User ID'});
                 } else {
-                    if (!buser) {
-                        res.json({ success: false, message : 'User was not found' });
-                    } else {
-                        res.json({ success: false, buser: buser });
-                    }
+                    Avatar.findOne({buserId: req.params.id}, function (err, avatar) {
+                        if (err) {
+                            res.json({success: false, message: 'An error occurred'});
+                        } else {
+                            if (!avatar) {
+                                res.json({success: true, buser: buser});
+                            } else {
+                                res.json({success: true, buser: buser, avatar: avatar});
+                            }
+                        }
+                    });
                 }
             });
         }
     });
+
     router.get('/businessprofile', function (req, res) {
-        Buser.findOne({ _id: req.decoded.buserId }).select('_id fullname password businessname category email address city state description').exec( function (err, buser) {
+        Buser.findOne({ _id: req.decoded.buserId }).select('_id fullname businessname category email address city state description').exec( function (err, buser) {
             if (err) {
                 res.json({ success: false, message: 'Error occurred' });
             } else {
                 if (!buser) {
                     res.json({ success: false, message: 'User not found'});
                 } else {
-                    res.json({ success: true, buser: buser });
+                    Avatar.findOne({ buserId: req.decoded.buserId}, function (err, avatar) {
+                       if (err) {
+                           res.json({ success: false, message: 'An error occurred' });
+                       } else {
+                           if (!avatar) {
+                               res.json({success: true, buser: buser});
+                           } else {
+                               res.json({success: true, buser: buser, avatar: avatar});
+                           }
+                       }
+                    });
                 }
             }
         });
     });
+
+    router.get('/getjobrequest', function (req, res) {
+       Request.findOne({ buserId: req.params.id }, function(err, request) {
+           if (err) {
+               res.json({ success: false, message: 'Error occurred' });
+           } else {
+               if (!request) {
+                   res.json({ success: false, message: 'No request was found' });
+               } else {
+                   res.json({ success: true, request: request });
+               }
+           }
+       });
+    });
+
 
 
     // router.get('/customerprofile', function (req, res) {

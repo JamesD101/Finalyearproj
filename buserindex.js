@@ -12,6 +12,7 @@ const router = express.Router();
 const bauthentication = require('./routes/bauthentication')(router);
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const multer = require('multer');
 // set mongoose promise into global
 mongoose.Promise = global.Promise;
 
@@ -31,6 +32,7 @@ app.use(cors({
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+
 
 app.use(express.static(__dirname + '/frontend/dist'));
 

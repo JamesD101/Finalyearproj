@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-// import { HomeComponent } from './components/home/home.component';
+import { HomeComponent } from './components/home/home.component';
 import { BsignupComponent } from './components/bsignup/bsignup.component';
 import { LoginComponent } from './components/login/login.component';
+import { ProfilepicuploadComponent } from './components/dashboard/bdashboard/profilepicupload/profilepicupload.component';
 // import { BloginComponent } from './components/login/blogin/blogin.component';
 import { BdashboardComponent } from './components/dashboard/bdashboard/bdashboard.component';
 import { ContentComponent } from './components/dashboard/bdashboard/content/content.component';
@@ -11,8 +12,8 @@ import { AddinfoComponent } from './components/dashboard/bdashboard/addinfo/addi
 import { UploadComponent } from './components/dashboard/bdashboard/upload/upload.component';
 
 const routes: Routes = [
-  { path: '', component: BsignupComponent },
-  // { path: 'home', component: HomeComponent },
+  { path: '', component: HomeComponent },
+  { path: 'home', component: HomeComponent },
   { path: 'bsignup', component: BsignupComponent },
   { path: 'login', component: LoginComponent},
   { path: 'bdash', component: BdashboardComponent,
@@ -20,12 +21,12 @@ const routes: Routes = [
       [
         { path: '', component: ContentComponent },
         { path: 'reviews', component: ContentComponent },
-        { path: 'message', component: MessageComponent },
+        { path: 'profilepicture/:id', component: ProfilepicuploadComponent },
         { path: 'editprofile/:id', component: AddinfoComponent },
         { path: 'upload', component: UploadComponent }
       ]
-  }
-  // { path: '**', component: HomeComponent }
+  },
+  { path: '**', component: HomeComponent }
 
 ];
 

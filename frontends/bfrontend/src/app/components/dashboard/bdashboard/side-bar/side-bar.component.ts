@@ -15,6 +15,8 @@ export class SideBarComponent implements OnInit {
   category;
   state;
   id ;
+  description;
+  // image;
 
   constructor(private bauthService: BauthService) { }
 
@@ -23,9 +25,11 @@ export class SideBarComponent implements OnInit {
       this.businessname = profile.buser.businessname;
       this.email = profile.buser.email;
       this.address = profile.buser.address;
+      this.description = profile.buser.description;
       this.city = profile.buser.city;
       this.state = profile.buser.state;
       this.category = profile.buser.category;
+      // this.image = profile.buser.image;
       // this.id = profile.buser._id;
     });
   }

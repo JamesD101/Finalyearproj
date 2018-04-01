@@ -1,10 +1,77 @@
-<div class="row">
-  <div class="reviews col-sm-12 col-md-12">
-    <h3 class="text-center page-header">Service Reviews</h3>
-    <br>
-    <h5 class="reviewme" *ngIf="empty">There is no review on the SERVICE PROVIDER</h5>
-    <div class="review" *ngFor="let r of originalrev">
-      <p class="text-me"><span>{{ r.username }}</span> : {{ r.review }}</p>
+<div class="main">
+  <!-- MAIN CONTENT -->
+  <div class="main-content">
+    <div class="container-fluid">
+      <!-- OVERVIEW -->
+      <div class="panel panel-headline">
+        <div class="panel-heading">
+          <h3 class="panel-title text-center">Service Provider Dashboard</h3>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="metric">
+                <p>
+                  <span class="number">{{ total }}</span>
+                  <span class="title">Job Request</span>
+                </p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="metric">
+                <p>
+                  <span class="number">{{ valcomreq }}</span>
+                  <span class="title">Successful Jobs Done</span>
+                </p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="metric">
+                <p>
+                  <span class="number">{{ views }}</span>
+                  <span class="title">Number of views</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- END OVERVIEW -->
+      <div class="row">
+        <div class="col-md-12">
+          <!-- RECENT PURCHASES -->
+          <div class="panel">
+            <div class="panel-heading">
+              <h3 class="panel-title text-center">Reviews of Customers</h3>
+              <div class="right">
+                <button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
+                <button type="button" class="btn-remove"><i class="lnr lnr-cross"></i></button>
+              </div>
+            </div>
+            <div class="panel-body no-padding">
+              <table class="table table-striped">
+                <thead>
+                <tr>
+                  <th>Username</th>
+                  <th>Review</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngIf="empty">
+                  <td>None</td>
+                  <td>None</td>
+                </tr>
+                <tr *ngFor="let r of holdReviews">
+                  <td>{{ r.username }}</td>
+                  <td>{{ r.review  }}</td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <!-- END RECENT PURCHASES -->
+        </div>
+      </div>
     </div>
   </div>
 </div>

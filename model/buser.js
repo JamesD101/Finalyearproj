@@ -89,7 +89,9 @@ const businessSchema = new Schema ({
     city: { type: String, required: true },
     state: { type: String, required: true},
     password: { type: String, required: true, validate: passwordValidate },
-    description: { type: String, validate: descriptionValidate }
+    description: { type: String, default: 'No Description', validate: descriptionValidate },
+    views : { type: Number, default: 0 },
+    image: { type: String, default: 'uploads/noimage.png' }
 });
 
 businessSchema.pre('save', function (next) {

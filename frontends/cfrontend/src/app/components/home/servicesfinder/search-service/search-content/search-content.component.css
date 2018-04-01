@@ -23,12 +23,15 @@ ul li {
   height: 180px;
   /*background-color: pink;*/
 }
+#myv{
+  font-size: 12px;
+}
 .image{
-  background-color: green;
+  /*background-color: green;*/
   height: 180px;
   width: 100px;
-  margin-top: 10px;
-  border-radius: 30px;
+  /*margin-top: 10px;*/
+  /*border-radius: 30px;*/
   /*display: inline;*/
 }
 .seller{
@@ -127,14 +130,21 @@ button{
   border: 0px;
   color: #fff;
   cursor: pointer;
-  border-bottom-right-radius: 10px;
+  /*border-bottom-right-radius: 10px;*/
+  transition: 300ms ease-in;
+}
+#first{
   border-top-right-radius: 10px;
+}
+
+#second{
+  border-bottom-right-radius: 10px;
+  /*background-color: #DB7703;*/
 }
 
 button:hover{
   background-color: #B76F1B;
 }
-
 .contain .hold-ex {
   margin-top: 20px;
   color: #fff;
@@ -167,6 +177,9 @@ button:hover{
   background: rgba(10,0,39,0.93);
 }
 
-
-
+.imageme{
+  width: 180px;
+  height: 190px;
+  border-radius: 30px;
+}
 

@@ -17,6 +17,8 @@ export class BsignupComponent implements OnInit {
   businessnameValid;
   businessnameMessage;
   emailValid;
+  wrongcat = true;
+  wrongstate = true;
   emailMessage;
   allCategory: string[] = ['Select a category', 'Photography', 'Makeup Artist', 'Stylist', 'MC', 'Catering'];
   defaultcat: string = 'Select a category';
@@ -135,21 +137,34 @@ export class BsignupComponent implements OnInit {
       state: this.brform.get('state').value,
       password: this.brform.get('password').value
     };
-    this.bauthService.registerBusiness(buser).subscribe( data => {
-      if (!data.success) {
-        this.messageClass = 'alert alert-danger';
-        this.message = data.message;
-        this.processing = false;
-        this.enableForm();
-      } else {
-        this.messageClass = 'alert alert-success';
-        this.message = data.message;
-        setTimeout( () => {
-          this.router.navigate(['/login']);
-        }, 2000);
-      }
-    });
+    if (buser.category === 'Select a category') {
+      this.messageClass = 'alert alert-danger';
+      this.message = 'Invalid Category';
+      this.enableForm();
+      this.processing = false;
+    } else if (buser.state === 'Select a state') {
+      this.messageClass = 'alert alert-danger';
+      this.message = 'Invalid State';
+      this.enableForm();
+      this.processing = false;
+    } else {
+      this.bauthService.registerBusiness(buser).subscribe( data => {
+        if (!data.success) {
+          this.messageClass = 'alert alert-danger';
+          this.message = data.message;
+          this.processing = false;
+          this.enableForm();
+        } else {
+          this.messageClass = 'alert alert-success';
+          this.message = data.message;
+          setTimeout( () => {
+            this.router.navigate(['/login']);
+          }, 2000);
+        }
+      });
+    }
   }
+
 
   /*checkBEmail(email){
     this.authService.checkBEmail(this.brform.get('email').value).subscribe( data => {

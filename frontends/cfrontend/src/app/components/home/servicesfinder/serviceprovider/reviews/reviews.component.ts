@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
 import { CauthService } from '../../../../../services/cauth.service';
+import { Router, ActivatedRoute } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-reviews',
@@ -9,40 +10,57 @@ import { CauthService } from '../../../../../services/cauth.service';
 })
 export class ReviewsComponent implements OnInit {
 
+  holdall;
   currentId;
-  reviews:any;
-  originalrev: any;
+  requests;
+  comrequests;
+  valreq;
+  valcomreq;
+  total;
+  views;
+  domain = 'http://localhost:5000';
+  empty;
+  holdReviews;
   lengthofreview;
-  u;
-  r;
-  empty: boolean;
 
   constructor(
+    private cauthService: CauthService,
     private router: Router,
-    private activatedRoute: ActivatedRoute,
-    private cauth: CauthService
+    private activedR: ActivatedRoute,
+    private http: HttpClient,
   ) { }
 
   ngOnInit() {
-    this.currentId = this.activatedRoute.snapshot.params['id'];
+    var myid = this.activedR.snapshot.params['id'];
+    this.http.get(this.domain + '/cauthentication/singleserviceprovider/'+myid).subscribe(data => {
+      this.holdall = data;
+      this.views = this.holdall.buser.views;
+    });
+    this.cauthService.checkBRequest(myid).subscribe(data => {
+      this.requests = data.somereq;
+      this.valreq = this.requests.length;
+      this.cauthService.checkconfirmedBRequest(myid).subscribe(data => {
+        this.comrequests = data.somereq;
+        this.valcomreq = this.comrequests.length;
+        this.total = this.valreq + this.valcomreq;
+      });
+    });
+    this.cauthService.checkconfirmedBRequest(myid).subscribe(data => {
+      this.comrequests = data.somereq;
+      this.valcomreq = this.comrequests.length;
+    });
 
-    this.cauth.getReviews(this.currentId).subscribe(data => {
+    this.cauthService.getReviews(myid).subscribe(data => {
       if (!data.success) {
-        console.log('No review was found');
+        console.log('error');
       } else {
         this.lengthofreview = data.review.length;
-        if (this.lengthofreview != 0 ) {
-          // this.empty = true;
-          // } else {
+        if (this.lengthofreview != 0) {
+          this.holdReviews = data.review;
           this.empty = false;
-          this.originalrev = data.review;
         } else {
           this.empty = true;
         }
-        // for (var i = 0; i <= this.lengthofreview; i++){
-        //   this.reviews.push(this.originalrev[i]);
-        //   console.log(this.reviews);
-        // console.log(this.originalrev);
       }
     });
   }

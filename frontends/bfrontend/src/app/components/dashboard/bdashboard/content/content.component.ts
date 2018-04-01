@@ -9,10 +9,18 @@ import { BauthService } from '../../../../services/bauth.service';
 })
 export class ContentComponent implements OnInit {
 
-  currentId;
+  id;
+  requests;
+  valreq;
+  comrequests;
+  valcomreq;
+  total;
   holdReviews;
   lengthofreview;
+  currentId;
   empty;
+  views;
+  view;
 
   constructor(
     private bauth: BauthService,
@@ -21,6 +29,25 @@ export class ContentComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.bauth.getProfile().subscribe(profile => {
+      this.id = profile.buser._id;
+      this.views = profile.buser.views;
+      console.log(this.views)
+      this.bauth.checkRequest(this.id).subscribe(data => {
+        this.requests = data.somereq;
+        this.valreq = this.requests.length;
+        this.bauth.acceptedRequest(this.id).subscribe(data => {
+          this.comrequests = data.somereq;
+          this.valcomreq = this.comrequests.length;
+          this.total = this.valreq + this.valcomreq;
+        });
+      });
+      this.bauth.acceptedRequest(this.id).subscribe(data => {
+        this.comrequests = data.somereq;
+        this.valcomreq = this.comrequests.length;
+      });
+    });
+
     this.bauth.getProfile().subscribe(profile => {
       if (!profile.success) {
         console.log('Error');

@@ -4,57 +4,7 @@
       <app-side-bar></app-side-bar>
     </div>
     <div class="here-there col-sm-12 col-md-8">
-      <!--<app-content></app-content>-->
-      <div class="gh">
-        <div class="container">
-          <div class="row">
-            <div class="box1 col-sm-12 col-md-4">
-              <div class="innerbox1">
-                <h5>Rating</h5>
-                <h3>5 star</h3>
-              </div>
-            </div>
-            <div class="box2 col-sm-12 col-md-4">
-              <div class="innerbox1">
-                <h5>Job request</h5>
-                <h5>{{ total }}</h5>
-              </div>
-            </div>
-            <div class="box3 col-sm-12 col-md-4">
-              <div class="innerbox1">
-                <h5>Successful jobs done</h5>
-                <h5>{{ valcomreq }}</h5>
-              </div>
-            </div>
-          </div>
-        </div>
-      <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-        <!--<a class="navbar-brand movenav" routerLink="/">TheLink</a>-->
-        <button class="navbar-toggler movein" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link movein" routerLink="/bdash/reviews">Review</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link movein" [routerLink]="['/bdash/editprofile/', id]">Add Description</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link movein" routerLink="/bdash/upload">Upload Works</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link movein" [routerLink]="['/bdash/profilepicture/', id]">Profile Picture</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-      </div>
-      <div class="therouter">
-       <router-outlet></router-outlet>
-      </div>
+      <router-outlet></router-outlet>
     </div>
   </div>
 </div>

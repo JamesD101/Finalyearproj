@@ -15,6 +15,7 @@ export class CdashboardComponent implements OnInit {
   messageClass;
   id;
   requests;
+  accrequests;
   comrequests;
   reqId;
   singleReq;
@@ -23,6 +24,7 @@ export class CdashboardComponent implements OnInit {
   businessname;
   empty = false;
   empt = false;
+  emptt = false;
 
   constructor(private cauthService: CauthService,
               private router: Router,
@@ -52,15 +54,26 @@ export class CdashboardComponent implements OnInit {
         // console.log(this.request);
       });
       this.cauthService.checkconfirmedRequest(this.id).subscribe(data => {
-        this.comrequests = data.somereq;
-        if (this.comrequests.length < 1) {
+        this.accrequests = data.somereq;
+        if (this.accrequests.length < 1) {
           this.empt = true;
         } else {
-          this.comrequests = data.somereq;
+          this.accrequests = data.somereq;
+          // console.log(this.comrequests);
         }
         // console.log(this.request);
       });
 
+      this.cauthService.checkconRequest(this.id).subscribe(data => {
+        this.comrequests = data.somereq;
+        if (this.comrequests.length < 1) {
+          this.emptt = true;
+        } else {
+          this.comrequests = data.somereq;
+          // console.log(this.comrequests);
+        }
+        // console.log(this.request);
+      });
     });
 
   }
@@ -74,6 +87,7 @@ export class CdashboardComponent implements OnInit {
 
   change(id){
     this.cauthService.getSingleReq(id).subscribe(data => {
+      // console.log(data);
       this.singleReq = data.request;
       this.reqId = this.singleReq._id;
       // console.log(this.singleReq);
@@ -85,6 +99,7 @@ export class CdashboardComponent implements OnInit {
     this.cauthService.changeStatus(this.reqId).subscribe(data => {
       if (!data.success) {
         this.message = 'An Error Occurred';
+        console.log(data.message);
         this.messageClass = 'alert alert-danger';
       } else {
         this.message = 'Successfully changed the status';
@@ -136,8 +151,11 @@ export class CdashboardComponent implements OnInit {
       } else {
         this.message = 'Review sent successfully';
         this.messageClass = 'alert alert-success';
-        this.revForm.controls['review'].disable();
-        // window.location.reload();
+        // this.revForm.controls['review'].disable();
+        setTimeout( () => {
+          window.location.reload();
+        }, 3000);
+
       }
     });
   }

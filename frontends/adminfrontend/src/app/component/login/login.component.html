@@ -1,0 +1,42 @@
+<div id="wrapper">
+  <div class="vertical-align-wrap">
+    <div class="vertical-align-middle">
+      <div class="auth-box">
+        <div class="left">
+          <div class="content">
+            <div class="header">
+              <p class="lead">Login to your account</p>
+            </div>
+            <form [formGroup]="aform" (submit)="onLoginUser()" class="form-auth-small">
+              <div class="form-group">
+                <label for="signin-email" class="control-label sr-only">Username</label>
+                <input type="text" name="username" class="form-control" id="signin-email" placeholder="Username" formControlName="username">
+                <ul class="help-block">
+                  <li *ngIf="aform.controls.username.errors?.required && aform.controls.username.dirty">This field is required</li>
+                  <li *ngIf="aform.controls.username.errors?.minlength || aform.controls.username.errors?.maxlength">Minimum length : 5 and Maximum length: 30</li>
+                </ul>
+              </div>
+              <div class="form-group">
+                <label for="signin-password" class="control-label sr-only">Password</label>
+                <input type="password" name="password" class="form-control" id="signin-password"placeholder="Password" formControlName="password">
+                <ul class="help-block">
+                  <li *ngIf="aform.controls.password.errors?.required && aform.controls.password.dirty">This field is required</li>
+                  <li *ngIf="aform.controls.password.errors?.minlength || aform.controls.password.errors?.maxlength">Minimum length : 5 and Maximum length: 30</li>
+                </ul>
+              </div>
+              <button type="submit" class="subbut btn btn-primary btn-lg btn-block">LOGIN</button>
+            </form>
+          </div>
+        </div>
+        <div class="right">
+          <div class="overlay"></div>
+          <div class="content text">
+            <h1 class="heading text-center mytext">THE LINK</h1>
+            <p class="text-center mytxt">where customers and service providers meet to create wonderful events</p>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+  </div>
+</div>

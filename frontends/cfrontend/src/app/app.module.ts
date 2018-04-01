@@ -23,13 +23,14 @@ import { SearchServiceComponent } from './components/home/servicesfinder/search-
 import { SearchSideBarComponent } from './components/home/servicesfinder/search-service/search-side-bar/search-side-bar.component';
 import { SearchContentComponent } from './components/home/servicesfinder/search-service/search-content/search-content.component';
 import { SearchBarComponent } from './components/home/servicesfinder/search-service/search-bar/search-bar.component';
-import { DropSearchComponent } from './components/home/filterservices/drop-search/drop-search.component';
 import { ServiceproviderComponent } from './components/home/servicesfinder/serviceprovider/serviceprovider.component';
 import { SideBarComponent } from './components/home/servicesfinder/serviceprovider/side-bar/side-bar.component'
 import { MessageComponent } from './components/message/message.component';
 import { ReviewsComponent } from './components/home/servicesfinder/serviceprovider/reviews/reviews.component';
 import { WorksComponent } from './components/home/servicesfinder/serviceprovider/works/works.component';
-
+import { FilterSearchComponent } from './components/home/filterservices/filter-search/filter-search.component';
+import { AuthGuard } from './guards/auth.guard';
+import { NoauthGuard } from './guards/noauth.guard';
 
 
 @NgModule({
@@ -47,12 +48,12 @@ import { WorksComponent } from './components/home/servicesfinder/serviceprovider
     SearchSideBarComponent,
     SearchContentComponent,
     SearchBarComponent,
-    DropSearchComponent,
     ServiceproviderComponent,
     SideBarComponent,
     MessageComponent,
     ReviewsComponent,
-    WorksComponent
+    WorksComponent,
+    FilterSearchComponent
   ],
   imports: [
     BrowserModule,
@@ -61,7 +62,7 @@ import { WorksComponent } from './components/home/servicesfinder/serviceprovider
     HttpClientModule,
     FlashMessagesModule
   ],
-  providers: [CauthService, FlashMessagesService],
+  providers: [CauthService, FlashMessagesService, AuthGuard, NoauthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

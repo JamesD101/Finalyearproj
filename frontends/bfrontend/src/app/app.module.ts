@@ -25,6 +25,7 @@ import { BdashboardComponent } from './components/dashboard/bdashboard/bdashboar
 import { SideBarComponent } from './components/dashboard/bdashboard/side-bar/side-bar.component'
 import { ContentComponent } from './components/dashboard/bdashboard/content/content.component';
 import { ProfilepicuploadComponent } from './components/dashboard/bdashboard/profilepicupload/profilepicupload.component';
+import { AcceptrequestComponent } from './components/acceptrequest/acceptrequest.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { ProfilepicuploadComponent } from './components/dashboard/bdashboard/pro
     MessageComponent,
     UploadComponent,
     AddinfoComponent,
-    ProfilepicuploadComponent
+    ProfilepicuploadComponent,
+    AcceptrequestComponent
   ],
   imports: [
     BrowserModule,

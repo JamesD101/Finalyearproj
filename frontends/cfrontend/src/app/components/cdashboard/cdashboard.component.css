@@ -1430,7 +1430,8 @@ select[multiple], select[size] {
   /*margin: 0 auto;*/
   margin-left: 200px;
   z-index: 0.2;
-  margin-top: 50px;
+  margin-top: 30px;
+  margin-bottom: 30px;
   /*max-width: 1000px;*/
 }
 .fixme {
@@ -1445,4 +1446,29 @@ select[multiple], select[size] {
 
 .whitey {
   color: #ffffff;
+}
+
+.containerme{
+  /*margin: 0 auto;*/
+  /*max-width: 100px;*/
+}
+.modal{
+  width: 800px !important;
+  margin: 0 auto;
+}
+.modal-body{
+  margin: 0 auto;
+  width: 100%;
+}
+.rating{
+  width: 100%;
+  font-size: 20px;
+  text-align: center;
+  padding: 5px;
+}
+.spec a{
+  color: #000;
+}
+.com{
+  color: #000;
 }

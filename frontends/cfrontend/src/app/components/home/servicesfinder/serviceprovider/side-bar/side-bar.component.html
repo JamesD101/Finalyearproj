@@ -1,7 +1,7 @@
 <div class="side-bar-me">
   <div class="mid-all">
-  <div class="circle-me">
-    <!--<span>{{ image }}</span>-->
+  <div>
+    <img class="circle-me" src="../../../../../../assets/{{image}}">
   </div>
 
     <div class="section-name">
@@ -10,9 +10,8 @@
 
     </div>
 
-    <div class="section-about-meo">
+    <div *ngIf="description" class="section-about-meo">
       {{ description }}
-      Learn how to create a chat bubble using css. Quick html tutorial that covers other advanced areas of css and chat bubble alignment
     </div>
 
     <div class="section-about-meo">
@@ -27,9 +26,9 @@
       {{ category }}
     </div>
     <ul>
-      <li><a><button class="mybutton">View contact</button></a></li>
-      <li><a><button class="mybutton">View Works</button></a></li>
+      <li><a><button class="mybutton" [routerLink]="['/works/', meid]">View Works</button></a></li>
       <li><a><button class="mybutton" (click)="hirepro()">Hire Pro</button></a></li>
+      <li><a [routerLink]="['/profile/', meid]"><button class="mybutton">View Reviews</button></a></li>
     </ul>
   </div>
 </div>

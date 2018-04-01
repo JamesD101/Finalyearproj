@@ -4,9 +4,12 @@ const config = require('../config/database');
 // const passport = require('passport');
 const jwt = require('jsonwebtoken');
 const Request = require('../model/request');
+const Rrequest = require('../model/rrequest');
+const Accrequest = require('../model/acceptrequest');
 const Avatar = require('../model/profilepic');
 const Comrequest = require('../model/comrequest');
 const Reviews = require('../model/reviews');
+const Stat = require('../model/stat');
 
 module.exports = function (router) {
 
@@ -108,6 +111,57 @@ module.exports = function (router) {
         }
     });
 
+    router.post('/rrequest', function(req,res){
+        if (!req.body.businessname){
+            res.json({ success: false, message: 'No businessname was provided'});
+        } else {
+            if (!req.body.username) {
+                res.json({success: false, message: 'No username was provided'});
+            } else {
+                if (!req.body.status) {
+                    res.json({ success: false, message: 'No status was provided' });
+                } else {
+                    Buser.findOne({businessname: req.body.businessname}, function (err, buser) {
+                        if (err) {
+                            res.json({success: false, message: 'An error occurred'});
+                        } else {
+                            if (!buser) {
+                                res.json({success: false, message: 'Username was not found.'});
+                            } else {
+                                Cuser.findOne({username: req.body.username}, function (err, cuser) {
+                                    if (err) {
+                                        res.json({success: false, message: err});
+                                    } else {
+                                        if (!cuser) {
+                                            res.json({success: false, message: 'No Cuser found'});
+                                        } else {
+                                            let rrequest = new Rrequest({
+                                                businessname: buser.businessname,
+                                                status: req.body.status,
+                                                cuserId: cuser._id,
+                                                username: cuser.username,
+                                                buserId: buser._id,
+                                                category: buser.category
+                                            });
+                                            rrequest.save(function (err){
+                                                if (err) {
+                                                    res.json({ success: false, message: 'An error occurred while saving'});
+                                                } else {
+                                                    res.json({ success: true, message: 'Request Saved'});
+                                                }
+                                            });
+                                            // res.json({success: true, buser: buser, cuser: cuser});
+                                        }
+                                    }
+                                });
+                            }
+                        }
+                    });
+                }
+            }
+        }
+    });
+
     router.get('/checkrequest/:id', function (req, res) {
         Request.find({ cuserId: req.params.id}, function (err, somereq) {
             if (err) {
@@ -122,21 +176,7 @@ module.exports = function (router) {
         });
     });
 
-    router.get('/checkbrequest/:id', function (req, res) {
-        Request.find({ buserId: req.params.id}, function (err, somereq) {
-            if (err) {
-                res.json({ success: false, message: err });
-            } else {
-                if (!somereq) {
-                    res.json({ success: false, message: 'No value' });
-                } else {
-                    res.json({ success: true, somereq: somereq });
-                }
-            }
-        });
-    });
-
-    router.get('/confirmedrequest/:id', function (req, res) {
+    router.get('/checkconrequest/:id', function (req, res) {
         Comrequest.find({ cuserId: req.params.id}, function (err, somereq) {
             if (err) {
                 res.json({ success: false, message: err });
@@ -150,8 +190,36 @@ module.exports = function (router) {
         });
     });
 
+    router.get('/checkbrequest/:id', function (req, res) {
+        Rrequest.find({ buserId: req.params.id}, function (err, somereq) {
+            if (err) {
+                res.json({ success: false, message: err });
+            } else {
+                if (!somereq) {
+                    res.json({ success: false, message: 'No value' });
+                } else {
+                    res.json({ success: true, somereq: somereq });
+                }
+            }
+        });
+    });
+
+    router.get('/confirmedrequest/:id', function (req, res) {
+        Accrequest.find({ cuserId: req.params.id}, function (err, somereq) {
+            if (err) {
+                res.json({ success: false, message: err });
+            } else {
+                if (!somereq) {
+                    res.json({ success: false, message: 'You do not have any requested service provider' });
+                } else {
+                    res.json({ success: true, somereq: somereq });
+                }
+            }
+        });
+    });
+
     router.get('/confirmedbrequest/:id', function (req, res) {
-        Comrequest.find({ buserId: req.params.id}, function (err, somereq) {
+        Accrequest.find({ buserId: req.params.id}, function (err, somereq) {
             if (err) {
                 res.json({ success: false, message: err });
             } else {
@@ -237,8 +305,7 @@ module.exports = function (router) {
                 } else {
                     res.json({ success: true, busers: busers });
                 }
-            }
-        });
+            }}).sort({ 'views' : -1});
     });
 
     router.get('/search/:category?/:state?', function (req,res) {
@@ -248,7 +315,7 @@ module.exports = function (router) {
             if (!req.query.state) {
                 res.json({success: false, message: 'State field is required'});
             } else {
-                Buser.find({ category: req.query.category, state: req.query.state }).select('_id businessname email address category city state description').exec( function (err, busers) {
+                Buser.find({ category: req.query.category, state: req.query.state }, function (err, busers) {
                     if(err){
                         res.json({ success: false, message: 'You must be log in' });
                     } else {
@@ -256,10 +323,10 @@ module.exports = function (router) {
                             res.json({success: false, message: 'No category like you selected'});
                         }
                         else {
-                            res.json({success: true, busers: busers});
-                        }
+                            res.json({ success: true, busers: busers });
+                            }
                     }
-                });
+                }).sort({ 'views' : -1});
                 // }
                 // }
                 //     .sort({ '_id' : -1});
@@ -349,8 +416,93 @@ module.exports = function (router) {
         });
     });
 
+    router.get('/directservice/Photography', function (req,res) {
+                Buser.find({ category: 'Photography' }, function (err, busers) {
+                    if(err){
+                        res.json({ success: false, message: 'You must be log in' });
+                    } else {
+                        if (!busers) {
+                            res.json({success: false, message: 'No category like you selected'});
+                        }
+                        else {
+                            res.json({ success: true, busers: busers });
+                        }
+                    }
+                }).sort({ 'views' : -1});
+    });
+    router.get('/directservice/Stylist', function (req,res) {
+        Buser.find({ category: 'Stylist' }, function (err, busers) {
+            if(err){
+                res.json({ success: false, message: 'You must be log in' });
+            } else {
+                if (!busers) {
+                    res.json({success: false, message: 'No category like you selected'});
+                }
+                else {
+                    res.json({ success: true, busers: busers });
+                }
+            }
+        }).sort({ 'views' : -1});
+    });
+    router.get('/directservice/Catering', function (req,res) {
+        Buser.find({ category: 'Catering' }, function (err, busers) {
+            if(err){
+                res.json({ success: false, message: 'You must be log in' });
+            } else {
+                if (!busers) {
+                    res.json({success: false, message: 'No category like you selected'});
+                }
+                else {
+                    res.json({success: true, busers: busers});
+                }
+            }
+        }).sort({ 'views' : -1});
+    });
+    router.get('/directservice/MC', function (req,res) {
+        Buser.find({ category: 'MC' }, function (err, busers) {
+            if(err){
+                res.json({ success: false, message: 'You must be log in' });
+            } else {
+                if (!busers) {
+                    res.json({success: false, message: 'No category like you selected'});
+                }
+                else {
+                    res.json({ success: true, busers: busers });
+                }
+            }
+        }).sort({ 'views' : -1});
+    });
+    router.get('/directservice/Makeupartist', function (req,res) {
+        Buser.find({ category: 'Makeup artist' }, function (err, busers) {
+            if(err){
+                res.json({ success: false, message: 'You must be log in' });
+            } else {
+                if (!busers) {
+                    res.json({success: false, message: 'No category like you selected'});
+                }
+                else {
+                    res.json({ success: true, busers: busers });
+                }
+            }
+        }).sort({ 'views' : -1});
+    });
+    router.get('/directservice/Eventcenter', function (req,res) {
+        Buser.find({ category: 'Event Center' }, function (err, busers) {
+            if(err){
+                res.json({ success: false, message: 'You must be log in' });
+            } else {
+                if (!busers) {
+                    res.json({success: false, message: 'No category like you selected'});
+                }
+                else {
+                    res.json({ success: true, busers: busers });
+                }
+            }
+        }).sort({ 'views' : -1});
+    });
+
     router.get('/singleserviceprovider/:id', function (req,res) {
-            Buser.findOne({_id: req.params.id}).select('_id businessname email address category city state description').exec( function (err, buser) {
+            Buser.findOne({_id: req.params.id}).select('_id businessname email address category city state description views image').exec( function (err, buser) {
                 if (err) {
                     res.json({ success: false, message: 'An error occured'});
                 } else {
@@ -398,6 +550,27 @@ module.exports = function (router) {
         });
     });
 
+    router.put('/addtoviews/:id', function (req, res) {
+        Buser.findOne({ _id: req.params.id }).select('views').exec(function(err, buser) {
+            if (err) {
+                res.json({ success: false, message: err });
+            } else {
+                if (!buser) {
+                    res.json({ success: false, message: 'No user found' });
+                } else {
+                    buser.views++;
+                    buser.save(function (err) {
+                        if (err) {
+                            res.json({ success: false, message: err });
+                        } else {
+                            res.json({ success: true, message: 'Added' });
+                        }
+                    });
+                }
+            }
+        }) ;
+    });
+    
     router.post('/changestatus/:id', function (req, res) {
         if (!req.params.id) {
             res.json({success: false, message: 'No ID found'});
@@ -435,8 +608,6 @@ module.exports = function (router) {
         }
     });
 
-
-
     router.use(function (req, res, next) {
         const token = req.headers['authorization'];
         if (!token){
@@ -452,6 +623,7 @@ module.exports = function (router) {
             });
         }
     })
+
 
     router.get('/customerprofile', function (req, res) {
         Cuser.findOne({ _id: req.decoded.cuserId }).select('_id username').exec( function (err, cuser) {

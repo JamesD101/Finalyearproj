@@ -16,6 +16,9 @@
         <a class="nav-link movers" routerLink="/bdash">Dashboard</a>
       </li>
       <li class="nav-item" *ngIf="bauthService.loggedIn()">
+        <a class="nav-link movers" routerLink="/acceptrequest">Accept Request</a>
+      </li>
+      <li class="nav-item" *ngIf="bauthService.loggedIn()">
         <a class="nav-link movers" (click)="onLogoutBusinessClick()">Logout</a>
       </li>
     </ul>

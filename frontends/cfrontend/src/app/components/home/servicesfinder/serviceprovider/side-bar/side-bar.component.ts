@@ -27,7 +27,8 @@ export class SideBarComponent implements OnInit {
   inscategory;
   insusername;
   inscuserid;
-  // image;
+  meid;
+  image;
   domain = 'http://localhost:5000';
   public takeBuser: any;
   public takeCuser: any;
@@ -48,13 +49,14 @@ export class SideBarComponent implements OnInit {
     getSingleSP(id) {
       this.http.get(this.domain + '/cauthentication/singleserviceprovider/'+id).subscribe(data => {
         this.holdall = data;
+        this.meid = this.holdall.buser._id;
         this.businessname = this.holdall.buser.businessname;
         this.email = this.holdall.buser.email;
         this.address = this.holdall.buser.address;
         this.city = this.holdall.buser.city;
         this.category = this.holdall.buser.category;
         this.description = this.holdall.buser.description;
-        console.log(this.holdall.businessname);
+        this.image = this.holdall.buser.image;
       });
     }
 
@@ -84,6 +86,13 @@ export class SideBarComponent implements OnInit {
             } else {
               this.flashy.show('Request sent', {cssClass: 'alert-success'});
             }
+         });
+         this.cauthService.sendRrequest(essRequest).subscribe(data => {
+           if (!data.success) {
+             console.log('An Error Occurred');
+           } else {
+             // this.flashy.show('Request sent', {cssClass: 'alert-success'});
+           }
          });
        });
      });

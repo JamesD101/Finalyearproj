@@ -1,0 +1,170 @@
+<div class="main">
+  <!-- MAIN CONTENT -->
+  <div class="main-content">
+    <div class="container-fluid">
+      <!-- OVERVIEW -->
+      <div class="panel panel-headline">
+        <div class="panel-heading">
+          <h3 class="panel-title">Administrator Dashboard</h3>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-md-3">
+              <div class="metric">
+                <p>
+                  <span class="number">{{ myb }}</span>
+                  <span class="title">Service Providers</span>
+                </p>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="metric">
+                <p>
+                  <span class="number">{{ myc }}</span>
+                  <span class="title">Customers</span>
+                </p>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="metric">
+                <p>
+                  <span class="number">{{ myj }}</span>
+                  <span class="title">Job Requests</span>
+                </p>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="metric">
+                <p>
+                  <span class="number">{{ myt}}</span>
+                  <span class="title">Transaction</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- END OVERVIEW -->
+      <div class="row">
+        <div class="col-md-12">
+          <!-- RECENT PURCHASES -->
+          <div class="panel">
+            <div class="panel-heading">
+              <h3 class="panel-title">Completed Transactions</h3>
+              <div class="right">
+                <button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
+                <button type="button" class="btn-remove"><i class="lnr lnr-cross"></i></button>
+              </div>
+            </div>
+            <div class="panel-body no-padding">
+              <table class="table table-striped">
+                <thead>
+                <tr>
+                  <th>Username</th>
+                  <th>Businessname</th>
+                  <th>Category</th>
+                  <th>Date & Time</th>
+                  <th>Status</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngIf="empty">
+                  <td>None</td>
+                  <td>None</td>
+                  <td>None</td>
+                  <td>None</td>
+                  <td>None</td>
+                </tr>
+                <tr *ngFor="let acc of myaccreq">
+                  <td>{{ acc.username }}</td>
+                  <td>{{ acc.businessname }}</td>
+                  <td>{{ acc.category }}</td>
+                  <td>{{ acc.date | date: 'MMM dd, yyyy (hh:mm:ss)' }}</td>
+                  <td><span class="label label-success">{{ acc.status }}</span></td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <!-- END RECENT PURCHASES -->
+        </div>
+        <div class="col-md-12">
+          <!-- RECENT PURCHASES -->
+          <div class="panel">
+            <div class="panel-heading">
+              <h3 class="panel-title">Pending Transactions</h3>
+              <div class="right">
+                <button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
+                <button type="button" class="btn-remove"><i class="lnr lnr-cross"></i></button>
+              </div>
+            </div>
+            <div class="panel-body no-padding">
+              <table class="table table-striped">
+                <thead>
+                <tr>
+                  <th>Username</th>
+                  <th>Businessname</th>
+                  <th>Category</th>
+                  <th>Date & Time</th>
+                  <th>Status</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngIf="empt">
+                  <td>None</td>
+                  <td>None</td>
+                  <td>None</td>
+                  <td>None</td>
+                  <td>None</td>
+                </tr>
+                <tr *ngFor="let acc of myreq">
+                  <td>{{ acc.username }}</td>
+                  <td>{{ acc.businessname }}</td>
+                  <td>{{ acc.category }}</td>
+                  <td>{{ acc.date | date: 'MMM dd, yyyy (hh:mm:ss)' }}</td>
+                  <td><span class="label label-success">{{ acc.status }}</span></td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <!-- END RECENT PURCHASES -->
+        </div>
+        <!--<div class="col-md-12">
+          &lt;!&ndash; MULTI CHARTS &ndash;&gt;
+          <div class="panel">
+            <div class="panel-heading">
+              <h3 class="panel-title"></h3>
+              <div class="right">
+                <button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
+                <button type="button" class="btn-remove"><i class="lnr lnr-cross"></i></button>
+              </div>
+            </div>
+            <div class="panel-body">
+              <div id="visits-trends-chart" class="ct-chart"></div>
+            </div>
+          </div>
+          &lt;!&ndash; END MULTI CHARTS &ndash;&gt;
+        </div>-->
+      </div>
+    </div>
+  </div>
+  <!-- END MAIN CONTENT -->
+</div>
+<!--
+<div class="container">
+<div class="panel">
+  <div class="panel-heading">
+    <h3 class="panel-title text-center">Search For A Service Provider</h3>
+  </div>
+  <div class="panel-body no-padding">
+    <div class="navbar-form mynav">
+      <div class="input-group">
+        <input type="text" value="" class="form-control" placeholder="Search for service provider...">
+        <span class="input-group-btn"><button type="button" class="btn btn-primary" (click)="">Go</button></span>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+-->

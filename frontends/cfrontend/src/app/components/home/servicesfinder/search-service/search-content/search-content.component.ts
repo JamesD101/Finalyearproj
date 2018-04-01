@@ -137,10 +137,28 @@ export class SearchContentComponent implements OnInit {
             console.log('An Error Occurred');
           } else {
             this.message = 'Request sent';
-            this.messageClass = 'alert alert-success'
+            this.messageClass = 'alert alert-success';
+          }
+        });
+        this.cauth.sendRrequest(essRequest).subscribe(data => {
+          if (!data.success) {
+            console.log('An Error Occurred');
+          } else {
+            // this.message = 'Request sent';
+            // this.messageClass = 'alert alert-success';
           }
         });
       });
+    });
+  }
+
+  addtoview(id){
+    this.cauth.addtoViews(id).subscribe(data => {
+      if (!data.success) {
+        console.log(data.message);
+      } else {
+        console.log('Added');
+      }
     });
   }
 

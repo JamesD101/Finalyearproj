@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CauthService } from '../../services/cauth.service';
 import { Router } from '@angular/router';
 import { FlashMessagesService } from 'angular2-flash-messages';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-navbar',
@@ -19,7 +20,9 @@ export class NavbarComponent implements OnInit {
   constructor(
               private cauthService: CauthService,
               private router: Router,
-              private flashMessagesService: FlashMessagesService ) {
+              private flashMessagesService: FlashMessagesService,
+              private location: Location
+  ) {
 
   }
 
@@ -33,7 +36,7 @@ export class NavbarComponent implements OnInit {
   }
 
   goBack(){
-    window.location.reload();
+    this.location.back();
   }
   onLogoutCustomerClick() {
     this.cauthService.logoutCustomer();

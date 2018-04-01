@@ -78,7 +78,28 @@ export class BauthService {
     // currentId = currentId.set('_id', id);
     return this.http.get(this.domain + '/bauthentication/confirmedrequest/' + id, {headers});
   }
-
+  acceptedRequest(id): Observable<any> {
+    this.loadToken();
+    const headers = new HttpHeaders().set('Authorization', this.bauthToken);
+    // let  currentId = new HttpParams();
+    // currentId = currentId.set('_id', id);
+    return this.http.get(this.domain + '/bauthentication/acceptedrequest/' + id, {headers});
+  }
+  deleteReq(id): Observable<any>{
+    this.loadToken();
+    const headers = new HttpHeaders().set('Authorization', this.bauthToken);
+    return this.http.get(this.domain + '/bauthentication/deleterequest/' + id, {headers});
+  }
+  acceptReq(id): Observable<any>{
+    this.loadToken();
+    const headers = new HttpHeaders().set('Authorization', this.bauthToken);
+    return this.http.post(this.domain + '/bauthentication/acceptreq/' + id, {headers});
+  }
+  getSingleReq(id): Observable<any> {
+    this.loadToken();
+    const headers = new HttpHeaders().set('Authorization', this.bauthToken);
+    return this.http.get(this.domain + '/bauthentication/singlereq/' + id, {headers});
+  }
 
   /* checkUsername(username): Observable<any> {
       return this.http.get(this.domain + '/authentication/checkUsername/' + username, { responseType: 'json' });

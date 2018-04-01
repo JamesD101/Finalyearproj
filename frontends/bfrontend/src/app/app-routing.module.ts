@@ -4,8 +4,8 @@ import { HomeComponent } from './components/home/home.component';
 import { BsignupComponent } from './components/bsignup/bsignup.component';
 import { LoginComponent } from './components/login/login.component';
 import { ProfilepicuploadComponent } from './components/dashboard/bdashboard/profilepicupload/profilepicupload.component';
-// import { BloginComponent } from './components/login/blogin/blogin.component';
 import { BdashboardComponent } from './components/dashboard/bdashboard/bdashboard.component';
+import { AcceptrequestComponent } from './components/acceptrequest/acceptrequest.component';
 import { ContentComponent } from './components/dashboard/bdashboard/content/content.component';
 import { MessageComponent } from './components/dashboard/bdashboard/message/message.component';
 import { AddinfoComponent } from './components/dashboard/bdashboard/addinfo/addinfo.component';
@@ -16,6 +16,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'bsignup', component: BsignupComponent },
   { path: 'login', component: LoginComponent},
+  { path: 'acceptrequest', component: AcceptrequestComponent},
   { path: 'bdash', component: BdashboardComponent,
     children:
       [

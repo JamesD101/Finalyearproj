@@ -51,6 +51,9 @@ export class CauthService {
   sendRequest(essRequest): Observable<any>{
     return this.http.post(this.domain + '/cauthentication/request', essRequest);
   }
+  sendRrequest(essRequest): Observable<any>{
+    return this.http.post(this.domain + '/cauthentication/rrequest', essRequest);
+  }
   changeStatus(id): Observable<any> {
     this.loadTokenC();
     const headers = new HttpHeaders().set('Authorization', this.cauthToken);
@@ -62,6 +65,13 @@ export class CauthService {
     // let  currentId = new HttpParams();
     // currentId = currentId.set('_id', id);
     return this.http.get(this.domain + '/cauthentication/checkrequest/' + id, {headers});
+  }
+  checkconRequest(id): Observable<any> {
+    this.loadTokenC();
+    const headers = new HttpHeaders().set('Authorization', this.cauthToken);
+    // let  currentId = new HttpParams();
+    // currentId = currentId.set('_id', id);
+    return this.http.get(this.domain + '/cauthentication/checkconrequest/' + id, {headers});
   }
   checkconfirmedRequest(id): Observable<any> {
     this.loadTokenC();
@@ -116,6 +126,9 @@ export class CauthService {
     const headers = new HttpHeaders().set('Authorization', this.cauthToken);
     return this.http.get(this.domain + '/cauthentication/customerprofile', { headers });
   }
+  searchAll(category): Observable<any> {
+    return this.http.get(this.domain + '/cauthentication/search/' + category);
+  }
   searchBusiness(someSearch): Observable<any> {
     let search = new HttpParams();
     search = search.append('category', someSearch.category);
@@ -123,40 +136,27 @@ export class CauthService {
     return this.http.get( this.domain + '/cauthentication/search', { params: search } );
   }
   searchBusinessP(): Observable<any> {
-    this.loadTokenC();
-    const headers = new HttpHeaders().set('Authorization', this.cauthToken);
-    let search = new HttpParams();
-    return this.http.get( this.domain + '/cauthentication/search/Photography', { headers} );
+    return this.http.get( this.domain + '/cauthentication/directservice/Photography' );
   }
   searchBusinessS(): Observable<any> {
-    this.loadTokenC();
-    const headers = new HttpHeaders().set('Authorization', this.cauthToken);
-    let search = new HttpParams();
-    return this.http.get( this.domain + '/cauthentication/search/Stylist', { headers} );
+    return this.http.get( this.domain + '/cauthentication/directservice/Stylist' );
   }
   searchBusinessE(): Observable<any> {
-    this.loadTokenC();
-    const headers = new HttpHeaders().set('Authorization', this.cauthToken);
-    let search = new HttpParams();
-    return this.http.get( this.domain + '/cauthentication/search/Event Center', { headers} );
+    return this.http.get( this.domain + '/cauthentication/directservice/Eventcenter' );
   }
   searchBusinessC(): Observable<any> {
-    this.loadTokenC();
-    const headers = new HttpHeaders().set('Authorization', this.cauthToken);
-    let search = new HttpParams();
-    return this.http.get( this.domain + '/cauthentication/search/Catering', { headers} );
+    return this.http.get( this.domain + '/cauthentication/directservice/Catering' );
   }
   searchBusinessM(): Observable<any> {
-    this.loadTokenC();
-    const headers = new HttpHeaders().set('Authorization', this.cauthToken);
-    let search = new HttpParams();
-    return this.http.get( this.domain + '/cauthentication/search/Makeup artist', { headers} );
+    return this.http.get( this.domain + '/cauthentication/directservice/Makeupartist' );
   }
   searchBusinessMa(): Observable<any> {
+    return this.http.get( this.domain + '/cauthentication/directservice/MC' );
+  }
+  addtoViews(id): Observable<any> {
     this.loadTokenC();
     const headers = new HttpHeaders().set('Authorization', this.cauthToken);
-    let search = new HttpParams();
-    return this.http.get( this.domain + '/cauthentication/search/MC', { headers} );
+    return this.http.put(this.domain + '/cauthentication/addtoviews/' + id, {headers});
   }
 
 }

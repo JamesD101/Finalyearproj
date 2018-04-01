@@ -1,14 +1,16 @@
 const Buser = require('../model/buser');
 const Cuser = require('../model/cuser');
 const Request = require('../model/request');
+const Rrequest = require('../model/rrequest');
 const Comrequest = require('../model/comrequest');
+const Acceptrequest = require('../model/acceptrequest');
 const config = require('../config/database');
 const jwt = require('jsonwebtoken');
 const Reviews = require('../model/reviews');
 const Avatar = require('../model/profilepic');
 var multer = require('multer');
 // set the directory for the uploads to the uploaded to
-var DIR = './uploads/';
+var DIR = './frontends/cfrontend/src/assets/uploads';
 //define the type of upload multer would be doing and pass in its destination, in our case, its a single file with the name photo
 var upload = multer({dest: DIR}).single('photo');
 
@@ -147,7 +149,7 @@ module.exports = function(router){
     });
 
     router.get('/checkrequest/:id', function (req, res) {
-        Request.find({ buserId: req.params.id}, function (err, somereq) {
+        Rrequest.find({ buserId: req.params.id}, function (err, somereq) {
             if (err) {
                 res.json({ success: false, message: err });
             } else {
@@ -174,7 +176,98 @@ module.exports = function(router){
         });
     });
 
+    router.get('/acceptedrequest/:id', function (req, res) {
+        Acceptrequest.find({ buserId: req.params.id}, function (err, somereq) {
+            if (err) {
+                res.json({ success: false, message: err });
+            } else {
+                if (!somereq) {
+                    res.json({ success: false, message: 'You do not have any requested service provider' });
+                } else {
+                    res.json({ success: true, somereq: somereq });
+                }
+            }
+        });
+    });
 
+    router.get('/deleterequest/:id', function (req, res) {
+        Comrequest.findOne({ _id: req.params.id}, function (err, comrequest) {
+            if (err) {
+                res.json({ success: false, message: err });
+            } else {
+                let request = new Request({
+                    businessname: comrequest.businessname,
+                    status: 'Pending',
+                    cuserId: comrequest.cuserId,
+                    username: comrequest.username,
+                    buserId: comrequest.buserId,
+                    category: comrequest.category
+                });
+                request.save(function (err){
+                    if (err) {
+                        res.json({ success: false, message: 'An error occurred while saving'});
+                    } else {
+                        res.json({ success: true, message: 'Request Saved'});
+                        Comrequest.findOneAndRemove({ _id: req.params.id}, function (err) {
+                            if (err) {
+                                res.json({ success: false, message: err });
+                            }
+                        });
+                    }
+                });
+            }
+        });
+    });
+    router.get('/singlereq/:id', function (req,res) {
+        Comrequest.findOne({ _id: req.params.id}, function (err, request) {
+            if (err) {
+                res.json({ success: false, message: err });
+            } else {
+                if (!request) {
+                    res.json({ success: false, message: 'No request was found' });
+                } else {
+                    res.json({ success: true, request: request });
+                }
+            }
+        });
+    });
+
+    router.post('/acceptreq/:id', function (req, res) {
+        if (!req.params.id) {
+            res.json({success: false, message: 'No ID found'});
+        } else {
+            Comrequest.findOne({_id: req.params.id}, function (err, comrequest) {
+                if (err) {
+                    res.json({success: false, message: 'Not a valid User ID'});
+                } else {
+                    if (!comrequest) {
+                        res.json({success: false, message: 'No Request was found'});
+                    } else {
+                        let accrequest = new Acceptrequest({
+                            businessname: comrequest.businessname,
+                            cuserId: comrequest.cuserId,
+                            username: comrequest.username,
+                            status: 'Done',
+                            buserId: comrequest.buserId,
+                            category: comrequest.category
+                        });
+                        accrequest.save((err) => {
+                            if (err) {
+                                res.json({success: false, message: err});
+                            } else {
+                                res.json({success: true, message: 'User info has been updated'});
+                                Comrequest.findOneAndRemove({ _id: req.params.id}, function (err) {
+                                    if (err) {
+                                        res.json({ success: false, message: err });
+                                    }
+                                });
+                            }
+                        });
+                    }
+                }
+            });
+        }
+    });
 
     router.post('/blogin', function(req,res){
         if (!req.body.businessname){
@@ -317,7 +410,7 @@ module.exports = function(router){
     });
 
     router.get('/businessprofile', function (req, res) {
-        Buser.findOne({ _id: req.decoded.buserId }).select('_id fullname businessname category email address city state description').exec( function (err, buser) {
+        Buser.findOne({ _id: req.decoded.buserId }).select('_id fullname businessname category email address city state description views').exec( function (err, buser) {
             if (err) {
                 res.json({ success: false, message: 'Error occurred' });
             } else {

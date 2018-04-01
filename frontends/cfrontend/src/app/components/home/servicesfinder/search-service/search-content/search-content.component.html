@@ -30,11 +30,11 @@
     <div class="row">
       <div class="contain col-md-8">
         <div class="row">
-          <div class="col-md-4 image"></div>
+          <div class="col-md-4 image"><img class="imageme" src="../../../../../../assets/{{search.image}}"></div>
           <div class="col-md-8 seller">
             <div class="insider">
               <h5><b>{{ search.businessname }}</b></h5>
-              <p>4 star</p>
+              <p id="myv">Number of views - {{ search.views }} views</p>
               <p><i>{{ search.address }}, {{ search.city }}, {{ search.state }}</i></p>
               <!--<p>Description</p>-->
               <h6> <b>Description: {{ search.description }}</b> <i></i></h6>
@@ -43,9 +43,9 @@
         </div>
       </div>
       <div class="sub col-md-4">
-        <a [routerLink]="['singleprovider/', search._id]"><button class="buttonme col-md-12">View Profile</button></a>
+        <a [routerLink]="['singleprovider/', search._id]"><button id="first" class="buttonme col-md-12" (click)="addtoview(search._id)">View Profile</button></a>
         <a><button (click)="hirepro(search._id)" class="buttonme col-md-12">Request Service Provider</button></a>
-        <a [routerLink]="['singleprovider/', search._id]"><button class="buttonme col-md-12">Contact Details</button></a>
+        <a [routerLink]="['singleprovider/', search._id]"><button id="second" class="buttonme col-md-12">View works</button></a>
       </div>
     </div>
   </div>

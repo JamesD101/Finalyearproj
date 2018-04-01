@@ -12,6 +12,7 @@ export class FilterservicesComponent implements OnInit {
   searches: any;
   dirSearch;
 
+
   constructor(
     private cauth: CauthService,
     private router: Router
@@ -26,11 +27,7 @@ export class FilterservicesComponent implements OnInit {
         console.log('fail');
       } else {
         this.searches = data.busers;
-        this.cauth.currentSearch = this.dirSearch;
-        console.log(this.cauth.currentSearch);
-        // public searched;
         this.router.navigate(['/search/Photography']);
-        // console.log(this.dirSearch);
       }
 
     });
@@ -44,6 +41,7 @@ export class FilterservicesComponent implements OnInit {
       } else {
         this.dirSearch = data.busers;
         console.log(this.dirSearch);
+        this.router.navigate(['/search/Stylist']);
       }
 
     });
@@ -56,6 +54,7 @@ export class FilterservicesComponent implements OnInit {
       } else {
         this.dirSearch = data.busers;
         console.log(this.dirSearch);
+        this.router.navigate(['/search/Event Center']);
       }
     });
   }
@@ -66,6 +65,7 @@ export class FilterservicesComponent implements OnInit {
       } else {
         this.dirSearch = data.busers;
         console.log(this.dirSearch);
+        this.router.navigate(['/search/Catering']);
       }
     });
   }
@@ -76,6 +76,7 @@ export class FilterservicesComponent implements OnInit {
       } else {
         this.dirSearch = data.busers;
         console.log(this.dirSearch);
+        this.router.navigate(['/search/MC']);
       }
     });
   }
@@ -86,6 +87,7 @@ export class FilterservicesComponent implements OnInit {
       } else {
         this.dirSearch = data.busers;
         console.log(this.dirSearch);
+        this.router.navigate(['/search/Makup artist']);
       }
     });
   }

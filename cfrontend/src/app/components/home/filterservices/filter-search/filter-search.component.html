@@ -1,0 +1,52 @@
+<h6 class="text-center page-header"> Quick search by highest views from customers of the service providers </h6>
+<ul class="row">
+  <li (click)="runSearchP()" class="col-sm-12 col-lg-2 col-md-4"><a><span><img src="../../../../assets/si-glyph-camera.svg"></span><br><br>Photographer</a></li>
+  <li (click)="runSearchS()" class="col-sm-12 col-lg-2 col-md-4"><a><span><img src="../../../../assets/si-glyph-hanger.svg"></span><br><br>Stylist</a></li>
+  <li (click)="runSearchE()" class="col-sm-12 col-lg-2 col-md-4"><a><span><img src="../../../../assets/si-glyph-building.svg"></span><br><br>Event Center</a></li>
+  <li (click)="runSearchC()" class="col-sm-12 col-lg-2 col-md-4"><a><span><img src="../../../../assets/si-glyph-spoon-fork.svg"></span><br><br>Catering</a></li>
+  <li (click)="runSearchM()" class="col-sm-12 col-lg-2 col-md-4"><a><span><img src="../../../../assets/si-glyph-brush-and-pencil.svg"></span><br><br>Make-up Artist</a></li>
+  <li (click)="runSearchMa()" class="col-sm-12 col-lg-2 col-md-4"><a><span><img src="../../../../assets/si-glyph-microphone-1.svg"></span><br><br>Master Ceremony</a></li>
+</ul>
+<br>
+
+<div class="containeer">
+<div class="row show-hide-message">
+  <div [ngClass] = "messageClass">
+    {{ message }}
+  </div>
+</div>
+
+<div *ngFor="let search of searches" class="containerme">
+  <div class="container">
+    <div class="row">
+      <div class="contain col-md-8">
+        <div class="row">
+          <div class="col-md-4 image"><img class="imageme" src="../../../../../../assets/{{search.image}}"/></div>
+          <div class="col-md-8 seller">
+            <div class="insider">
+              <h5><b>{{ search.businessname }}</b></h5>
+              <p id="myv">Number of views - {{ search.views }} views</p>
+              <p><i>{{ search.address }}, {{ search.city }}, {{ search.state }}</i></p>
+              <h6> <b>Description: {{ search.description }}</b> <i></i></h6>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="sub col-md-4">
+        <a [routerLink]="['singleprovider/', search._id]"><button id="first" class="buttonme col-md-12" (click)="addtoview(search._id)">View Profile</button></a>
+        <a><button (click)="hirepro(search._id)" class="buttonme col-md-12">Request Service Provider</button></a>
+        <a [routerLink]="['works/', search._id]"><button id="second" class="buttonme col-md-12">View works</button></a>
+      </div>
+    </div>
+  </div>
+  <br>
+  <span class="underline"></span>
+</div>
+</div>
+
+
+<!--</ng-template-->
+
+
+
+

@@ -1,0 +1,20 @@
+<div class="contain">
+  <h2 class="text1">Hire the right <span>SERVICE PROVIDERS</span> for your event</h2>
+
+  <form [formGroup]="searchForm" (submit)="onSearch()" class="hold-search-btn">
+
+    <select name="category" formControlName="category" class="searchservice" autocomplete="off">
+      <option *ngFor="let c of allCategory" [ngValue]="c">{{ c }}</option>
+    </select>
+
+    <select class="searchlocation" name="state" formControlName="state" autocomplete="off">
+      <option *ngFor="let s of allState" [ngValue]="s">{{ s }}</option>
+    </select>
+    <button type="submit" class="searchbutton">Search</button>
+
+  </form>
+
+  <div class="hold-ex">
+    <p class="ex1">Eg. Stylist, Photographer, Event center, Caterer</p>
+  </div>
+</div>

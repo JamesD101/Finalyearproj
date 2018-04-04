@@ -1,0 +1,10 @@
+<div class="inner">
+  <div class="row">
+    <div class="here-now col-sm-12 col-md-4">
+      <app-side-bar></app-side-bar>
+    </div>
+    <ul class="here-there col-sm-12 col-md-8">
+      <li *ngFor="let work of myworks"><img class="imageme" [src]="work"/></li>
+    </ul>
+  </div>
+</div>

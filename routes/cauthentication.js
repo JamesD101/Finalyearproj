@@ -6,7 +6,7 @@ const jwt = require('jsonwebtoken');
 const Request = require('../model/request');
 const Rrequest = require('../model/rrequest');
 const Accrequest = require('../model/acceptrequest');
-const Avatar = require('../model/profilepic');
+const Works = require('../model/works');
 const Comrequest = require('../model/comrequest');
 const Reviews = require('../model/reviews');
 const Stat = require('../model/stat');
@@ -367,6 +367,21 @@ module.exports = function (router) {
         }
     });
 
+    router.get('/getworks/:id', function (req, res) {
+        Works.find({ buserId: req.params.id }, function (err, work) {
+            if (err) {
+                res.json({ success: false, message: err });
+            } else {
+                if (!work) {
+                    res.json({success: true, message: 'Service Provider has no uploaded works' });
+                } else {
+                    res.json({ success: true, work: work });
+                }
+            }
+        });
+    });
+
+
     router.get('/deleterequest/:id', function (req, res) {
        Request.findOneAndRemove({ _id: req.params.id}, function (err) {
            if (err) {
@@ -400,17 +415,7 @@ module.exports = function (router) {
                 if (!buser) {
                     res.json({success: false, message: 'No Service Provider was found'});
                 } else {
-                    Avatar.findOne({buserId: req.decoded.buserId}, function (err, avatar) {
-                        if (err) {
-                            res.json({success: false, message: 'An error occurred'});
-                        } else {
-                            if (!avatar) {
-                                res.json({success: true, buser: buser});
-                            } else {
-                                res.json({success: true, buser: buser, avatar: avatar});
-                            }
-                        }
-                    });
+                    res.json({success: true, buser: buser});
                 }
             }
         });
@@ -511,23 +516,9 @@ module.exports = function (router) {
                     } else {
                         Reviews.findOne({ buserId: req.params.id}, function (err, review) {
                            if (err) {
-                               res.json({ success: false, message: err });
+                               res.json({success: false, message: err});
                            } else {
-                               if (!review) {
-                                   res.json({success: true, buser: buser });
-                               } else {
-                                   Avatar.findOne({ buserId: req.params.id}, function (err, avatar) {
-                                      if (err) {
-                                          res.json({ success: false, message: 'An Error occurred' });
-                                      } else {
-                                          if (!avatar){
-                                              res.json({success: true, buser: buser, review: review});
-                                          } else {
-                                              res.json({success: true, buser: buser, review: review, avatar: avatar });
-                                          }
-                                      }
-                                   });
-                               }
+                               res.json({success: true, buser: buser, review: review});
                            }
                         });
                     }
@@ -570,7 +561,7 @@ module.exports = function (router) {
             }
         }) ;
     });
-    
+
     router.post('/changestatus/:id', function (req, res) {
         if (!req.params.id) {
             res.json({success: false, message: 'No ID found'});
@@ -624,6 +615,26 @@ module.exports = function (router) {
         }
     })
 
+    router.put('/addtoviews/:id', function (req, res) {
+        Buser.findOne({ _id: req.params.id }).select('views').exec(function(err, buser) {
+            if (err) {
+                res.json({ success: false, message: err });
+            } else {
+                if (!buser) {
+                    res.json({ success: false, message: 'No user found' });
+                } else {
+                    buser.views++;
+                    buser.save(function (err) {
+                        if (err) {
+                            res.json({ success: false, message: err });
+                        } else {
+                            res.json({ success: true, message: 'Added' });
+                        }
+                    });
+                }
+            }
+        }) ;
+    });
 
     router.get('/customerprofile', function (req, res) {
         Cuser.findOne({ _id: req.decoded.cuserId }).select('_id username').exec( function (err, cuser) {
@@ -634,6 +645,30 @@ module.exports = function (router) {
                     res.json({ success: false, message: 'User not found'});
                 } else {
                     res.json({ success: true, cuser: cuser });
+                }
+            }
+        });
+    });
+
+    router.get('/getforhire/:id', function (req,res) {
+        Buser.findOne({_id: req.params.id}).select('_id businessname email address category city state description views image').exec( function (err, buser) {
+            if (err) {
+                res.json({ success: false, message: 'An error occured'});
+            } else {
+                if (!buser) {
+                    res.json({ success: false, message: 'No Service Provider was found' });
+                } else {
+                    Reviews.findOne({ buserId: req.params.id}, function (err, review) {
+                        if (err) {
+                            res.json({ success: false, message: err });
+                        } else {
+                            if (!review) {
+                                res.json({success: true, buser: buser });
+                            } else {
+                                res.json({ success: true, buser: buser, review: review })
+                            }
+                        }
+                    });
                 }
             }
         });

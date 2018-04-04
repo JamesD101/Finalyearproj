@@ -7,10 +7,10 @@ const Acceptrequest = require('../model/acceptrequest');
 const config = require('../config/database');
 const jwt = require('jsonwebtoken');
 const Reviews = require('../model/reviews');
-const Avatar = require('../model/profilepic');
+const Works = require('../model/works');
 var multer = require('multer');
 // set the directory for the uploads to the uploaded to
-var DIR = './frontends/cfrontend/src/assets/uploads';
+var DIR = './cfrontend/src/assets/uploads';
 //define the type of upload multer would be doing and pass in its destination, in our case, its a single file with the name photo
 var upload = multer({dest: DIR}).single('photo');
 
@@ -106,7 +106,8 @@ module.exports = function(router){
                 if (!buser){
                     res.json({ success: false, message: 'No User was found' });
                 } else {
-                    var path = '';
+                    // var path = '';
+                    var namey = '';
                     upload(req, res, function (err) {
                         if (err) {
                             // An error occurred when uploading
@@ -114,18 +115,18 @@ module.exports = function(router){
                             return res.status(422).send("an Error occured");
                         }
                         // No error occured.
-                        path = req.file.path;
+                        // path = req.file.path;
+                        namey = req.file.filename;
                         // return res.send("Upload Completed for "+path);
-                        let avatar = new Avatar({
+                        let works = new Works({
                             buserId: req.params.id,
-                            // businessname: buser.businessname,
-                            imgpath: path
+                            imgpath: namey
                         });
-                        avatar.save(function (err) {
+                        works.save(function (err) {
                             if (err) {
-                                res.json({ success: false, message: 'An Error Occcurred' });
+                                res.json({ success: false, message: 'An Error Occurred' });
                             } else {
-                                res.json({ success: true, message: 'Profile Picture was saved successfully' });
+                                res.json({ success: true, message: 'Picture was uploaded successfully' });
                             }
                         });
                     });
@@ -393,7 +394,7 @@ module.exports = function(router){
                 if (err) {
                     res.json({success: false, message: 'Not a valid User ID'});
                 } else {
-                    Avatar.findOne({buserId: req.params.id}, function (err, avatar) {
+                    Works.findOne({buserId: req.params.id}, function (err, avatar) {
                         if (err) {
                             res.json({success: false, message: 'An error occurred'});
                         } else {
@@ -417,7 +418,7 @@ module.exports = function(router){
                 if (!buser) {
                     res.json({ success: false, message: 'User not found'});
                 } else {
-                    Avatar.findOne({ buserId: req.decoded.buserId}, function (err, avatar) {
+                    Works.findOne({ buserId: req.decoded.buserId}, function (err, avatar) {
                        if (err) {
                            res.json({ success: false, message: 'An error occurred' });
                        } else {

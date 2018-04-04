@@ -1,0 +1,22 @@
+<div class="holdme">
+  <div class="me">
+    <h5 class="text-center">Upload pictures to show your works</h5>
+
+    <div class="upload-class">
+      <input class="form-control myin" type="file" (change)="onFileSelected($event)">
+      <button [disabled]="!yes" class="btn btn-success mybtn" type="button" (click)="onUpload()">Upload</button>
+      <!--<h6 *ngIf="show">Upload successful</h6>
+      <h6 *ngIf="unshow">Upload was not successful</h6>-->
+    </div>
+
+    <div class="custom-file mb-1">
+
+      <input type="file" name="file" id="file" class="custom-file-input">
+      <label for="file" class="custom-file-label">Choose File</label>
+    </div>
+    <br>
+    <input type="submit" value="Submit" class="btn btn-primary btn-block">
+  </div>
+  <br>
+  <br>
+</div>

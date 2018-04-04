@@ -4,504 +4,8 @@
     <list default="true" id="c4b0bfe0-680c-4a67-9fcd-6248b97d6b15" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/buserindex.js" afterPath="$PROJECT_DIR$/buserindex.js" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/.angular-cli.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/.editorconfig" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/.gitignore" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/README.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/e2e/app.e2e-spec.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/e2e/app.po.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/e2e/tsconfig.e2e.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/karma.conf.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/package.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/protractor.conf.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/app/app-routing.module.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/app/app.component.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/app/app.component.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/app/app.component.spec.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/app/app.component.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/app/app.module.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/app/component/dashboard/dashboard.component.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/app/component/dashboard/dashboard.component.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/app/component/dashboard/dashboard.component.spec.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/app/component/dashboard/dashboard.component.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/app/component/home/home.component.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/app/component/home/home.component.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/app/component/home/home.component.spec.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/app/component/home/home.component.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/app/component/login/login.component.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/app/component/login/login.component.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/app/component/login/login.component.spec.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/app/component/login/login.component.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/app/component/navbar/navbar.component.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/app/component/navbar/navbar.component.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/app/component/navbar/navbar.component.spec.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/app/component/navbar/navbar.component.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/app/component/signup/signup.component.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/app/component/signup/signup.component.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/app/component/signup/signup.component.spec.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/app/component/signup/signup.component.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/app/service/auth.service.spec.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/app/service/auth.service.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/assets/.gitkeep" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/assets/css/bootstrap-grid.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/assets/css/bootstrap-grid.css.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/assets/css/bootstrap-grid.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/assets/css/bootstrap-grid.min.css.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/assets/css/bootstrap-reboot.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/assets/css/bootstrap-reboot.css.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/assets/css/bootstrap-reboot.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/assets/css/bootstrap-reboot.min.css.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/assets/css/bootstrap.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/assets/css/bootstrap.css.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/assets/css/bootstrap.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/assets/css/bootstrap.min.css.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/assets/font-awesome-4.7.0/HELP-US-OUT.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/assets/font-awesome-4.7.0/css/font-awesome.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/assets/font-awesome-4.7.0/css/font-awesome.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/assets/font-awesome-4.7.0/fonts/FontAwesome.otf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/assets/font-awesome-4.7.0/fonts/fontawesome-webfont.eot" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/assets/font-awesome-4.7.0/fonts/fontawesome-webfont.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/assets/font-awesome-4.7.0/fonts/fontawesome-webfont.ttf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/assets/font-awesome-4.7.0/fonts/fontawesome-webfont.woff" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/assets/font-awesome-4.7.0/fonts/fontawesome-webfont.woff2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/assets/font-awesome-4.7.0/less/animated.less" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/assets/font-awesome-4.7.0/less/bordered-pulled.less" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/assets/font-awesome-4.7.0/less/core.less" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/assets/font-awesome-4.7.0/less/fixed-width.less" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/assets/font-awesome-4.7.0/less/font-awesome.less" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/assets/font-awesome-4.7.0/less/icons.less" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/assets/font-awesome-4.7.0/less/larger.less" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/assets/font-awesome-4.7.0/less/list.less" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/assets/font-awesome-4.7.0/less/mixins.less" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/assets/font-awesome-4.7.0/less/path.less" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/assets/font-awesome-4.7.0/less/rotated-flipped.less" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/assets/font-awesome-4.7.0/less/screen-reader.less" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/assets/font-awesome-4.7.0/less/stacked.less" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/assets/font-awesome-4.7.0/less/variables.less" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/assets/font-awesome-4.7.0/scss/_animated.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/assets/font-awesome-4.7.0/scss/_bordered-pulled.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/assets/font-awesome-4.7.0/scss/_core.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/assets/font-awesome-4.7.0/scss/_fixed-width.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/assets/font-awesome-4.7.0/scss/_icons.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/assets/font-awesome-4.7.0/scss/_larger.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/assets/font-awesome-4.7.0/scss/_list.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/assets/font-awesome-4.7.0/scss/_mixins.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/assets/font-awesome-4.7.0/scss/_path.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/assets/font-awesome-4.7.0/scss/_rotated-flipped.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/assets/font-awesome-4.7.0/scss/_screen-reader.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/assets/font-awesome-4.7.0/scss/_stacked.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/assets/font-awesome-4.7.0/scss/_variables.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/assets/font-awesome-4.7.0/scss/font-awesome.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/assets/jquery.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/assets/js/bootstrap.bundle.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/assets/js/bootstrap.bundle.js.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/assets/js/bootstrap.bundle.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/assets/js/bootstrap.bundle.min.js.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/assets/js/bootstrap.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/assets/js/bootstrap.js.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/assets/js/bootstrap.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/assets/js/bootstrap.min.js.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/assets/si-glyph-brush-and-pencil.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/assets/si-glyph-building.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/assets/si-glyph-camera.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/assets/si-glyph-hanger.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/assets/si-glyph-microphone-1.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/assets/si-glyph-spoon-fork.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/assets/tech.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/assets/upload.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/environments/environment.prod.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/environments/environment.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/favicon.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/index.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/main.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/polyfills.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/styles.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/test.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/tsconfig.app.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/tsconfig.spec.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/src/typings.d.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/tsconfig.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/adminfrontend/tslint.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/assets/c2d377b57e330ae98d45c3c685f8f83b" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/.angular-cli.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/.editorconfig" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/.gitignore" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/README.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/e2e/app.e2e-spec.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/e2e/app.po.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/e2e/tsconfig.e2e.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/karma.conf.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/package.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/protractor.conf.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/app/app-routing.module.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/app/app.component.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/app/app.component.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/app/app.component.spec.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/app/app.component.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/app/app.module.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/app/components/acceptrequest/acceptrequest.component.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/app/components/acceptrequest/acceptrequest.component.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/app/components/acceptrequest/acceptrequest.component.spec.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/app/components/acceptrequest/acceptrequest.component.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/app/components/bsignup/bsignup.component.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/app/components/bsignup/bsignup.component.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/app/components/bsignup/bsignup.component.spec.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/app/components/bsignup/bsignup.component.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/app/components/dashboard/bdashboard/addinfo/addinfo.component.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/app/components/dashboard/bdashboard/addinfo/addinfo.component.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/app/components/dashboard/bdashboard/addinfo/addinfo.component.spec.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/app/components/dashboard/bdashboard/addinfo/addinfo.component.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/app/components/dashboard/bdashboard/bdashboard.component.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/app/components/dashboard/bdashboard/bdashboard.component.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/app/components/dashboard/bdashboard/bdashboard.component.spec.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/app/components/dashboard/bdashboard/bdashboard.component.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/app/components/dashboard/bdashboard/content/content.component.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/app/components/dashboard/bdashboard/content/content.component.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/app/components/dashboard/bdashboard/content/content.component.spec.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/app/components/dashboard/bdashboard/content/content.component.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/app/components/dashboard/bdashboard/message/message.component.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/app/components/dashboard/bdashboard/message/message.component.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/app/components/dashboard/bdashboard/message/message.component.spec.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/app/components/dashboard/bdashboard/message/message.component.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/app/components/dashboard/bdashboard/profilepicupload/profilepicupload.component.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/app/components/dashboard/bdashboard/profilepicupload/profilepicupload.component.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/app/components/dashboard/bdashboard/profilepicupload/profilepicupload.component.spec.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/app/components/dashboard/bdashboard/profilepicupload/profilepicupload.component.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/app/components/dashboard/bdashboard/side-bar/side-bar.component.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/app/components/dashboard/bdashboard/side-bar/side-bar.component.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/app/components/dashboard/bdashboard/side-bar/side-bar.component.spec.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/app/components/dashboard/bdashboard/side-bar/side-bar.component.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/app/components/dashboard/bdashboard/upload/upload.component.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/app/components/dashboard/bdashboard/upload/upload.component.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/app/components/dashboard/bdashboard/upload/upload.component.spec.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/app/components/dashboard/bdashboard/upload/upload.component.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/app/components/home/back.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/app/components/home/home.component.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/app/components/home/home.component.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/app/components/home/home.component.spec.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/app/components/home/home.component.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/app/components/home/howitworks.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/app/components/login/blogin/blogin.component.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/app/components/login/blogin/blogin.component.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/app/components/login/blogin/blogin.component.spec.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/app/components/login/blogin/blogin.component.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/app/components/login/login.component.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/app/components/login/login.component.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/app/components/login/login.component.spec.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/app/components/login/login.component.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/app/components/navbar/navbar.component.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/app/components/navbar/navbar.component.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/app/components/navbar/navbar.component.spec.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/app/components/navbar/navbar.component.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/app/components/viewprofile/content/content.component.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/app/components/viewprofile/content/content.component.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/app/components/viewprofile/content/content.component.spec.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/app/components/viewprofile/content/content.component.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/app/components/viewprofile/side-bar/side-bar.component.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/app/components/viewprofile/side-bar/side-bar.component.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/app/components/viewprofile/side-bar/side-bar.component.spec.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/app/components/viewprofile/side-bar/side-bar.component.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/app/components/viewprofile/viewprofile.component.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/app/components/viewprofile/viewprofile.component.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/app/components/viewprofile/viewprofile.component.spec.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/app/components/viewprofile/viewprofile.component.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/app/guards/auth.guard.spec.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/app/guards/auth.guard.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/app/guards/noauth.guard.spec.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/app/guards/noauth.guard.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/app/services/bauth.service.spec.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/app/services/bauth.service.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/assets/.gitkeep" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/assets/css/bootstrap-grid.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/assets/css/bootstrap-grid.css.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/assets/css/bootstrap-grid.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/assets/css/bootstrap-grid.min.css.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/assets/css/bootstrap-reboot.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/assets/css/bootstrap-reboot.css.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/assets/css/bootstrap-reboot.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/assets/css/bootstrap-reboot.min.css.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/assets/css/bootstrap.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/assets/css/bootstrap.css.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/assets/css/bootstrap.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/assets/css/bootstrap.min.css.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/assets/font-awesome-4.7.0/HELP-US-OUT.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/assets/font-awesome-4.7.0/css/font-awesome.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/assets/font-awesome-4.7.0/css/font-awesome.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/assets/font-awesome-4.7.0/fonts/FontAwesome.otf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/assets/font-awesome-4.7.0/fonts/fontawesome-webfont.eot" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/assets/font-awesome-4.7.0/fonts/fontawesome-webfont.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/assets/font-awesome-4.7.0/fonts/fontawesome-webfont.ttf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/assets/font-awesome-4.7.0/fonts/fontawesome-webfont.woff" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/assets/font-awesome-4.7.0/fonts/fontawesome-webfont.woff2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/assets/font-awesome-4.7.0/less/animated.less" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/assets/font-awesome-4.7.0/less/bordered-pulled.less" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/assets/font-awesome-4.7.0/less/core.less" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/assets/font-awesome-4.7.0/less/fixed-width.less" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/assets/font-awesome-4.7.0/less/font-awesome.less" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/assets/font-awesome-4.7.0/less/icons.less" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/assets/font-awesome-4.7.0/less/larger.less" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/assets/font-awesome-4.7.0/less/list.less" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/assets/font-awesome-4.7.0/less/mixins.less" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/assets/font-awesome-4.7.0/less/path.less" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/assets/font-awesome-4.7.0/less/rotated-flipped.less" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/assets/font-awesome-4.7.0/less/screen-reader.less" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/assets/font-awesome-4.7.0/less/stacked.less" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/assets/font-awesome-4.7.0/less/variables.less" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/assets/font-awesome-4.7.0/scss/_animated.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/assets/font-awesome-4.7.0/scss/_bordered-pulled.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/assets/font-awesome-4.7.0/scss/_core.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/assets/font-awesome-4.7.0/scss/_fixed-width.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/assets/font-awesome-4.7.0/scss/_icons.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/assets/font-awesome-4.7.0/scss/_larger.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/assets/font-awesome-4.7.0/scss/_list.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/assets/font-awesome-4.7.0/scss/_mixins.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/assets/font-awesome-4.7.0/scss/_path.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/assets/font-awesome-4.7.0/scss/_rotated-flipped.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/assets/font-awesome-4.7.0/scss/_screen-reader.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/assets/font-awesome-4.7.0/scss/_stacked.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/assets/font-awesome-4.7.0/scss/_variables.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/assets/font-awesome-4.7.0/scss/font-awesome.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/assets/jquery.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/assets/js/bootstrap.bundle.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/assets/js/bootstrap.bundle.js.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/assets/js/bootstrap.bundle.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/assets/js/bootstrap.bundle.min.js.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/assets/js/bootstrap.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/assets/js/bootstrap.js.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/assets/js/bootstrap.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/assets/js/bootstrap.min.js.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/assets/si-glyph-brush-and-pencil.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/assets/si-glyph-building.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/assets/si-glyph-camera.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/assets/si-glyph-hanger.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/assets/si-glyph-microphone-1.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/assets/si-glyph-spoon-fork.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/assets/tech.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/assets/upload.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/environments/environment.prod.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/environments/environment.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/index.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/main.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/polyfills.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/styles.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/test.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/the-link-logo.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/tsconfig.app.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/tsconfig.spec.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/src/typings.d.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/tsconfig.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/bfrontend/tslint.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/.angular-cli.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/.editorconfig" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/.gitignore" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/README.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/e2e/app.e2e-spec.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/e2e/app.po.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/e2e/tsconfig.e2e.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/karma.conf.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/package.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/protractor.conf.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/app-routing.module.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/app.component.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/app.component.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/app.component.spec.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/app.component.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/app.module.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/cdashboard/cdashboard.component.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/cdashboard/cdashboard.component.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/cdashboard/cdashboard.component.spec.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/cdashboard/cdashboard.component.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/csignup/csignup.component.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/csignup/csignup.component.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/csignup/csignup.component.spec.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/csignup/csignup.component.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/home/filterservices/filter-search/filter-search.component.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/home/filterservices/filter-search/filter-search.component.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/home/filterservices/filter-search/filter-search.component.spec.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/home/filterservices/filter-search/filter-search.component.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/home/filterservices/filterservices.component.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/home/filterservices/filterservices.component.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/home/filterservices/filterservices.component.spec.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/home/filterservices/filterservices.component.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/home/home.component.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/home/home.component.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/home/home.component.spec.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/home/home.component.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/home/servicesfinder/search-service/search-bar/search-bar.component.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/home/servicesfinder/search-service/search-bar/search-bar.component.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/home/servicesfinder/search-service/search-bar/search-bar.component.spec.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/home/servicesfinder/search-service/search-bar/search-bar.component.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/home/servicesfinder/search-service/search-content/search-content.component.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/home/servicesfinder/search-service/search-content/search-content.component.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/home/servicesfinder/search-service/search-content/search-content.component.spec.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/home/servicesfinder/search-service/search-content/search-content.component.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/home/servicesfinder/search-service/search-service.component.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/home/servicesfinder/search-service/search-service.component.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/home/servicesfinder/search-service/search-service.component.spec.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/home/servicesfinder/search-service/search-service.component.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/home/servicesfinder/search-service/search-side-bar/search-side-bar.component.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/home/servicesfinder/search-service/search-side-bar/search-side-bar.component.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/home/servicesfinder/search-service/search-side-bar/search-side-bar.component.spec.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/home/servicesfinder/search-service/search-side-bar/search-side-bar.component.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/home/servicesfinder/serviceprovider/buser.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/home/servicesfinder/serviceprovider/reviews/reviews.component.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/home/servicesfinder/serviceprovider/reviews/reviews.component.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/home/servicesfinder/serviceprovider/reviews/reviews.component.spec.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/home/servicesfinder/serviceprovider/reviews/reviews.component.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/home/servicesfinder/serviceprovider/serviceprovider.component.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/home/servicesfinder/serviceprovider/serviceprovider.component.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/home/servicesfinder/serviceprovider/serviceprovider.component.spec.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/home/servicesfinder/serviceprovider/serviceprovider.component.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/home/servicesfinder/serviceprovider/side-bar/side-bar.component.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/home/servicesfinder/serviceprovider/side-bar/side-bar.component.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/home/servicesfinder/serviceprovider/side-bar/side-bar.component.spec.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/home/servicesfinder/serviceprovider/side-bar/side-bar.component.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/home/servicesfinder/serviceprovider/works/works.component.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/home/servicesfinder/serviceprovider/works/works.component.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/home/servicesfinder/serviceprovider/works/works.component.spec.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/home/servicesfinder/serviceprovider/works/works.component.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/home/servicesfinder/servicesfinder.component.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/home/servicesfinder/servicesfinder.component.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/home/servicesfinder/servicesfinder.component.spec.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/home/servicesfinder/servicesfinder.component.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/login/clogin/clogin.component.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/login/clogin/clogin.component.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/login/clogin/clogin.component.spec.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/login/clogin/clogin.component.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/login/login.component.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/login/login.component.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/login/login.component.spec.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/login/login.component.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/message/message.component.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/message/message.component.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/message/message.component.spec.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/message/message.component.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/navbar/navbar.component.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/navbar/navbar.component.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/navbar/navbar.component.spec.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/navbar/navbar.component.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/viewprofile/content/content.component.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/viewprofile/content/content.component.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/viewprofile/content/content.component.spec.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/viewprofile/content/content.component.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/viewprofile/side-bar/side-bar.component.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/viewprofile/side-bar/side-bar.component.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/viewprofile/side-bar/side-bar.component.spec.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/viewprofile/side-bar/side-bar.component.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/viewprofile/viewprofile.component.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/viewprofile/viewprofile.component.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/viewprofile/viewprofile.component.spec.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/components/viewprofile/viewprofile.component.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/guards/auth.guard.spec.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/guards/auth.guard.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/guards/noauth.guard.spec.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/guards/noauth.guard.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/services/cauth.service.spec.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/services/cauth.service.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/services/chat.service.spec.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/app/services/chat.service.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/assets/.gitkeep" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/assets/Screen Shot 2018-03-31 at 11.58.52 PM.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/assets/css/bootstrap-grid.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/assets/css/bootstrap-grid.css.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/assets/css/bootstrap-grid.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/assets/css/bootstrap-grid.min.css.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/assets/css/bootstrap-reboot.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/assets/css/bootstrap-reboot.css.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/assets/css/bootstrap-reboot.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/assets/css/bootstrap-reboot.min.css.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/assets/css/bootstrap.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/assets/css/bootstrap.css.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/assets/css/bootstrap.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/assets/css/bootstrap.min.css.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/assets/font-awesome-4.7.0/HELP-US-OUT.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/assets/font-awesome-4.7.0/css/font-awesome.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/assets/font-awesome-4.7.0/css/font-awesome.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/assets/font-awesome-4.7.0/fonts/FontAwesome.otf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/assets/font-awesome-4.7.0/fonts/fontawesome-webfont.eot" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/assets/font-awesome-4.7.0/fonts/fontawesome-webfont.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/assets/font-awesome-4.7.0/fonts/fontawesome-webfont.ttf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/assets/font-awesome-4.7.0/fonts/fontawesome-webfont.woff" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/assets/font-awesome-4.7.0/fonts/fontawesome-webfont.woff2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/assets/font-awesome-4.7.0/less/animated.less" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/assets/font-awesome-4.7.0/less/bordered-pulled.less" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/assets/font-awesome-4.7.0/less/core.less" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/assets/font-awesome-4.7.0/less/fixed-width.less" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/assets/font-awesome-4.7.0/less/font-awesome.less" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/assets/font-awesome-4.7.0/less/icons.less" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/assets/font-awesome-4.7.0/less/larger.less" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/assets/font-awesome-4.7.0/less/list.less" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/assets/font-awesome-4.7.0/less/mixins.less" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/assets/font-awesome-4.7.0/less/path.less" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/assets/font-awesome-4.7.0/less/rotated-flipped.less" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/assets/font-awesome-4.7.0/less/screen-reader.less" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/assets/font-awesome-4.7.0/less/stacked.less" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/assets/font-awesome-4.7.0/less/variables.less" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/assets/font-awesome-4.7.0/scss/_animated.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/assets/font-awesome-4.7.0/scss/_bordered-pulled.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/assets/font-awesome-4.7.0/scss/_core.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/assets/font-awesome-4.7.0/scss/_fixed-width.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/assets/font-awesome-4.7.0/scss/_icons.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/assets/font-awesome-4.7.0/scss/_larger.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/assets/font-awesome-4.7.0/scss/_list.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/assets/font-awesome-4.7.0/scss/_mixins.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/assets/font-awesome-4.7.0/scss/_path.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/assets/font-awesome-4.7.0/scss/_rotated-flipped.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/assets/font-awesome-4.7.0/scss/_screen-reader.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/assets/font-awesome-4.7.0/scss/_stacked.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/assets/font-awesome-4.7.0/scss/_variables.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/assets/font-awesome-4.7.0/scss/font-awesome.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/assets/jquery.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/assets/js/bootstrap.bundle.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/assets/js/bootstrap.bundle.js.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/assets/js/bootstrap.bundle.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/assets/js/bootstrap.bundle.min.js.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/assets/js/bootstrap.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/assets/js/bootstrap.js.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/assets/js/bootstrap.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/assets/js/bootstrap.min.js.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/assets/si-glyph-brush-and-pencil.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/assets/si-glyph-building.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/assets/si-glyph-camera.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/assets/si-glyph-hanger.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/assets/si-glyph-microphone-1.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/assets/si-glyph-spoon-fork.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/assets/tech.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/assets/uploads/baa7b5133fbc190f3c445126e437237e" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/assets/uploads/noimage.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/assets/uploads/noimage.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/assets/uploads/tech.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/environments/environment.prod.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/environments/environment.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/index.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/main.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/polyfills.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/styles.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/test.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/the-link-logo.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/tsconfig.app.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/tsconfig.spec.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/src/typings.d.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/tsconfig.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/cfrontend/tslint.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/frontends/the-link-logo.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/node_modules/concat-stream/index.js" afterPath="$PROJECT_DIR$/node_modules/concat-stream/index.js" />
-      <change beforePath="$PROJECT_DIR$/node_modules/concat-stream/node_modules/readable-stream/README.md" afterPath="$PROJECT_DIR$/node_modules/concat-stream/node_modules/readable-stream/README.md" />
-      <change beforePath="$PROJECT_DIR$/node_modules/concat-stream/node_modules/readable-stream/lib/_stream_duplex.js" afterPath="$PROJECT_DIR$/node_modules/concat-stream/node_modules/readable-stream/lib/_stream_duplex.js" />
-      <change beforePath="$PROJECT_DIR$/node_modules/concat-stream/node_modules/readable-stream/lib/_stream_readable.js" afterPath="$PROJECT_DIR$/node_modules/concat-stream/node_modules/readable-stream/lib/_stream_readable.js" />
-      <change beforePath="$PROJECT_DIR$/node_modules/concat-stream/node_modules/readable-stream/lib/_stream_writable.js" afterPath="$PROJECT_DIR$/node_modules/concat-stream/node_modules/readable-stream/lib/_stream_writable.js" />
-      <change beforePath="$PROJECT_DIR$/node_modules/concat-stream/node_modules/readable-stream/lib/internal/streams/destroy.js" afterPath="$PROJECT_DIR$/node_modules/concat-stream/node_modules/readable-stream/lib/internal/streams/destroy.js" />
-      <change beforePath="$PROJECT_DIR$/node_modules/concat-stream/node_modules/readable-stream/package.json" afterPath="$PROJECT_DIR$/node_modules/concat-stream/node_modules/readable-stream/package.json" />
-      <change beforePath="$PROJECT_DIR$/node_modules/concat-stream/node_modules/string_decoder/.npmignore" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/node_modules/concat-stream/node_modules/string_decoder/README.md" afterPath="$PROJECT_DIR$/node_modules/concat-stream/node_modules/string_decoder/README.md" />
-      <change beforePath="$PROJECT_DIR$/node_modules/concat-stream/node_modules/string_decoder/lib/string_decoder.js" afterPath="$PROJECT_DIR$/node_modules/concat-stream/node_modules/string_decoder/lib/string_decoder.js" />
-      <change beforePath="$PROJECT_DIR$/node_modules/concat-stream/node_modules/string_decoder/package.json" afterPath="$PROJECT_DIR$/node_modules/concat-stream/node_modules/string_decoder/package.json" />
-      <change beforePath="$PROJECT_DIR$/node_modules/concat-stream/package.json" afterPath="$PROJECT_DIR$/node_modules/concat-stream/package.json" />
-      <change beforePath="$PROJECT_DIR$/node_modules/concat-stream/readme.md" afterPath="$PROJECT_DIR$/node_modules/concat-stream/readme.md" />
-      <change beforePath="$PROJECT_DIR$/node_modules/multer/package.json" afterPath="$PROJECT_DIR$/node_modules/multer/package.json" />
       <change beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
       <change beforePath="$PROJECT_DIR$/routes/bauthentication.js" afterPath="$PROJECT_DIR$/routes/bauthentication.js" />
-      <change beforePath="$PROJECT_DIR$/routes/cauthentication.js" afterPath="$PROJECT_DIR$/routes/cauthentication.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -522,21 +26,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="buserindex.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="buserindex.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/buserindex.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="268">
-              <caret line="60" column="9" lean-forward="false" selection-start-line="60" selection-start-column="9" selection-end-line="60" selection-end-column="9" />
+            <state relative-caret-position="-362">
+              <caret line="25" column="7" lean-forward="true" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="7" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bauthentication.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="bauthentication.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/bauthentication.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1657">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="2055">
+              <caret line="137" column="0" lean-forward="true" selection-start-line="137" selection-start-column="0" selection-end-line="137" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.ejs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/view/index.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="450">
+              <caret line="30" column="14" lean-forward="true" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -562,6 +76,8 @@
       <list>
         <option value="$PROJECT_DIR$/bfrontend/src/app/components/dashboard/bdashboard/upload/upload.component.css" />
         <option value="$PROJECT_DIR$/bfrontend/src/app/components/dashboard/bdashboard/upload/upload.component.html" />
+        <option value="$PROJECT_DIR$/routes/bauthentication.js" />
+        <option value="$PROJECT_DIR$/view/index.ejs" />
         <option value="$PROJECT_DIR$/buserindex.js" />
       </list>
     </option>
@@ -603,11 +119,6 @@
             <path>
               <item name="thelink" type="b2602c69:ProjectViewProjectNode" />
               <item name="thelink" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="thelink" type="b2602c69:ProjectViewProjectNode" />
-              <item name="thelink" type="462c0819:PsiDirectoryNode" />
-              <item name="bfrontend" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="thelink" type="b2602c69:ProjectViewProjectNode" />
@@ -697,15 +208,16 @@
       <workItem from="1507276053269" duration="321000" />
       <workItem from="1507276435264" duration="90000" />
       <workItem from="1522861533869" duration="1326000" />
-      <workItem from="1522863040645" duration="85000" />
+      <workItem from="1522863040645" duration="1018000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2551000" />
+    <option name="totallyTimeSpent" value="3484000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24806201" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -780,18 +292,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/buserindex.js">
+    <entry file="file://$PROJECT_DIR$/routes/bauthentication.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="60" column="9" lean-forward="false" selection-start-line="60" selection-start-column="9" selection-end-line="60" selection-end-column="9" />
+        <state relative-caret-position="2055">
+          <caret line="137" column="0" lean-forward="true" selection-start-line="137" selection-start-column="0" selection-end-line="137" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/bauthentication.js">
+    <entry file="file://$PROJECT_DIR$/view/index.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1657">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="450">
+          <caret line="30" column="14" lean-forward="true" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/buserindex.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-362">
+          <caret line="25" column="7" lean-forward="true" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="7" />
           <folding />
         </state>
       </provider>

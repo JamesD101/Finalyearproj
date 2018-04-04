@@ -17,6 +17,21 @@ const Grid = require('gridfs-stream');
 const methodOverride = require('method-override');
 
 const app = express();
+
+
+//MIDDLEWARE
+// app.use(cors({
+//     origin: 'http://localhost:4001'
+// }));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use(methodOverride('_method'));
+app.use(express.static(__dirname + '/frontend/dist'));
+
+
+
+app.use('/bauthentication', bauthentication);
+app.set('view engine', 'ejs');
 // set mongoose promise into global
 mongoose.Promise = global.Promise;
 
@@ -62,26 +77,18 @@ const storage = new GridFsStorage({
 });
 const upload = multer({ storage });
 
-
-//MIDDLEWARE
-app.use(cors({
-    origin: 'http://localhost:4001'
-}));
-
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
-app.use(methodOverride('_method'));
-app.use(express.static(__dirname + '/frontend/dist'));
-
-app.use('/bauthentication', bauthentication);
-
-
-
-app.get('*', function(req,res) {
-    // to send the frontend file to the backend
-    res.sendFile(path.join(__dirname + '/frontend/dist/index.html'));
+router.post('/upload', upload.single('file'), function(req, res){
+    res.json({ file: req.file });
 });
 
+
+// app.get('*', function(req,res) {
+    // to send the frontend file to the backend
+    // res.sendFile(path.join(__dirname + '/frontend/dist/index.html'));
+// });
+app.get('/', function (req,res) {
+   res.render('index');
+});
 
 app.listen(port, function () {
     console.log('Listening on port ' + port) ;

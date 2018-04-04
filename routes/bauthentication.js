@@ -98,7 +98,7 @@ module.exports = function(router){
         }
     });
 
-    router.post('/upload/:id', function (req, res, next) {
+   /* router.post('/upload/:id', function (req, res, next) {
         Buser.findOne({ _id: req.params.id }).select('_id businessname').exec( function (err, buser) {
             if (err) {
                 res.json({ success: false, message: 'An error occurred' });
@@ -133,7 +133,8 @@ module.exports = function(router){
                 }
             }
         });
-    });
+    });*/
+
 
     router.get('/getreviews/:id', function (req, res) {
         Reviews.find({ buserId: req.params.id }, function (err, review) {

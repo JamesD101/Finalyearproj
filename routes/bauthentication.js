@@ -1,3 +1,4 @@
+const mongoose = require('mongoose');
 const Buser = require('../model/buser');
 const Cuser = require('../model/cuser');
 const Request = require('../model/request');
@@ -8,15 +9,37 @@ const config = require('../config/database');
 const jwt = require('jsonwebtoken');
 const Reviews = require('../model/reviews');
 const Works = require('../model/works');
-var multer = require('multer');
+const multer = require('multer');
+const path = require('path');
 // set the directory for the uploads to the uploaded to
 var DIR = './cfrontend/src/assets/uploads';
 //define the type of upload multer would be doing and pass in its destination, in our case, its a single file with the name photo
-var upload = multer({dest: DIR}).single('photo');
+// var upload = multer({dest: DIR}).single('file');
+
+// adding the storage for the pictures to be stored in
+var storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null,  DIR)
+    },
+    filename: function (req, file, cb) {
+        var fileObj = {
+            "image/png": ".png",
+            "image/jpeg": ".jpeg"
+            // "image/jpg": ".jpg"
+        };
+        if (fileObj[file.mimetype] == undefined) {
+            cb(new Error("file format not valid"));
+        } else {
+            cb(null, file.fieldname + '-' + Date.now() + fileObj[file.mimetype])
+        }
+    }
+});
+
+var upload = multer({ storage: storage }).single('file');
 
 module.exports = function(router){
 
-
+    // register api
     router.post('/bregister', function (req, res) {
         if (!req.body.fullname) {
             res.json({success: false, message: 'Fullname is required'});
@@ -98,7 +121,9 @@ module.exports = function(router){
         }
     });
 
-   /* router.post('/upload/:id', function (req, res, next) {
+    // upload api
+   router.post('/upload/:id', function (req, res, next) {
+
         Buser.findOne({ _id: req.params.id }).select('_id businessname').exec( function (err, buser) {
             if (err) {
                 res.json({ success: false, message: 'An error occurred' });
@@ -106,25 +131,26 @@ module.exports = function(router){
                 if (!buser){
                     res.json({ success: false, message: 'No User was found' });
                 } else {
-                    // var path = '';
                     var namey = '';
+                    // running the upload function
                     upload(req, res, function (err) {
                         if (err) {
                             // An error occurred when uploading
                             console.log(err);
                             return res.status(422).send("an Error occured");
                         }
-                        // No error occured.
-                        // path = req.file.path;
-                        namey = req.file.filename;
-                        // return res.send("Upload Completed for "+path);
+                        namey =  req.file.filename;
+
                         let works = new Works({
                             buserId: req.params.id,
-                            imgpath: namey
+                            filename: namey,
+                            contentType: req.file.contentType,
+                            size: req.file.size,
+                            uploadDate: req.file.date
                         });
                         works.save(function (err) {
                             if (err) {
-                                res.json({ success: false, message: 'An Error Occurred' });
+                                res.json({ success: false, message: err });
                             } else {
                                 res.json({ success: true, message: 'Picture was uploaded successfully' });
                             }
@@ -133,9 +159,9 @@ module.exports = function(router){
                 }
             }
         });
-    });*/
+    });
 
-
+   // getting the reviews for the service provider
     router.get('/getreviews/:id', function (req, res) {
         Reviews.find({ buserId: req.params.id }, function (err, review) {
             if (err) {
@@ -150,6 +176,7 @@ module.exports = function(router){
         });
     });
 
+    // checking for the request on the service provider
     router.get('/checkrequest/:id', function (req, res) {
         Rrequest.find({ buserId: req.params.id}, function (err, somereq) {
             if (err) {
@@ -164,6 +191,7 @@ module.exports = function(router){
         });
     });
 
+    // checking for the confirmed request
     router.get('/confirmedrequest/:id', function (req, res) {
         Comrequest.find({ buserId: req.params.id}, function (err, somereq) {
             if (err) {
@@ -178,6 +206,7 @@ module.exports = function(router){
         });
     });
 
+    // getting the accepted requests
     router.get('/acceptedrequest/:id', function (req, res) {
         Acceptrequest.find({ buserId: req.params.id}, function (err, somereq) {
             if (err) {
@@ -192,6 +221,7 @@ module.exports = function(router){
         });
     });
 
+    // getting the delete request
     router.get('/deleterequest/:id', function (req, res) {
         Comrequest.findOne({ _id: req.params.id}, function (err, comrequest) {
             if (err) {
@@ -220,6 +250,8 @@ module.exports = function(router){
             }
         });
     });
+
+    // getting a single request
     router.get('/singlereq/:id', function (req,res) {
         Comrequest.findOne({ _id: req.params.id}, function (err, request) {
             if (err) {
@@ -234,6 +266,7 @@ module.exports = function(router){
         });
     });
 
+    // posting an accepted request to the database and changing the collection
     router.post('/acceptreq/:id', function (req, res) {
         if (!req.params.id) {
             res.json({success: false, message: 'No ID found'});
@@ -253,7 +286,7 @@ module.exports = function(router){
                             buserId: comrequest.buserId,
                             category: comrequest.category
                         });
-                        accrequest.save((err) => {
+                        accrequest.save(function(err) {
                             if (err) {
                                 res.json({success: false, message: err});
                             } else {
@@ -271,6 +304,7 @@ module.exports = function(router){
         }
     });
 
+    // logging api functionality
     router.post('/blogin', function(req,res){
         if (!req.body.businessname){
             res.json({ success: false, message: 'No Business Name was provided'});
@@ -306,6 +340,7 @@ module.exports = function(router){
         }
     });
 
+    // setting up the token for the service provider on login
     router.use(function (req, res, next) {
         const token = req.headers['authorization'];
         if (!token){
@@ -322,6 +357,7 @@ module.exports = function(router){
         }
     });
 
+    // adding a description to the database of the service provider
     router.put('/adddesc', function (req, res) {
         if (!req.body.businessname) {
             res.json({success: false, message: 'A Business name must be provided'});
@@ -351,42 +387,7 @@ module.exports = function(router){
         }
     });
 
-
-    // router.put('/addinfo', function (req, res) {
-    //     if (!req.body.fullname) {
-    //         res.json({success: false, message: 'Fullname is required'});
-    //     } else {
-    //         if (!req.body.businessname) {
-    //                 res.json({success: false, message: 'A Business name must be provided'});
-    //             } else {
-    //                 if (!req.body.description) {
-    //                     res.json({success: false, message: 'Description is required'});
-    //                 } else {
-    //                     Buser.findOne({ businessname: req.body.businessname }, function (err, buser) {
-    //                         if (err) {
-    //                             res.json({ success: false, message: 'An error occurred here' });
-    //                         } else {
-    //                             if (!buser) {
-    //                                 res.json({ success: false, message: 'No User was found' });
-    //                             } else {
-                                    // buser.fullname = req.body.fullname;
-                                    // buser.businessname = req.body.businessname;
-                                    // buser.description = req.body.description;
-                                    // buser.save(function (err) {
-                                    //     if (err) {
-                                    //         res.json({success: false, message: 'An error occurred'});
-                                    //     } else {
-                                    //         res.json({ success: true, message: 'Information has been updated successfully' });
-                                    //        }
-                                    //    });
-                                   // }
-                               // }
-                            // });
-                        // }
-                // }
-        // }
-// });
-
+    // getting a single user with their works
     router.get('/singleuser/:id', function (req,res) {
         if (!req.params.id){
             res.json({ success:false, message: 'No UserID was provided' });
@@ -395,14 +396,14 @@ module.exports = function(router){
                 if (err) {
                     res.json({success: false, message: 'Not a valid User ID'});
                 } else {
-                    Works.findOne({buserId: req.params.id}, function (err, avatar) {
+                    Works.findOne({buserId: req.params.id}, function (err, work) {
                         if (err) {
                             res.json({success: false, message: 'An error occurred'});
                         } else {
-                            if (!avatar) {
+                            if (!work) {
                                 res.json({success: true, buser: buser});
                             } else {
-                                res.json({success: true, buser: buser, avatar: avatar});
+                                res.json({success: true, buser: buser, work: work});
                             }
                         }
                     });
@@ -410,6 +411,8 @@ module.exports = function(router){
             });
         }
     });
+
+    // getting the business provider's profile
 
     router.get('/businessprofile', function (req, res) {
         Buser.findOne({ _id: req.decoded.buserId }).select('_id fullname businessname category email address city state description views').exec( function (err, buser) {
@@ -435,6 +438,7 @@ module.exports = function(router){
         });
     });
 
+    // getting the job request of the service provider
     router.get('/getjobrequest', function (req, res) {
        Request.findOne({ buserId: req.params.id }, function(err, request) {
            if (err) {

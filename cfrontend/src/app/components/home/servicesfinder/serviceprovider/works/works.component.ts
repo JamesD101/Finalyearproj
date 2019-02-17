@@ -28,9 +28,8 @@ export class WorksComponent implements OnInit {
       if (data.success){
         // this.works = data.work[0].imgpath;
         this.works = data.work;
-        for (this.mine = 0; this.mine < this.works.length; this.mine++) {
-          this.myworks.push("../../../../../assets/uploads/"+this.works[this.mine].imgpath);
-        }
+    //     // for (this.mine = 0; this.mine < this.works.length; this.mine++) {
+    //     //   this.myworks.push("../../../../../assets/uploads/"+this.works[this.mine].filename);
       } else {
         console.log(data.message);
       }

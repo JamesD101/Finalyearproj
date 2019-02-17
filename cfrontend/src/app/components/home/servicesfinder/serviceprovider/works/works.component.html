@@ -4,7 +4,8 @@
       <app-side-bar></app-side-bar>
     </div>
     <ul class="here-there col-sm-12 col-md-8">
-      <li *ngFor="let work of myworks"><img class="imageme" [src]="work"/></li>
+      <li *ngFor="let work of works"><img class="imageme" src="../../../../../assets/uploads/{{work.filename}}"/></li>
     </ul>
   </div>
 </div>
+

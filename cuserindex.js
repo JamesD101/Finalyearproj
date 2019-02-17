@@ -33,16 +33,13 @@ app.use(cors({
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.use(express.static(__dirname + '/frontend/dist'));
+app.use(express.static(__dirname + '/cfrontend/dist'));
 
 app.use('/cauthentication', cauthentication);
-// app.use('/request', request);
-
-
 
 app.get('*', function(req,res) {
     // to send the frontend file to the backend
-    res.sendFile(path.join(__dirname + '/frontends/cfrontend/dist/index.html'));
+    res.sendFile(path.join(__dirname + '/cfrontend/dist/index.html'));
 });
 
 server.listen(port);

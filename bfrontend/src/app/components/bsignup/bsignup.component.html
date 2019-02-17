@@ -86,7 +86,14 @@
         <li *ngIf="brform.errors?.matchingPassword && brform.controls.confirm.dirty">Passwords do not match</li>
       </ul>
     </div>
-    <button type="submit" [disabled]="!brform.valid || processing" class="subbut btn btn-primary btn-lg btn-block">SIGN UP</button>
+    <!--<div class="custom-file mb-1">-->
+      <!--<input type="file" name="file" id="file" class="custom-file-input" (change)="onFileSelected($event)">-->
+      <!--<label for="file" class="custom-file-label">Add a profile picture (OPTIONAL)</label>-->
+      <!--<br><br>-->
+    <!--</div>-->
+
+
+    <button type="submit" [disabled]="!brform.valid || processing" class="subbut btn btn-primary btn-lg btn-block" (click)="onUpload()">SIGN UP</button>
   </form>
     </div>
     </div>

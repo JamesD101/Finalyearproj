@@ -49,7 +49,7 @@ export class UploadComponent implements OnInit {
   }
   onUpload(event){
     let formData:FormData = new FormData();
-    formData.append('photo', this.selectedFile, this.selectedFile.name);
+    formData.append('file', this.selectedFile, this.selectedFile.name);
     this.bauth.upload(this.infoid, formData).subscribe(function(data) {
      if (data.success) {
        alert(data.message);

@@ -10,6 +10,7 @@ const jwt = require('jsonwebtoken');
 
 module.exports = function(router){
 
+    // register
     router.post('/register', function (req, res) {
         if (!req.body.username) {
             res.json({success: false, message: 'Username is required'});
@@ -52,6 +53,7 @@ module.exports = function(router){
             }}
     });
 
+    // login
     router.post('/login', function(req,res){
         if (!req.body.username){
             res.json({ success: false, message: 'No Username was provided'});
@@ -82,7 +84,7 @@ module.exports = function(router){
         }
     });
 
-
+    // getting token
     router.use(function (req, res, next) {
         const token = req.headers['authorization'];
         if (!token){
@@ -99,6 +101,7 @@ module.exports = function(router){
         }
     });
 
+    // getting all service provider
     router.get('/allbuser', function (req, res) {
         Buser.find({}, function (err, busers) {
             if (err) {
@@ -113,9 +116,7 @@ module.exports = function(router){
         });
     });
 
-
-
-
+    // getting all customer
     router.get('/allcuser', function (req, res) {
         Cuser.find({}, function (err, cusers) {
             if (err) {
@@ -130,6 +131,7 @@ module.exports = function(router){
         });
     });
 
+    // getitng all request
     router.get('/allreq', function (req, res) {
         Rrequest.find({}, function (err, requests) {
             if (err) {
@@ -144,6 +146,7 @@ module.exports = function(router){
         });
     });
 
+    // getting all the acceoted request
     router.get('/allaccreq', function (req, res) {
         Acceptrequest.find({}, function (err, accs) {
             if (err) {
@@ -158,6 +161,7 @@ module.exports = function(router){
         });
     });
 
+    // search in all the accepted request for a service provider
     router.get('/search/:businessname', function (req, res) {
         Acceptrequest.find({businessname: req.params.businessname}, function (err, accs) {
             if (err) {

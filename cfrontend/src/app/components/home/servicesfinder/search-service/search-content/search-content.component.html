@@ -1,6 +1,6 @@
 
 <div class="center-my-form col-md-12">
-  <h6 class="text-center">You must be logged in to view the profile of service providers</h6>
+  <!--<h6 class="text-center">You must be logged in to view the profile of service providers</h6>-->
   <div class="centering">
     <form [formGroup]="searchForm" class="hold-search-btn" (submit)="onSearch()">
       <select name="category" formControlName="category" class="searchservice" autocomplete="off">
@@ -18,20 +18,20 @@
 </div>
 <br>
 <br>
+<div class="meee">
 <h5 *ngIf="empty">The category or location which was searched for those not have any SERVICE PROVIDER</h5>
 <div class="row show-hide-message">
   <div [ngClass] = "messageClass">
     {{ message }}
   </div>
 </div>
-
 <div *ngFor="let search of searches" class="containerme">
   <div class="container mine">
     <div class="row">
-      <div class="contain col-md-8">
+      <div class="contain col-12 col-md-8">
         <div class="row">
-          <div class="col-md-4 image"><img class="imageme" src="../../../../../../assets/{{search.image}}"></div>
-          <div class="col-md-8 seller">
+          <div class="col-12 col-md-4 image"><img class="imageme" src="../../../../../../assets/{{search.image}}" alt="No Image Available For Service Provider"></div>
+          <div class="col-12 col-md-8 seller">
             <div class="insider">
               <h5><b>{{ search.businessname }}</b></h5>
               <p id="myv">Number of views - {{ search.views }} views</p>
@@ -42,7 +42,7 @@
           </div>
         </div>
       </div>
-      <div class="sub col-md-4 col-sm-12">
+      <div class="sub col-12 col-md-4">
         <a [routerLink]="['singleprovider/', search._id]"><button id="first" class="buttonme col-md-12" (click)="addtoview(search._id)">View Profile</button></a>
         <a><button (click)="hirepro(search._id)" class="buttonme col-md-12">Request Service Provider</button></a>
         <a [routerLink]="['works/', search._id]"><button id="second" class="buttonme col-md-12">View works</button></a>
@@ -50,6 +50,7 @@
     </div>
   </div>
   <span class="underline"></span>
+</div>
 </div>
 
 

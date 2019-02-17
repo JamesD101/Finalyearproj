@@ -13,6 +13,7 @@ const Stat = require('../model/stat');
 
 module.exports = function (router) {
 
+    // register as a customer
     router.post('/cregister', function (req,res) {
         if (!req.body.username){
             res.json({ success: false, message: 'Username is required'});
@@ -60,6 +61,7 @@ module.exports = function (router) {
         }
     });
 
+    // adding request of the customer for a service provider
     router.post('/request', function(req,res){
         if (!req.body.businessname){
             res.json({ success: false, message: 'No businessname was provided'});
@@ -111,6 +113,7 @@ module.exports = function (router) {
         }
     });
 
+    // getting another collection for the same request
     router.post('/rrequest', function(req,res){
         if (!req.body.businessname){
             res.json({ success: false, message: 'No businessname was provided'});
@@ -162,6 +165,7 @@ module.exports = function (router) {
         }
     });
 
+    // getting request from a particular service provider
     router.get('/checkrequest/:id', function (req, res) {
         Request.find({ cuserId: req.params.id}, function (err, somereq) {
             if (err) {
@@ -176,6 +180,7 @@ module.exports = function (router) {
         });
     });
 
+    // getting confirmed request from a particular service provider
     router.get('/checkconrequest/:id', function (req, res) {
         Comrequest.find({ cuserId: req.params.id}, function (err, somereq) {
             if (err) {
@@ -190,6 +195,7 @@ module.exports = function (router) {
         });
     });
 
+    // getting the request for a particular service provider
     router.get('/checkbrequest/:id', function (req, res) {
         Rrequest.find({ buserId: req.params.id}, function (err, somereq) {
             if (err) {
@@ -204,6 +210,7 @@ module.exports = function (router) {
         });
     });
 
+    // getting the confirmed request which a particular customer has
     router.get('/confirmedrequest/:id', function (req, res) {
         Accrequest.find({ cuserId: req.params.id}, function (err, somereq) {
             if (err) {
@@ -218,6 +225,7 @@ module.exports = function (router) {
         });
     });
 
+    // getting the confirmed service provider request
     router.get('/confirmedbrequest/:id', function (req, res) {
         Accrequest.find({ buserId: req.params.id}, function (err, somereq) {
             if (err) {
@@ -232,6 +240,7 @@ module.exports = function (router) {
         });
     });
 
+    // add reviews for a service provider
     router.post('/addreviews', function (req,res) {
        if (!req.body.review) {
            res.json({ success: false, message: 'No review' });
@@ -280,6 +289,7 @@ module.exports = function (router) {
        }
     });
 
+    // getting reviews of service provider
     router.get('/getreviews/:id', function (req, res) {
         Reviews.find({ buserId: req.params.id }, function (err, review) {
            if (err) {
@@ -294,7 +304,7 @@ module.exports = function (router) {
         });
     });
 
-
+    // searching for service provider based on category alone
     router.get('/search/:category', function (req,res) {
         Buser.find({ category: req.params.category}, function (err, busers) {
             if(err){
@@ -308,6 +318,7 @@ module.exports = function (router) {
             }}).sort({ 'views' : -1});
     });
 
+    // searching for service provider based on category and state
     router.get('/search/:category?/:state?', function (req,res) {
         if (!req.query.category) {
             res.json({success: false, message: 'Category is required'});
@@ -327,13 +338,11 @@ module.exports = function (router) {
                             }
                     }
                 }).sort({ 'views' : -1});
-                // }
-                // }
-                //     .sort({ '_id' : -1});
             }
         }
     });
 
+    // logging by customer
     router.post('/clogin', function(req,res){
         if (!req.body.username){
             res.json({ success: false, message: 'No username was provided'});
@@ -367,6 +376,7 @@ module.exports = function (router) {
         }
     });
 
+    // getting works of service provider
     router.get('/getworks/:id', function (req, res) {
         Works.find({ buserId: req.params.id }, function (err, work) {
             if (err) {
@@ -381,7 +391,7 @@ module.exports = function (router) {
         });
     });
 
-
+    // deleting the request of service provider
     router.get('/deleterequest/:id', function (req, res) {
        Request.findOneAndRemove({ _id: req.params.id}, function (err) {
            if (err) {
@@ -392,6 +402,7 @@ module.exports = function (router) {
        });
     });
 
+    // getting job request of service provider
     router.get('/getjobrequestofsp/:id', function (req, res) {
         Request.find({ buserId: req.params.id }, function(err, request) {
             if (err) {
@@ -406,7 +417,7 @@ module.exports = function (router) {
         });
     });
 
-
+    // getting profile of a particular service provider
     router.get('/onlyserviceprovider/:businessname', function (req,res) {
         Buser.findOne({ businessname: req.params.businessname }).select('_id businessname email address category city state description').exec( function (err, buser) {
             if (err) {
@@ -421,6 +432,7 @@ module.exports = function (router) {
         });
     });
 
+    // searching directly
     router.get('/directservice/Photography', function (req,res) {
                 Buser.find({ category: 'Photography' }, function (err, busers) {
                     if(err){
@@ -435,6 +447,7 @@ module.exports = function (router) {
                     }
                 }).sort({ 'views' : -1});
     });
+    // searching directly
     router.get('/directservice/Stylist', function (req,res) {
         Buser.find({ category: 'Stylist' }, function (err, busers) {
             if(err){
@@ -449,6 +462,7 @@ module.exports = function (router) {
             }
         }).sort({ 'views' : -1});
     });
+    // searching directly
     router.get('/directservice/Catering', function (req,res) {
         Buser.find({ category: 'Catering' }, function (err, busers) {
             if(err){
@@ -463,6 +477,7 @@ module.exports = function (router) {
             }
         }).sort({ 'views' : -1});
     });
+    // searching directly
     router.get('/directservice/MC', function (req,res) {
         Buser.find({ category: 'MC' }, function (err, busers) {
             if(err){
@@ -477,6 +492,7 @@ module.exports = function (router) {
             }
         }).sort({ 'views' : -1});
     });
+    // searching directly
     router.get('/directservice/Makeupartist', function (req,res) {
         Buser.find({ category: 'Makeup artist' }, function (err, busers) {
             if(err){
@@ -491,6 +507,7 @@ module.exports = function (router) {
             }
         }).sort({ 'views' : -1});
     });
+    // searching directly
     router.get('/directservice/Eventcenter', function (req,res) {
         Buser.find({ category: 'Event Center' }, function (err, busers) {
             if(err){
@@ -506,6 +523,7 @@ module.exports = function (router) {
         }).sort({ 'views' : -1});
     });
 
+    // getting service provider with reviews
     router.get('/singleserviceprovider/:id', function (req,res) {
             Buser.findOne({_id: req.params.id}).select('_id businessname email address category city state description views image').exec( function (err, buser) {
                 if (err) {
@@ -526,7 +544,7 @@ module.exports = function (router) {
             });
     });
 
-
+    // getting single request
     router.get('/singlereq/:id', function (req,res) {
         Request.findOne({ _id: req.params.id}, function (err, request) {
           if (err) {
@@ -541,6 +559,7 @@ module.exports = function (router) {
         });
     });
 
+    /*// adding to views
     router.put('/addtoviews/:id', function (req, res) {
         Buser.findOne({ _id: req.params.id }).select('views').exec(function(err, buser) {
             if (err) {
@@ -560,8 +579,9 @@ module.exports = function (router) {
                 }
             }
         }) ;
-    });
+    });*/
 
+    // changing status of request
     router.post('/changestatus/:id', function (req, res) {
         if (!req.params.id) {
             res.json({success: false, message: 'No ID found'});
@@ -581,7 +601,7 @@ module.exports = function (router) {
                             buserId: request.buserId,
                             category: request.category
                         });
-                        newrequest.save((err) => {
+                        newrequest.save(function (err) {
                             if (err) {
                                 res.json({success: false, message: err});
                             } else {
@@ -599,6 +619,7 @@ module.exports = function (router) {
         }
     });
 
+    // getting token for the customer
     router.use(function (req, res, next) {
         const token = req.headers['authorization'];
         if (!token){
@@ -613,8 +634,9 @@ module.exports = function (router) {
                 }
             });
         }
-    })
+    });
 
+    // adding to view only when logged in
     router.put('/addtoviews/:id', function (req, res) {
         Buser.findOne({ _id: req.params.id }).select('views').exec(function(err, buser) {
             if (err) {
@@ -636,6 +658,7 @@ module.exports = function (router) {
         }) ;
     });
 
+    // getting profile of customer
     router.get('/customerprofile', function (req, res) {
         Cuser.findOne({ _id: req.decoded.cuserId }).select('_id username').exec( function (err, cuser) {
             if (err) {
@@ -650,6 +673,7 @@ module.exports = function (router) {
         });
     });
 
+    // hiring service provider
     router.get('/getforhire/:id', function (req,res) {
         Buser.findOne({_id: req.params.id}).select('_id businessname email address category city state description views image').exec( function (err, buser) {
             if (err) {

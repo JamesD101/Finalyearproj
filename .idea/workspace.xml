@@ -3,9 +3,40 @@
   <component name="ChangeListManager">
     <list default="true" id="c4b0bfe0-680c-4a67-9fcd-6248b97d6b15" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/bfrontend/src/app/components/bsignup/bsignup.component.html" afterPath="$PROJECT_DIR$/bfrontend/src/app/components/bsignup/bsignup.component.html" />
+      <change beforePath="$PROJECT_DIR$/bfrontend/src/app/components/bsignup/bsignup.component.ts" afterPath="$PROJECT_DIR$/bfrontend/src/app/components/bsignup/bsignup.component.ts" />
+      <change beforePath="$PROJECT_DIR$/bfrontend/src/app/components/dashboard/bdashboard/upload/upload.component.html" afterPath="$PROJECT_DIR$/bfrontend/src/app/components/dashboard/bdashboard/upload/upload.component.html" />
+      <change beforePath="$PROJECT_DIR$/bfrontend/src/app/components/dashboard/bdashboard/upload/upload.component.ts" afterPath="$PROJECT_DIR$/bfrontend/src/app/components/dashboard/bdashboard/upload/upload.component.ts" />
+      <change beforePath="$PROJECT_DIR$/bfrontend/src/app/components/home/home.component.html" afterPath="$PROJECT_DIR$/bfrontend/src/app/components/home/home.component.html" />
       <change beforePath="$PROJECT_DIR$/buserindex.js" afterPath="$PROJECT_DIR$/buserindex.js" />
-      <change beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change beforePath="$PROJECT_DIR$/cfrontend/src/app/components/cdashboard/cdashboard.component.css" afterPath="$PROJECT_DIR$/cfrontend/src/app/components/cdashboard/cdashboard.component.css" />
+      <change beforePath="$PROJECT_DIR$/cfrontend/src/app/components/home/servicesfinder/search-service/search-content/search-content.component.css" afterPath="$PROJECT_DIR$/cfrontend/src/app/components/home/servicesfinder/search-service/search-content/search-content.component.css" />
+      <change beforePath="$PROJECT_DIR$/cfrontend/src/app/components/home/servicesfinder/search-service/search-content/search-content.component.html" afterPath="$PROJECT_DIR$/cfrontend/src/app/components/home/servicesfinder/search-service/search-content/search-content.component.html" />
+      <change beforePath="$PROJECT_DIR$/cfrontend/src/app/components/home/servicesfinder/serviceprovider/works/works.component.html" afterPath="$PROJECT_DIR$/cfrontend/src/app/components/home/servicesfinder/serviceprovider/works/works.component.html" />
+      <change beforePath="$PROJECT_DIR$/cfrontend/src/app/components/home/servicesfinder/serviceprovider/works/works.component.ts" afterPath="$PROJECT_DIR$/cfrontend/src/app/components/home/servicesfinder/serviceprovider/works/works.component.ts" />
+      <change beforePath="$PROJECT_DIR$/cfrontend/src/app/services/cauth.service.ts" afterPath="$PROJECT_DIR$/cfrontend/src/app/services/cauth.service.ts" />
+      <change beforePath="$PROJECT_DIR$/cfrontend/src/assets/uploads/0e06f150507c38a3b7cef5b0a6002aee" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cfrontend/src/assets/uploads/2f701bdc0503ead8bb70c5686a4f1719" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cfrontend/src/assets/uploads/5601f22ebd6d03a1f2617b5718720d81" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cfrontend/src/assets/uploads/6a82993a82213c80bae6d21a34bf71a4" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cfrontend/src/assets/uploads/8842ce366fec266cf91ed2cd1747156f" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cfrontend/src/assets/uploads/9b6da58ee64fc0ed934a51494746fc49" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cfrontend/src/assets/uploads/9e31f758693158b571d4babf648299c0" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cfrontend/src/assets/uploads/a6d81419f134f948967a549a93985ef0" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cfrontend/src/assets/uploads/aca808e8792e927f20c0607917d5a581" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cfrontend/src/assets/uploads/c4d69cfd87fb3890a9bbd1e70b75516e" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cfrontend/src/assets/uploads/e625eb8c7ccb46e6e8cbad5874987977" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cfrontend/src/assets/uploads/fba7008ecfb53a75b955e1494dbf61dc" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cfrontend/src/assets/uploads/noimage.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cfrontend/src/assets/uploads/noimage.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cfrontend/src/assets/uploads/tech.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cuserindex.js" afterPath="$PROJECT_DIR$/cuserindex.js" />
+      <change beforePath="$PROJECT_DIR$/model/buser.js" afterPath="$PROJECT_DIR$/model/buser.js" />
+      <change beforePath="$PROJECT_DIR$/model/works.js" afterPath="$PROJECT_DIR$/model/works.js" />
+      <change beforePath="$PROJECT_DIR$/routes/aauthentication.js" afterPath="$PROJECT_DIR$/routes/aauthentication.js" />
       <change beforePath="$PROJECT_DIR$/routes/bauthentication.js" afterPath="$PROJECT_DIR$/routes/bauthentication.js" />
+      <change beforePath="$PROJECT_DIR$/routes/cauthentication.js" afterPath="$PROJECT_DIR$/routes/cauthentication.js" />
+      <change beforePath="$PROJECT_DIR$/view/index.ejs" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,57 +47,33 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="upload.component.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bfrontend/src/app/components/dashboard/bdashboard/upload/upload.component.html">
+      <file leaf-file-name="cauthentication.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/routes/cauthentication.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="74" lean-forward="false" selection-start-line="17" selection-start-column="74" selection-end-line="17" selection-end-column="74" />
+            <state relative-caret-position="390">
+              <caret line="258" column="17" lean-forward="false" selection-start-line="258" selection-start-column="17" selection-end-line="258" selection-end-column="17" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="buserindex.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/buserindex.js">
+      <file leaf-file-name="reviews.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/model/reviews.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-362">
-              <caret line="25" column="7" lean-forward="true" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bauthentication.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/bauthentication.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2055">
-              <caret line="137" column="0" lean-forward="true" selection-start-line="137" selection-start-column="0" selection-end-line="137" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.ejs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/view/index.ejs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="30" column="14" lean-forward="true" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="upload.component.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bfrontend/src/app/components/dashboard/bdashboard/upload/upload.component.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="29" column="8" lean-forward="false" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>center</find>
+      <find>centerme</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -75,10 +82,27 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/bfrontend/src/app/components/dashboard/bdashboard/upload/upload.component.css" />
-        <option value="$PROJECT_DIR$/bfrontend/src/app/components/dashboard/bdashboard/upload/upload.component.html" />
-        <option value="$PROJECT_DIR$/routes/bauthentication.js" />
         <option value="$PROJECT_DIR$/view/index.ejs" />
+        <option value="$PROJECT_DIR$/views/index.ejs" />
+        <option value="$PROJECT_DIR$/bfrontend/src/app/components/dashboard/bdashboard/upload/upload.component.ts" />
+        <option value="$PROJECT_DIR$/model/works.js" />
+        <option value="$PROJECT_DIR$/cfrontend/.angular-cli.json" />
+        <option value="$PROJECT_DIR$/cfrontend/src/app/components/home/servicesfinder/serviceprovider/works/works.component.ts" />
+        <option value="$PROJECT_DIR$/cuserindex.js" />
+        <option value="$PROJECT_DIR$/cfrontend/src/app/components/home/servicesfinder/serviceprovider/works/works.component.html" />
+        <option value="$PROJECT_DIR$/bfrontend/src/app/components/dashboard/bdashboard/upload/upload.component.html" />
+        <option value="$PROJECT_DIR$/bfrontend/src/app/components/bsignup/bsignup.component.ts" />
+        <option value="$PROJECT_DIR$/bfrontend/src/app/components/bsignup/bsignup.component.html" />
+        <option value="$PROJECT_DIR$/model/buser.js" />
+        <option value="$PROJECT_DIR$/cfrontend/src/app/components/cdashboard/cdashboard.component.css" />
+        <option value="$PROJECT_DIR$/cfrontend/src/app/components/home/servicesfinder/search-service/search-content/search-content.component.html" />
+        <option value="$PROJECT_DIR$/cfrontend/src/app/components/home/servicesfinder/search-service/search-content/search-content.component.css" />
         <option value="$PROJECT_DIR$/buserindex.js" />
+        <option value="$PROJECT_DIR$/routes/bauthentication.js" />
+        <option value="$PROJECT_DIR$/routes/cauthentication.js" />
+        <option value="$PROJECT_DIR$/routes/aauthentication.js" />
+        <option value="$PROJECT_DIR$/cfrontend/src/app/services/cauth.service.ts" />
+        <option value="$PROJECT_DIR$/bfrontend/src/app/components/home/home.component.html" />
       </list>
     </option>
   </component>
@@ -94,8 +118,9 @@
     <handled-path value="$PROJECT_DIR$/cfrontend/node_modules" />
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
-    <option name="width" value="1440" />
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="x" value="318" />
+    <option name="width" value="1122" />
     <option name="height" value="900" />
   </component>
   <component name="ProjectView">
@@ -113,22 +138,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="thelink" type="b2602c69:ProjectViewProjectNode" />
-              <item name="thelink" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="thelink" type="b2602c69:ProjectViewProjectNode" />
-              <item name="thelink" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="Scratches" />
       <pane id="Scope">
         <subPane subId="Project Files">
@@ -167,6 +176,27 @@
           <select />
         </subPane>
       </pane>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="thelink" type="b2602c69:ProjectViewProjectNode" />
+              <item name="thelink" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="thelink" type="b2602c69:ProjectViewProjectNode" />
+              <item name="thelink" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="thelink" type="b2602c69:ProjectViewProjectNode" />
+              <item name="thelink" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -174,7 +204,16 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.General" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/cfrontend/src/app/components/home/servicesfinder/serviceprovider/works" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/cfrontend/src/app/components/home/servicesfinder/serviceprovider/works" />
+      <recent name="$PROJECT_DIR$/cfrontend/src/app/components" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -208,34 +247,59 @@
       <workItem from="1507276053269" duration="321000" />
       <workItem from="1507276435264" duration="90000" />
       <workItem from="1522861533869" duration="1326000" />
-      <workItem from="1522863040645" duration="1018000" />
+      <workItem from="1522863040645" duration="14046000" />
+      <workItem from="1522878677881" duration="3424000" />
+      <workItem from="1522923360151" duration="4450000" />
+      <workItem from="1523789447941" duration="350000" />
+      <workItem from="1523967361368" duration="51000" />
+      <workItem from="1524001244429" duration="89000" />
+      <workItem from="1524655117540" duration="68000" />
+      <workItem from="1535035653917" duration="1360000" />
+      <workItem from="1538892520751" duration="628000" />
+      <workItem from="1539001652571" duration="320000" />
+      <workItem from="1539790554788" duration="707000" />
+      <workItem from="1542143034619" duration="71000" />
+      <workItem from="1542193348472" duration="520000" />
+      <workItem from="1542616996966" duration="108000" />
+      <workItem from="1543672647320" duration="98000" />
+      <workItem from="1544543614981" duration="5000" />
+      <workItem from="1546794027973" duration="29000" />
+      <workItem from="1548412865473" duration="4514000" />
+      <workItem from="1548508522489" duration="430000" />
+      <workItem from="1548546247838" duration="588000" />
+      <workItem from="1548623199845" duration="527000" />
+      <workItem from="1548968729457" duration="2702000" />
+      <workItem from="1549034804047" duration="3527000" />
+      <workItem from="1549136189828" duration="1394000" />
+      <workItem from="1549219270070" duration="3201000" />
+      <workItem from="1549669446127" duration="25000" />
+      <workItem from="1549743884687" duration="75000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3484000" />
+    <option name="totallyTimeSpent" value="45773000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24806201" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18239437" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24947146" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.326972" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.326972" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889965" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -246,72 +310,371 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/bfrontend/src/app/components/dashboard/bdashboard/upload/upload.component.css">
+    <entry file="file://$PROJECT_DIR$/cfrontend/src/app/components/home/servicesfinder/serviceprovider/works/works.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
-          <caret line="29" column="8" lean-forward="false" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
-          <folding />
+          <caret line="29" column="31" lean-forward="true" selection-start-line="29" selection-start-column="31" selection-end-line="29" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cfrontend/src/app/components/home/servicesfinder/search-service/search-content/search-content.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-279">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cfrontend/src/app/components/home/servicesfinder/serviceprovider/works/works.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="110" lean-forward="false" selection-start-line="6" selection-start-column="58" selection-end-line="6" selection-end-column="111" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bfrontend/src/app/components/dashboard/bdashboard/upload/upload.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="22" column="17" lean-forward="false" selection-start-line="19" selection-start-column="2" selection-end-line="22" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bfrontend/src/app/components/bsignup/bsignup.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="582">
+          <caret line="93" column="0" lean-forward="true" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bfrontend/src/app/components/dashboard/bdashboard/upload/upload.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="95" lean-forward="false" selection-start-line="17" selection-start-column="95" selection-end-line="17" selection-end-column="95" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cfrontend/src/app/components/cdashboard/cdashboard.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cfrontend/src/app/components/home/home.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cfrontend/src/app/components/home/servicesfinder/servicesfinder.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="631">
+          <caret line="158" column="67" lean-forward="true" selection-start-line="158" selection-start-column="0" selection-end-line="158" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cfrontend/src/app/components/cdashboard/cdashboard.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="569">
+          <caret line="1475" column="40" lean-forward="false" selection-start-line="1475" selection-start-column="40" selection-end-line="1475" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cfrontend/src/app/components/home/servicesfinder/search-service/search-content/search-content.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="18" lean-forward="false" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cfrontend/src/app/components/home/servicesfinder/search-service/search-content/search-content.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="353">
+          <caret line="203" column="21" lean-forward="false" selection-start-line="203" selection-start-column="21" selection-end-line="203" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/adminindex.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bfrontend/src/app/components/home/home.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="17" lean-forward="false" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cfrontend/src/app/services/cauth.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1245">
+          <caret line="83" column="26" lean-forward="false" selection-start-line="83" selection-start-column="26" selection-end-line="83" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cuserindex.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/database.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="6" column="2" lean-forward="false" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cfrontend/src/app/components/viewprofile/content/content.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cfrontend/src/app/components/csignup/csignup.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cfrontend/src/app/components/login/clogin/clogin.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cfrontend/src/app/components/login/clogin/clogin.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cfrontend/src/app/components/login/login.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-163">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cfrontend/src/app/components/login/login.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1">
+          <caret line="42" column="3" lean-forward="false" selection-start-line="42" selection-start-column="3" selection-end-line="42" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cfrontend/src/app/app-routing.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bfrontend/src/app/components/dashboard/bdashboard/bdashboard.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="15" column="11" lean-forward="false" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bfrontend/src/app/components/dashboard/bdashboard/bdashboard.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bfrontend/src/app/components/dashboard/bdashboard/content/content.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="1" lean-forward="false" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bfrontend/src/app/components/dashboard/bdashboard/content/content.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bfrontend/src/app/app-routing.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bfrontend/src/app/components/dashboard/bdashboard/side-bar/side-bar.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="1" lean-forward="false" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bfrontend/src/app/components/dashboard/bdashboard/side-bar/side-bar.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="1" lean-forward="false" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bfrontend/src/app/services/bauth.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1702">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bfrontend/src/app/app.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-887">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bfrontend/src/app/components/bsignup/bsignup.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-83">
+          <caret line="173" column="3" lean-forward="false" selection-start-line="173" selection-start-column="3" selection-end-line="173" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bfrontend/src/app/components/login/login.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cfrontend/src/app/components/csignup/csignup.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cfrontend/src/app/components/home/filterservices/filterservices.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cfrontend/src/app/components/home/home.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cfrontend/src/app/components/home/filterservices/filter-search/filter-search.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="160" column="17" lean-forward="false" selection-start-line="160" selection-start-column="17" selection-end-line="160" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#50#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cfrontend/src/app/components/cdashboard/cdashboard.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/comrequest.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/buserindex.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="900">
-          <caret line="60" column="9" lean-forward="false" selection-start-line="60" selection-start-column="9" selection-end-line="60" selection-end-column="9" />
+        <state relative-caret-position="260">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/buser.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="88" column="3" lean-forward="true" selection-start-line="88" selection-start-column="3" selection-end-line="88" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/request.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/rrequest.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="676">
+          <caret line="26" column="38" lean-forward="false" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bfrontend/src/app/components/dashboard/bdashboard/upload/upload.component.html">
+    <entry file="file://$PROJECT_DIR$/model/works.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="74" lean-forward="false" selection-start-line="17" selection-start-column="74" selection-end-line="17" selection-end-column="74" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/thelink/frontend/src/polyfills.ts" />
-    <entry file="file://$PROJECT_DIR$/thelink/frontend/src/polyfills.ts" />
-    <entry file="file://$PROJECT_DIR$/bfrontend/src/app/components/dashboard/bdashboard/upload/upload.component.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="8" lean-forward="false" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bfrontend/src/app/components/dashboard/bdashboard/upload/upload.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="74" lean-forward="false" selection-start-line="17" selection-start-column="74" selection-end-line="17" selection-end-column="74" />
-          <folding />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/bauthentication.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2055">
-          <caret line="137" column="0" lean-forward="true" selection-start-line="137" selection-start-column="0" selection-end-line="137" selection-end-column="0" />
+        <state relative-caret-position="4082">
+          <caret line="157" column="22" lean-forward="false" selection-start-line="157" selection-start-column="22" selection-end-line="157" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/aauthentication.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/reviews.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/index.ejs">
+    <entry file="file://$PROJECT_DIR$/routes/cauthentication.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="14" lean-forward="true" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/buserindex.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-362">
-          <caret line="25" column="7" lean-forward="true" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="7" />
+        <state relative-caret-position="390">
+          <caret line="258" column="17" lean-forward="false" selection-start-line="258" selection-start-column="17" selection-end-line="258" selection-end-column="17" />
           <folding />
         </state>
       </provider>

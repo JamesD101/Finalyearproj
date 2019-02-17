@@ -2,21 +2,28 @@
   <div class="me">
     <h5 class="text-center">Upload pictures to show your works</h5>
 
-    <div class="upload-class">
-      <input class="form-control myin" type="file" (change)="onFileSelected($event)">
+    <!--<div class="upload-class">
+      <input class="form-control myin" type="file" name="file" (change)="onFileSelected($event)">
       <button [disabled]="!yes" class="btn btn-success mybtn" type="button" (click)="onUpload()">Upload</button>
-      <!--<h6 *ngIf="show">Upload successful</h6>
-      <h6 *ngIf="unshow">Upload was not successful</h6>-->
-    </div>
+      &lt;!&ndash;<h6 *ngIf="show">Upload successful</h6>
+      <h6 *ngIf="unshow">Upload was not successful</h6>&ndash;&gt;
+    </div>-->
 
     <div class="custom-file mb-1">
 
-      <input type="file" name="file" id="file" class="custom-file-input">
+      <input type="file" name="file" id="file" class="custom-file-input" (change)="onFileSelected($event)">
       <label for="file" class="custom-file-label">Choose File</label>
     </div>
     <br>
-    <input type="submit" value="Submit" class="btn btn-primary btn-block">
+    <input type="submit" value="Submit" class="btn btn-primary btn-block" (click)="onUpload()">
   </div>
   <br>
   <br>
 </div>
+
+    <!--<input type="submit" value="Submit" class="btn btn-primary btn-block" (click)="onUpload()">-->
+  <!--</div>-->
+  <!--<br>-->
+  <!--<br>-->
+<!--</div>-->
+

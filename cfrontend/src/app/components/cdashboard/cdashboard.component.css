@@ -1427,12 +1427,12 @@ select[multiple], select[size] {
 }
 
 .centerme{
-  /*margin: 0 auto;*/
-  margin-left: 200px;
+  margin: 0 auto;
+  /*margin-left: 200px;*/
   z-index: 0.2;
-  margin-top: 30px;
-  margin-bottom: 30px;
-  /*max-width: 1000px;*/
+  /*margin-top: 30px;*/
+  /*margin-bottom: 30px;*/
+  max-width: 100% !important;
 }
 .fixme {
   padding-top: 10px;
@@ -1471,4 +1471,10 @@ select[multiple], select[size] {
 }
 .com{
   color: #000;
+}
+
+@media only screen and  (min-width: 1200px) {
+  .centerme{
+    margin-left: 200px;
+  }
 }

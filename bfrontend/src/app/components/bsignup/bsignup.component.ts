@@ -25,6 +25,12 @@ export class BsignupComponent implements OnInit {
   allState: string[] = ['Select a state', 'Abuja', 'Adamawa', 'Kaduna', 'Kano', 'Kwara', 'Lagos', 'Ogun', 'Ondo', 'Osun', 'Plateau'];
   defaultstate: string = 'Select a state';
 
+  selectedFile: File = null;
+  yes = false;
+  show = false;
+  unshow = false;
+
+
   constructor(
     private formBuilder: FormBuilder,
     private bauthService: BauthService,
@@ -164,7 +170,6 @@ export class BsignupComponent implements OnInit {
       });
     }
   }
-
 
   /*checkBEmail(email){
     this.authService.checkBEmail(this.brform.get('email').value).subscribe( data => {

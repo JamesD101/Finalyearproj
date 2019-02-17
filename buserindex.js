@@ -1,40 +1,25 @@
 const express = require('express');
 // set port number for backend
 const port = 4000;
+// require mongoose
 const mongoose = require('mongoose');
+// require path
 const path = require('path');
-const passport = require('passport');
+// require config
 const config = require('./config/database');
 //import express router
 const router = express.Router();
+const crypto = require('crypto');
 //import authentication routes
 const bauthentication = require('./routes/bauthentication')(router);
+// require bodyparser
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const multer = require('multer');
-const GridFsStorage = require('multer-gridfs-storage');
-const Grid = require('gridfs-stream');
-const methodOverride = require('method-override');
 
 const app = express();
 
-
-//MIDDLEWARE
-// app.use(cors({
-//     origin: 'http://localhost:4001'
-// }));
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
-app.use(methodOverride('_method'));
-app.use(express.static(__dirname + '/frontend/dist'));
-
-
-
-app.use('/bauthentication', bauthentication);
-app.set('view engine', 'ejs');
-// set mongoose promise into global
 mongoose.Promise = global.Promise;
-
 //connect to database
 mongoose.connect(config.uri, function (err) {
     if (err){
@@ -44,51 +29,27 @@ mongoose.connect(config.uri, function (err) {
     }
 });
 
-// Create mongodb connection
-const conn = mongoose.createConnection(config.uri);
-
-// Init stream
-let gfs;
-
-conn.once('open', () => {
-    // Init stream
-    gfs = Grid(conn.db, mongoose.mongo);
-    gfs.collection('uploads');
-});
-
-// Create storage engine
-const storage = new GridFsStorage({
-        url: config.uri,
-        file: (req, file) => {
-        return new Promise((resolve, reject) => {
-            crypto.randomBytes(16, (err, buf) => {
-            if (err) {
-                return reject(err);
-            }
-            const filename = buf.toString('hex') + path.extname(file.originalname);
-        const fileInfo = {
-            filename: filename,
-            bucketName: 'uploads'
-            };
-            resolve(fileInfo);
-            });
-        });
-        }
-});
-const upload = multer({ storage });
-
-router.post('/upload', upload.single('file'), function(req, res){
-    res.json({ file: req.file });
-});
+// MIDDLEWARE
+//MIDDLEWARE
+app.use(cors({
+    origin: 'http://localhost:4001'
+}));
 
 
-// app.get('*', function(req,res) {
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+app.use(express.static(__dirname + '/bfrontend/dist'));
+
+app.use('/bauthentication', bauthentication);
+
+
+
+app.get('*', function(req,res) {
     // to send the frontend file to the backend
-    // res.sendFile(path.join(__dirname + '/frontend/dist/index.html'));
-// });
-app.get('/', function (req,res) {
-   res.render('index');
+    res.sendFile(path.join(__dirname + '/bfrontend/dist/index.html'));
 });
+
 
 app.listen(port, function () {
     console.log('Listening on port ' + port) ;
